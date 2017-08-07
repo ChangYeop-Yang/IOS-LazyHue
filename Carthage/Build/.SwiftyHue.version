@@ -1,0 +1,9 @@
+{
+  "commitish" : "0.2.6",
+  "iOS" : [
+    {
+      "hash" : "48624f2c407049451031276cea7733fb1b7d089d382d9fd318ff152d62506f81",
+      "name" : "SwiftyHue"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+
+/* Class = "UILabel"; text = "- 날씨상태"; ObjectID = "6gl-jz-uXr"; */
+"6gl-jz-uXr.text" = "- 날씨상태";
+
+/* Class = "UILabel"; text = "⌘ 즐겨찾는 사진"; ObjectID = "6we-fz-M04"; */
+"6we-fz-M04.text" = "⌘ 즐겨찾는 사진";
+
+/* Class = "UILabel"; text = "⌘ 날씨정보"; ObjectID = "Azg-o3-kGo"; */
+"Azg-o3-kGo.text" = "⌘ 날씨정보";
+
+/* Class = "UILabel"; text = "Music Mode"; ObjectID = "BiI-wY-qfc"; */
+"BiI-wY-qfc.text" = "Music Mode";
+
+/* Class = "UILabel"; text = "- 기온"; ObjectID = "Eu0-HX-2iD"; */
+"Eu0-HX-2iD.text" = "- 기온";
+
+/* Class = "UILabel"; text = "- 밝기"; ObjectID = "FcQ-JA-An9"; */
+"FcQ-JA-An9.text" = "- 밝기";
+
+/* Class = "UILabel"; text = "Party Mode"; ObjectID = "Ljh-zx-YfK"; */
+"Ljh-zx-YfK.text" = "Party Mode";
+
+/* Class = "UILabel"; text = "- 습도 및 강수량"; ObjectID = "OKH-fm-myu"; */
+"OKH-fm-myu.text" = "- 습도 및 강수량";
+
+/* Class = "UIBarButtonItem"; title = "연결상태"; ObjectID = "Qcn-Co-Xm1"; */
+"Qcn-Co-Xm1.title" = "연결상태";
+
+/* Class = "UIViewController"; title = "멀티미디어 화면"; ObjectID = "RW4-4z-Z3w"; */
+"RW4-4z-Z3w.title" = "멀티미디어 화면";
+
+/* Class = "UILabel"; text = "- 파랑"; ObjectID = "UD0-ve-scP"; */
+"UD0-ve-scP.text" = "- 파랑";
+
+/* Class = "UIViewController"; title = "설정 화면"; ObjectID = "c0U-Ba-LCl"; */
+"c0U-Ba-LCl.title" = "설정 화면";
+
+/* Class = "UILabel"; text = "- 녹색"; ObjectID = "cvf-yx-fgb"; */
+"cvf-yx-fgb.text" = "- 녹색";
+
+/* Class = "UILabel"; text = "⌘ 통합 리모콘"; ObjectID = "gBk-Ff-511"; */
+"gBk-Ff-511.text" = "⌘ 통합 리모콘";
+
+/* Class = "UILabel"; text = "- 불쾌지수"; ObjectID = "hK3-Ne-lVJ"; */
+"hK3-Ne-lVJ.text" = "- 불쾌지수";
+
+/* Class = "UIViewController"; title = "알람 화면"; ObjectID = "iJi-EZ-PuA"; */
+"iJi-EZ-PuA.title" = "알람 화면";
+
+/* Class = "UILabel"; text = "Shake Mode"; ObjectID = "icx-PY-kOa"; */
+"icx-PY-kOa.text" = "Shake Mode";
+
+/* Class = "UINavigationItem"; title = "홈 화면"; ObjectID = "lbX-Rm-B9a"; */
+"lbX-Rm-B9a.title" = "홈 화면";
+
+/* Class = "UIBarButtonItem"; title = "Ready"; ObjectID = "lfv-Xl-fZP"; */
+"lfv-Xl-fZP.title" = "Ready";
+
+/* Class = "UILabel"; text = "Random Mode"; ObjectID = "li8-80-bwU"; */
+"li8-80-bwU.text" = "Random Mode";
+
+/* Class = "UILabel"; text = "- 미세먼지"; ObjectID = "nDy-zo-TTz"; */
+"nDy-zo-TTz.text" = "- 미세먼지";
+
+/* Class = "UIViewController"; title = "상세 화면"; ObjectID = "qbE-6T-QoL"; */
+"qbE-6T-QoL.title" = "상세 화면";
+
+/* Class = "UIBarButtonItem"; title = "초기화"; ObjectID = "v3P-JB-9ec"; */
+"v3P-JB-9ec.title" = "초기화";
+
+/* Class = "UILabel"; text = "- 빨강"; ObjectID = "zLt-Zw-vf6"; */
+"zLt-Zw-vf6.text" = "- 빨강";

@@ -1,0 +1,13 @@
+language: objective-c
+
+branches:
+  only:
+    - master
+
+xcode_project: Log.xcodeproj
+xcode_scheme: LogTests
+osx_image: xcode8
+xcode_sdk: iphonesimulator10.0
+
+script:
+  - xcodebuild test -project Log.xcodeproj -scheme "Log iOS" -destination "platform=iOS Simulator,name=iPhone 6s"
