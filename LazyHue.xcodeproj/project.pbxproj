@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2710876D1F30425200A02992 /* ic_settings_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2710876C1F30425200A02992 /* ic_settings_white.png */; };
 		27112BBC1F387BFE00B528D7 /* BridgeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27112BBB1F387BFE00B528D7 /* BridgeControl.swift */; };
+		2712F7201F38B3C700433468 /* BasicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712F71F1F38B3C700433468 /* BasicData.swift */; };
 		271577A81F2F084F00875C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271577A71F2F084F00875C73 /* AppDelegate.swift */; };
 		271577AA1F2F084F00875C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271577A91F2F084F00875C73 /* ViewController.swift */; };
 		271577AD1F2F084F00875C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271577AB1F2F084F00875C73 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		270E6E891F34B3270076FAAE /* Log.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Log.framework; path = Carthage/Build/iOS/Log.framework; sourceTree = "<group>"; };
 		2710876C1F30425200A02992 /* ic_settings_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_white.png; sourceTree = "<group>"; };
 		27112BBB1F387BFE00B528D7 /* BridgeControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeControl.swift; sourceTree = "<group>"; };
+		2712F71F1F38B3C700433468 /* BasicData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicData.swift; sourceTree = "<group>"; };
 		271577A41F2F084F00875C73 /* LazyHue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyHue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271577A71F2F084F00875C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		271577A91F2F084F00875C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2712F71E1F38B3AF00433468 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				2712F71F1F38B3C700433468 /* BasicData.swift */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
 		2715779B1F2F084F00875C73 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		271577A61F2F084F00875C73 /* LazyHue */ = {
 			isa = PBXGroup;
 			children = (
+				2712F71E1F38B3AF00433468 /* Basic */,
 				27C11A8B1F34D382002C02C9 /* Configuration */,
 				271B2DC21F2F77C900A4915F /* Image */,
 				271B2DB91F2F648D00A4915F /* Font */,
@@ -281,6 +292,7 @@
 			files = (
 				27112BBC1F387BFE00B528D7 /* BridgeControl.swift in Sources */,
 				271577AA1F2F084F00875C73 /* ViewController.swift in Sources */,
+				2712F7201F38B3C700433468 /* BasicData.swift in Sources */,
 				27C11A8D1F34D3DB002C02C9 /* BridgeConfig.swift in Sources */,
 				271577A81F2F084F00875C73 /* AppDelegate.swift in Sources */,
 			);

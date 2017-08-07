@@ -162,8 +162,11 @@
                                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="VIM-64-JTW">
+                                                    <slider opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="VIM-64-JTW">
                                                         <rect key="frame" x="68" y="0.0" width="289" height="31"/>
+                                                        <connections>
+                                                            <action selector="actColorSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="WA9-vV-YYh"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                             </stackView>
@@ -179,8 +182,11 @@
                                                         <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="moY-4O-Lim">
+                                                    <slider opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="moY-4O-Lim">
                                                         <rect key="frame" x="68" y="0.0" width="289" height="31"/>
+                                                        <connections>
+                                                            <action selector="actColorSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="sAv-uy-nK7"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                             </stackView>
@@ -196,8 +202,11 @@
                                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="cDl-5h-kv1">
+                                                    <slider opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="cDl-5h-kv1">
                                                         <rect key="frame" x="68" y="0.0" width="289" height="31"/>
+                                                        <connections>
+                                                            <action selector="actColorSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="TVc-U9-3fI"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                             </stackView>
@@ -213,8 +222,11 @@
                                                         <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Ypm-fO-yh7">
+                                                    <slider opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Ypm-fO-yh7">
                                                         <rect key="frame" x="68" y="0.0" width="289" height="31"/>
+                                                        <connections>
+                                                            <action selector="actColorSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="PMK-2N-yzx"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                             </stackView>
@@ -281,6 +293,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sliderBlue" destination="cDl-5h-kv1" id="o6l-ba-Ls7"/>
+                        <outlet property="sliderGreen" destination="moY-4O-Lim" id="rEl-iE-8Cq"/>
+                        <outlet property="sliderHue" destination="Ypm-fO-yh7" id="fJB-XT-BQ4"/>
+                        <outlet property="sliderRed" destination="VIM-64-JTW" id="Y0g-IR-E2j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

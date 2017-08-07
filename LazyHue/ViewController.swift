@@ -13,12 +13,18 @@ var swiftyHue:SwiftyHue = SwiftyHue()
 
 class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticatorDelegate
 {
-    /* fileprivate */
+    /* MARK : - fileprivate */
     fileprivate var bridge:HueBridge!
     fileprivate let bridgeConfig:BridgeConfig = BridgeConfig()
-    fileprivate let bridgeControl:BridgeControl = BridgeControl()
+    fileprivate let bridgeControl:BridgeControl = BridgeControl(swiftyHue: swiftyHue)
     fileprivate let bridgeFinder:BridgeFinder = BridgeFinder()
     fileprivate var bridgeAuthenticator:BridgeAuthenticator?
+    
+    /* MARK : - Slider Outlet */
+    @IBOutlet weak var sliderRed: UISlider!
+    @IBOutlet weak var sliderBlue: UISlider!
+    @IBOutlet weak var sliderGreen: UISlider!
+    @IBOutlet weak var sliderHue: UISlider!
     
     override func viewDidLoad()
     {
@@ -91,6 +97,30 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     @IBAction func actPowerSwitch(_ sender: UISwitch)
     {
         for item in (swiftyHue.resourceCache?.lights)!
-        { bridgeControl.ctlLightPower(hue: swiftyHue, light: item.key, power: sender.isOn) }
+        { bridgeControl.ctlLightPower(light: item.key, power: sender.isOn) }
+    }
+    
+    @IBAction func actColorSlider(_ sender: UISlider)
+    {
+        /* Color Variable */
+        var nRed:Int = Int(sliderRed.value)
+        var nBlue:Int = Int(sliderBlue.value)
+        var nGreen:Int = Int(sliderGreen.value)
+        var nHue:Int = Int(sliderHue.value)
+        
+        switch (sender.tag)
+        {
+            /* Red Slider */
+            case 15 : nRed = Int(sender.value); break;
+            /* Green Slider */
+            case 16 : nGreen = Int(sender.value); break;
+            /* Blue Slier */
+            case 17 : nBlue = Int(sender.value); break;
+            /* Hue Slider */
+            default : nHue = Int(sliderHue.value); break;
+        }
+        
+        for item in (swiftyHue.resourceCache?.lights)!
+        { bridgeControl.ctlLightColor(light: item.key, red: nRed, blue: nBlue, green: nGreen, hue: nHue) }
     }
 }
