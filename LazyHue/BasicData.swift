@@ -10,5 +10,10 @@ import Foundation
 
 class BasicData
 {
-    public static let MAX_RGB_VALUE:Float = 255.0
+    /* MARK - Static RGB Variable */
+    public static let F_RGB_MAX_VALUE:Float = 255.0
+    
+    /* MARK - Static BOOL Variable */
+    public static let TRUE_VALUE:Int32 = 1
+    public static let FALUSE_VALUE:Int32 = 0
 }

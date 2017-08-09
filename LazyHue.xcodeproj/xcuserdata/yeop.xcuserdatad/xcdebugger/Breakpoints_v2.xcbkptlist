@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LazyHue/ViewController.swift"
+            timestampString = "523899869.228389"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LazyHue.ViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "LazyHue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeop/Google%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%87%E1%85%B3/%5B%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A7%E1%86%B8%5D%20Develop/%5BDevelop%5D%20Project/%5BProject%5D%20IOS/LazyHue/LazyHue/ViewController.swift"
+                  timestampString = "523900092.066395"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LazyHue.ViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "LazyHue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeop/Google%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%87%E1%85%B3/%5B%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A7%E1%86%B8%5D%20Develop/%5BDevelop%5D%20Project/%5BProject%5D%20IOS/LazyHue/LazyHue/ViewController.swift"
+                  timestampString = "523900092.068373"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -9,7 +9,9 @@
 import UIKit
 import SwiftyHue    /* Philips Hue API */
 
+/* MARK : - Public Variable */
 var swiftyHue:SwiftyHue = SwiftyHue()
+var bridgeLights:[String:Light]!
 
 class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticatorDelegate
 {
@@ -31,6 +33,30 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        /* POINT : - Import Bridge Resource */
+        if let cache:BridgeResourcesCache = bridgeConfig.readBridgeLightConfig()
+        {
+            for item in cache.lights
+            {
+                let lightState:LightState = item.value.state
+                let cgPoint:CGPoint = CGPoint(x: CGFloat(lightState.xy![0]), y: CGFloat(lightState.xy![1]))
+                let colorXY = HueUtilities.colorFromXY(cgPoint, forModel: item.key)
+                
+                let fRed:Float = Float(colorXY.cgColor.components![0]) * BasicData.F_RGB_MAX_VALUE
+                let fGreen:Float = Float(colorXY.cgColor.components![1]) * BasicData.F_RGB_MAX_VALUE
+                let fBlue:Float = Float(colorXY.cgColor.components![2]) * BasicData.F_RGB_MAX_VALUE
+                
+                print("\(Int(fRed)) \(Int(fGreen)) \(Int(fBlue))")
+                bridgeControl.ctlLightColor(light: item.key, red: 255, blue: 50, green: 50, hue: 255)
+            }
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
         swiftyHue.enableLogging(true)
         swiftyHue.setMinLevelForLogMessages(.info)
         
@@ -46,15 +72,31 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
             swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .sensors)
             swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .config)
             swiftyHue.startHeartbeat()
-        }
-        else { bridgeFinder.delegate = self; bridgeFinder.start(); }
+        } else { bridgeFinder.delegate = self; bridgeFinder.start(); }
+        
+        /* POINT : - Philips Hue Bridge Lights & Groups */
+        bridgeLights = swiftyHue.resourceCache?.lights
+        
+        /* POINT : - Press Home Button */
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(pressHomeKey), name: Notification.Name.UIApplicationWillResignActive, object: nil)
     }
-
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    /* MARK : - Press Home Button Method */
+    func pressHomeKey()
+    {
+        guard let bridgeCache = swiftyHue.resourceCache else
+        { print("Error! Export Bridge Setting Value."); exit(BasicData.FALUSE_VALUE); }
+        
+        /* POINT - Export Bridge Resource Config Method */
+        bridgeConfig.writeBridgeLightConfig(bridgeResourceConfig: bridgeCache)
+        //exit(BasicData.TRUE_VALUE)
+    }
     
     /* MARK : - BridgeFinderDelegate */
     func bridgeFinder(_ finder: BridgeFinder, didFinishWithResult bridges: [HueBridge])
@@ -96,7 +138,7 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     /* MARK : - IBAction Method */
     @IBAction func actPowerSwitch(_ sender: UISwitch)
     {
-        for item in (swiftyHue.resourceCache?.lights)!
+        for item in bridgeLights
         { bridgeControl.ctlLightPower(light: item.key, power: sender.isOn) }
     }
     
@@ -117,10 +159,10 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
             /* Blue Slier */
             case 17 : nBlue = Int(sender.value); break;
             /* Hue Slider */
-            default : nHue = Int(sliderHue.value); break;
+            default : nHue = Int(sender.value); break;
         }
         
-        for item in (swiftyHue.resourceCache?.lights)!
+        for item in bridgeLights
         { bridgeControl.ctlLightColor(light: item.key, red: nRed, blue: nBlue, green: nGreen, hue: nHue) }
     }
 }

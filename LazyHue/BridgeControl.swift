@@ -24,7 +24,8 @@ class BridgeControl
         var lightState:LightState = LightState()
         lightState.on = power
         
-        swiftyHue.bridgeSendAPI.updateLightStateForId(light, withLightState: lightState) { (errors) in print(errors) }
+        swiftyHue.bridgeSendAPI.updateLightStateForId(light, withLightState: lightState)
+        { (errors) in print("Change Lamp Power Fail. \(errors)") }
     }
     
     /* MARK - Control Light Color Method */
@@ -35,6 +36,8 @@ class BridgeControl
         var lightState:LightState = LightState()
         lightState.brightness = hue
         lightState.xy = [Float(colorXY.x), Float(colorXY.y)]
-        swiftyHue.bridgeSendAPI.updateLightStateForId(light, withLightState: lightState) { (errors) in print(errors) }
+        
+        swiftyHue.bridgeSendAPI.updateLightStateForId(light, withLightState: lightState)
+        { (errors) in print("Change Lamp Color Fail. \(errors)") }
     }
 }

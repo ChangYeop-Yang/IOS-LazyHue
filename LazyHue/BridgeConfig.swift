@@ -12,12 +12,14 @@ import Foundation
 
 class BridgeConfig
 {
+    /* MARK - fileprivate */
     fileprivate let bridgeAccessConfigUserDefaultsKey = "BridgeAccessConfig"
+    fileprivate let bridgeLightConfigDefaultsKey = "BridgeResourceConfig"
+    fileprivate let userDefaults = UserDefaults.standard
     
-    /* Import Bridge Setting Value */
-    func readBridgeAccessConfig() -> BridgeAccessConfig?
+    /* MARK - Import Setting Value Method */
+    final func readBridgeAccessConfig() -> BridgeAccessConfig?
     {
-        let userDefaults = UserDefaults.standard
         let bridgeAccessConfigJSON = userDefaults.object(forKey: bridgeAccessConfigUserDefaultsKey) as? JSON
         
         var bridgeAccessConfig: BridgeAccessConfig?
@@ -26,12 +28,26 @@ class BridgeConfig
         
         return bridgeAccessConfig
     }
-    
-    /* Export Bridge Setting Value */
-    func writeBridgeAccessConfig(bridgeAccessConfig:BridgeAccessConfig)
+    final func readBridgeLightConfig() -> BridgeResourcesCache?
     {
-        let userDefaults = UserDefaults.standard
+        let bridgeResourceConfigJSON = userDefaults.object(forKey: bridgeLightConfigDefaultsKey) as? JSON
+        
+        var bridgeResourceConfig:BridgeResourcesCache?
+        if let bridgeResouceConfigJSON = bridgeResourceConfigJSON
+        { bridgeResourceConfig = BridgeResourcesCache(json: bridgeResouceConfigJSON) }
+        
+        return bridgeResourceConfig
+    }
+    
+    /* MARK - Export Bridge Setting Value Method */
+    final func writeBridgeAccessConfig(bridgeAccessConfig:BridgeAccessConfig)
+    {
         let bridgeAccessConfigJSON = bridgeAccessConfig.toJSON()
         userDefaults.set(bridgeAccessConfigJSON, forKey: bridgeAccessConfigUserDefaultsKey)
+    }
+    final func writeBridgeLightConfig(bridgeResourceConfig:BridgeResourcesCache)
+    {
+        let bridgeResourceConfigJSON = bridgeResourceConfig.toJSON()
+        userDefaults.set(bridgeResourceConfigJSON, forKey: bridgeLightConfigDefaultsKey)
     }
 }
