@@ -28,34 +28,9 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     @IBOutlet weak var sliderGreen: UISlider!
     @IBOutlet weak var sliderHue: UISlider!
     
-    override func viewDidLoad()
+    override func loadView()
     {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        /* POINT : - Import Bridge Resource */
-        if let cache:BridgeResourcesCache = bridgeConfig.readBridgeLightConfig()
-        {
-            for item in cache.lights
-            {
-                let lightState:LightState = item.value.state
-                let cgPoint:CGPoint = CGPoint(x: CGFloat(lightState.xy![0]), y: CGFloat(lightState.xy![1]))
-                let colorXY = HueUtilities.colorFromXY(cgPoint, forModel: item.key)
-                
-                let fRed:Float = Float(colorXY.cgColor.components![0]) * BasicData.F_RGB_MAX_VALUE
-                let fGreen:Float = Float(colorXY.cgColor.components![1]) * BasicData.F_RGB_MAX_VALUE
-                let fBlue:Float = Float(colorXY.cgColor.components![2]) * BasicData.F_RGB_MAX_VALUE
-                
-                print("\(Int(fRed)) \(Int(fGreen)) \(Int(fBlue))")
-                bridgeControl.ctlLightColor(light: item.key, red: 255, blue: 50, green: 50, hue: 255)
-            }
-        }
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
+        super.loadView()
         
         swiftyHue.enableLogging(true)
         swiftyHue.setMinLevelForLogMessages(.info)
@@ -81,7 +56,28 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(pressHomeKey), name: Notification.Name.UIApplicationWillResignActive, object: nil)
     }
- 
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        /* POINT : - Import Bridge Resource */
+        if let cache:BridgeResourcesCache = bridgeConfig.readBridgeLightConfig()
+        {
+            for item in cache.lights
+            {
+                swiftyHue.bridgeSendAPI.updateLightStateForId(item.key, withLightState: item.value.state)
+                { (erros) in print("Error, Starting Philips Hue System. \(String(describing: erros))") }
+            }
+        }
+        
+        var www = WeatherParserJSON()
+        var l = www.resultWeather()
+        print("여기다")
+        print(l)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -95,7 +91,6 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
         
         /* POINT - Export Bridge Resource Config Method */
         bridgeConfig.writeBridgeLightConfig(bridgeResourceConfig: bridgeCache)
-        //exit(BasicData.TRUE_VALUE)
     }
     
     /* MARK : - BridgeFinderDelegate */
