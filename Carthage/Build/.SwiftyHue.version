@@ -1,8 +1,26 @@
 {
-  "commitish" : "0.2.6",
   "iOS" : [
     {
-      "hash" : "48624f2c407049451031276cea7733fb1b7d089d382d9fd318ff152d62506f81",
+      "hash" : "18be7614652af2e28bb3050c7324baf8dbb87f131c627e87bd8bac67cdc5d52c",
+      "name" : "SwiftyHue"
+    }
+  ],
+  "commitish" : "0.2.6",
+  "watchOS" : [
+    {
+      "hash" : "a2cc96212dbc939a47274d72f30e023257dbf0c0b1909e9ceb3a7ab1a5d01bc3",
+      "name" : "SwiftyHue"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "ccccd0d89558e8453e825cf14c46fc0b20826ea5bfd6a7b6f6c2cbcd91e76717",
+      "name" : "SwiftyHue"
+    }
+  ],
+  "Mac" : [
+    {
+      "hash" : "cde3bfbe56432871d6c5e3a860181b8681e6d66d66ade4e440a76c76b2cfe088",
       "name" : "SwiftyHue"
     }
   ]

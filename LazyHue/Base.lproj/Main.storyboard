@@ -75,19 +75,19 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 습도 및 강수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKH-fm-myu">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 강수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKH-fm-myu">
                                                         <rect key="frame" x="10" y="67.666666666666657" width="135" height="28.666666666666686"/>
                                                         <fontDescription key="fontDescription" name="BMJUAOTF" family="BM JUA_OTF" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 미세먼지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDy-zo-TTz">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 습도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDy-zo-TTz">
                                                         <rect key="frame" x="10" y="96.333333333333343" width="135" height="29"/>
                                                         <fontDescription key="fontDescription" name="BMJUAOTF" family="BM JUA_OTF" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 불쾌지수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-Ne-lVJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 풍속" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-Ne-lVJ">
                                                         <rect key="frame" x="10" y="125.33333333333336" width="135" height="28.666666666666643"/>
                                                         <fontDescription key="fontDescription" name="BMJUAOTF" family="BM JUA_OTF" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -294,6 +294,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imagePaint" destination="jIU-4e-ODr" id="OrD-fN-AVf"/>
+                        <outlet property="imageWeather" destination="Wb3-F0-nLC" id="33i-oG-Fvt"/>
+                        <outlet property="labelHumidity" destination="nDy-zo-TTz" id="F3z-3f-DCN"/>
+                        <outlet property="labelPrecipitation" destination="OKH-fm-myu" id="TL0-sm-OTX"/>
+                        <outlet property="labelSpeed" destination="hK3-Ne-lVJ" id="FK5-I4-hV3"/>
+                        <outlet property="labelState" destination="6gl-jz-uXr" id="hM9-xo-lf8"/>
+                        <outlet property="labelTemperature" destination="Eu0-HX-2iD" id="Sfn-fs-M0s"/>
                         <outlet property="sliderBlue" destination="cDl-5h-kv1" id="o6l-ba-Ls7"/>
                         <outlet property="sliderGreen" destination="moY-4O-Lim" id="rEl-iE-8Cq"/>
                         <outlet property="sliderHue" destination="Ypm-fO-yh7" id="fJB-XT-BQ4"/>

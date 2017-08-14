@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Alamofire    /* Alamofire API */
 import SwiftyHue    /* Philips Hue API */
+import SwiftyJSON   /* Swifty JSON API */
 
 /* MARK : - Public Variable */
 var swiftyHue:SwiftyHue = SwiftyHue()
-var bridgeLights:[String:Light]!
 
 class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticatorDelegate
 {
@@ -28,6 +29,17 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     @IBOutlet weak var sliderGreen: UISlider!
     @IBOutlet weak var sliderHue: UISlider!
     
+    /* MARK : - Label Outlet */
+    @IBOutlet weak var labelState: UILabel!
+    @IBOutlet weak var labelTemperature: UILabel!
+    @IBOutlet weak var labelPrecipitation: UILabel!
+    @IBOutlet weak var labelHumidity: UILabel!
+    @IBOutlet weak var labelSpeed: UILabel!
+    
+    /* MARK : - Image Outlet */
+    @IBOutlet weak var imageWeather: UIImageView!
+    @IBOutlet weak var imagePaint: UIImageView!
+    
     override func loadView()
     {
         super.loadView()
@@ -36,7 +48,7 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
         swiftyHue.setMinLevelForLogMessages(.info)
         
         /* Bridge Config Check */
-        if let config:BridgeAccessConfig = bridgeConfig.readBridgeAccessConfig()
+        if let config = bridgeConfig.readJSONConfig(type: ConfigData.CONFIG_ACCESS_CODE) as? BridgeAccessConfig
         {
             swiftyHue.setBridgeAccessConfig(config)
             swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .lights)
@@ -49,9 +61,6 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
             swiftyHue.startHeartbeat()
         } else { bridgeFinder.delegate = self; bridgeFinder.start(); }
         
-        /* POINT : - Philips Hue Bridge Lights & Groups */
-        bridgeLights = swiftyHue.resourceCache?.lights
-        
         /* POINT : - Press Home Button */
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(pressHomeKey), name: Notification.Name.UIApplicationWillResignActive, object: nil)
@@ -63,19 +72,21 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
         // Do any additional setup after loading the view, typically from a nib.
         
         /* POINT : - Import Bridge Resource */
-        if let cache:BridgeResourcesCache = bridgeConfig.readBridgeLightConfig()
+        if let result = bridgeConfig.readJSONConfig(type: ConfigData.CONFIG_LIGHT_CODE) as? [String:Float]
         {
-            for item in cache.lights
+            sliderRed.value = result["Red"]!; sliderGreen.value = result["Green"]!
+            sliderBlue.value = result["Blue"]!; sliderHue.value = result["Hue"]!
+            
+            guard let cache = swiftyHue.resourceCache?.lights else { print("Error, Empty Light List."); return }
+            for item in cache
             {
-                swiftyHue.bridgeSendAPI.updateLightStateForId(item.key, withLightState: item.value.state)
-                { (erros) in print("Error, Starting Philips Hue System. \(String(describing: erros))") }
+                bridgeControl.ctlLightColor(light: item.key, red: Int(result["Red"]!), blue: Int(result["Blue"]!), green: Int(result["Green"]!), hue: Int(result["Hue"]!))
             }
         }
         
-        var www = WeatherParserJSON()
-        var l = www.resultWeather()
-        print("여기다")
-        print(l)
+        /* POINT : - Import KMA Server. */
+        let sRequestURL:String = createRequestAddress(latitude: 0.0, longitude: 0.0)
+        importKMAWeatherData(sURL: sRequestURL)
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,11 +97,79 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     /* MARK : - Press Home Button Method */
     func pressHomeKey()
     {
-        guard let bridgeCache = swiftyHue.resourceCache else
-        { print("Error! Export Bridge Setting Value."); exit(BasicData.FALUSE_VALUE); }
+        let aSliderValue = ["Red":sliderRed.value, "Green":sliderGreen.value, "Blue":sliderBlue.value, "Hue":sliderHue.value]
+        bridgeConfig.writeJSONConfig(config: aSliderValue, type: ConfigData.CONFIG_LIGHT_CODE)
+    }
+    
+    /* MARK : - User Custom Method */
+    func createRequestAddress(latitude:Double, longitude:Double) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
         
-        /* POINT - Export Bridge Resource Config Method */
-        bridgeConfig.writeBridgeLightConfig(bridgeResourceConfig: bridgeCache)
+        var sRequestURL:String = "http://newsky2.kma.go.kr/service/SecndSrtpdFrcstInfoService2/ForecastTimeData?serviceKey="
+        sRequestURL.append(WeatherData.KMA_API_KEY)
+        sRequestURL.append("&base_date=\(dateFormatter.string(from: NSDate() as Date))"); dateFormatter.dateFormat = "HHmm"
+        sRequestURL.append("&base_time=\(dateFormatter.string(from: NSDate() as Date))")
+        sRequestURL.append("&nx=60&ny=127&numOfRows=30&pageSize=10&pageNo=1&startPage=1&_type=json")
+        
+        return sRequestURL
+    }
+    
+    func setWeatherState(type:Int)
+    {
+        switch type
+        {
+            case WeatherData.SKY_CLEAR:
+                self.labelState.text = "⌘ 상태 : 맑음"
+                self.imageWeather.image = #imageLiteral(resourceName: "ic_clear.png")
+            case WeatherData.SKY_PARTLY_CLOUDY:
+                self.labelState.text = "⌘ 상태 : 구름조금"
+                self.imageWeather.image = #imageLiteral(resourceName: "ic_cloudy.png")
+            case WeatherData.SKY_OVER_CLOUDY:
+                self.labelState.text = "⌘ 상태 : 구름많음"
+                self.imageWeather.image = #imageLiteral(resourceName: "ic_over.png")
+            case WeatherData.SKY_BLOOMING:
+                self.labelState.text = "⌘ 상태 : 흐림"
+                self.imageWeather.image = #imageLiteral(resourceName: "ic_blooming.png")
+            default:
+                self.labelState.text = "⌘ 상태 : 정보없음"
+        }
+    }
+    
+    func importKMAWeatherData(sURL:String)
+    {
+        let jsonHeder:[String] = ["response", "body", "items", "item"]
+        
+        Alamofire.request(sURL).responseJSON(queue: DispatchQueue.global(qos: .utility))
+        {
+            (response) in
+            switch response.result
+            {
+                case .success:
+                    guard let value = response.result.value
+                        else { print("Error, Download Remote Server JSON File."); break; }
+                
+                    /* POINT - Find JSON Header Position. */
+                    var swiftyJSON = JSON(value)
+                    for item in jsonHeder { swiftyJSON = swiftyJSON[item] }
+                
+                    /* POINT - FIND JSON Value. */
+                    for item in swiftyJSON
+                    {
+                        switch item.1["category"]
+                        {
+                            case "T1H" : self.labelTemperature.text = "⌘ 기온 : \(item.1["fcstValue"].stringValue) &deg"
+                            case "RN1" : self.labelPrecipitation.text = "⌘ 강수량 : \(item.1["fcstValue"].intValue) mm"
+                            case "SKY" : self.setWeatherState(type: item.1["fcstValue"].intValue)
+                            case "REH" : self.labelHumidity.text = "⌘ 습도 : \(item.1["fcstValue"].intValue) %"
+                            case "WSD" : self.labelSpeed.text = "⌘ 풍속 : \(item.1["fcstValue"].intValue) m/s"
+                            default : continue
+                        }
+                    }
+                case .failure(let error) : print("Error, Connect Remote Server.")
+            }
+        }
     }
     
     /* MARK : - BridgeFinderDelegate */
@@ -123,7 +202,8 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
         print("Authenticated, hello \(username)")
         
         let bridgeAccessConfig = BridgeAccessConfig(bridgeId: bridge.serialNumber, ipAddress: bridge.ip, username: username)
-        bridgeConfig.writeBridgeAccessConfig(bridgeAccessConfig: bridgeAccessConfig)
+        
+        bridgeConfig.writeJSONConfig(config: bridgeAccessConfig, type: ConfigData.CONFIG_ACCESS_CODE)
     }
     
     func bridgeAuthenticatorRequiresLinkButtonPress(_ authenticator: BridgeAuthenticator, secondsLeft: TimeInterval) {
@@ -133,12 +213,16 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     /* MARK : - IBAction Method */
     @IBAction func actPowerSwitch(_ sender: UISwitch)
     {
-        for item in bridgeLights
+        guard let bridgeCache = swiftyHue.resourceCache?.lights else { print("Error, Empty Light List."); return }
+        
+        for item in bridgeCache
         { bridgeControl.ctlLightPower(light: item.key, power: sender.isOn) }
     }
     
     @IBAction func actColorSlider(_ sender: UISlider)
     {
+        guard let bridgeCache = swiftyHue.resourceCache?.lights else { return }
+        
         /* Color Variable */
         var nRed:Int = Int(sliderRed.value)
         var nBlue:Int = Int(sliderBlue.value)
@@ -157,7 +241,7 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
             default : nHue = Int(sender.value); break;
         }
         
-        for item in bridgeLights
+        for item in bridgeCache
         { bridgeControl.ctlLightColor(light: item.key, red: nRed, blue: nBlue, green: nGreen, hue: nHue) }
     }
 }

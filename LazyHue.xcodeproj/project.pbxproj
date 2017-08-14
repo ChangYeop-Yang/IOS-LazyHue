@@ -20,23 +20,29 @@
 		271B2DC01F2F64B000A4915F /* BMDOHYEON_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 271B2DBC1F2F64B000A4915F /* BMDOHYEON_otf.otf */; };
 		271B2DC11F2F64B000A4915F /* BMYEONSUNG_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 271B2DBD1F2F64B000A4915F /* BMYEONSUNG_otf.otf */; };
 		271B2DC41F2F77DD00A4915F /* Add_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 271B2DC31F2F77DD00A4915F /* Add_Image.png */; };
+		271BBAD91F41944300B097AB /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BBAD81F41944300B097AB /* WeatherData.swift */; };
+		271C362E1F41C20600D83D14 /* ConfigData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C362D1F41C20600D83D14 /* ConfigData.swift */; };
+		271C36301F41D66200D83D14 /* ErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C362F1F41D66200D83D14 /* ErrorData.swift */; };
 		2728E6D41F304D38009C086B /* ic_mic_none_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2728E6D01F304D38009C086B /* ic_mic_none_white.png */; };
 		2728E6D51F304D38009C086B /* ic_queue_music_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2728E6D11F304D38009C086B /* ic_queue_music_white.png */; };
 		2728E6D61F304D38009C086B /* ic_tune_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2728E6D21F304D38009C086B /* ic_tune_white.png */; };
 		2728E6D71F304D38009C086B /* ic_timer_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2728E6D31F304D38009C086B /* ic_timer_white.png */; };
 		2728E6D91F3051FD009C086B /* ic_alarm_add_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2728E6D81F3051FD009C086B /* ic_alarm_add_white.png */; };
+		272E1D031F420BE200C7E1CF /* ic_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 272E1CFF1F420BE200C7E1CF /* ic_over.png */; };
+		272E1D041F420BE200C7E1CF /* ic_blooming.png in Resources */ = {isa = PBXBuildFile; fileRef = 272E1D001F420BE200C7E1CF /* ic_blooming.png */; };
+		272E1D051F420BE200C7E1CF /* ic_cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = 272E1D011F420BE200C7E1CF /* ic_cloudy.png */; };
+		272E1D061F420BE200C7E1CF /* ic_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 272E1D021F420BE200C7E1CF /* ic_clear.png */; };
 		274532C51F34B96100EA5FC6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E6E831F34B31F0076FAAE /* Alamofire.framework */; };
 		274532C61F34B96300EA5FC6 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E6E851F34B3210076FAAE /* CocoaAsyncSocket.framework */; };
 		274532C71F34B96600EA5FC6 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E6E871F34B3240076FAAE /* Gloss.framework */; };
 		274532C81F34B96900EA5FC6 /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E6E891F34B3270076FAAE /* Log.framework */; };
-		278DEBA01F3F262600EAD25B /* ConvertCordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 278DEB9E1F3F262600EAD25B /* ConvertCordinate.cpp */; };
-		278DEBA41F3F27D100EAD25B /* WeatherParserJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DEBA31F3F27D100EAD25B /* WeatherParserJSON.swift */; };
 		27A6276C1F34B4C500B1A2B5 /* SwiftyHue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276BE26A1F31AE8400779507 /* SwiftyHue.framework */; };
 		27A664A31F309CAB00299A6F /* ic_vibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A664A21F309CAB00299A6F /* ic_vibrate.png */; };
 		27A664A51F30A00A00299A6F /* ic_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A664A41F30A00A00299A6F /* ic_music.png */; };
 		27A664A71F30B6D100299A6F /* ic_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A664A61F30B6D100299A6F /* ic_question.png */; };
 		27A664A91F30B74E00299A6F /* ic_fireworks.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A664A81F30B74E00299A6F /* ic_fireworks.png */; };
 		27C11A8D1F34D3DB002C02C9 /* BridgeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C11A8C1F34D3DB002C02C9 /* BridgeConfig.swift */; };
+		27C569EC1F40941D0026B91B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C569EB1F40941D0026B91B /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,22 +65,27 @@
 		271B2DBC1F2F64B000A4915F /* BMDOHYEON_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMDOHYEON_otf.otf; sourceTree = "<group>"; };
 		271B2DBD1F2F64B000A4915F /* BMYEONSUNG_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMYEONSUNG_otf.otf; sourceTree = "<group>"; };
 		271B2DC31F2F77DD00A4915F /* Add_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add_Image.png; sourceTree = "<group>"; };
+		271BBAD81F41944300B097AB /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		271BBADA1F41A3D400B097AB /* LazyHue-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LazyHue-Bridging-Header.h"; sourceTree = "<group>"; };
+		271C362D1F41C20600D83D14 /* ConfigData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigData.swift; sourceTree = "<group>"; };
+		271C362F1F41D66200D83D14 /* ErrorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorData.swift; sourceTree = "<group>"; };
 		2728E6D01F304D38009C086B /* ic_mic_none_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_mic_none_white.png; sourceTree = "<group>"; };
 		2728E6D11F304D38009C086B /* ic_queue_music_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_queue_music_white.png; sourceTree = "<group>"; };
 		2728E6D21F304D38009C086B /* ic_tune_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_tune_white.png; sourceTree = "<group>"; };
 		2728E6D31F304D38009C086B /* ic_timer_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_timer_white.png; sourceTree = "<group>"; };
 		2728E6D81F3051FD009C086B /* ic_alarm_add_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_alarm_add_white.png; sourceTree = "<group>"; };
+		272E1CFF1F420BE200C7E1CF /* ic_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_over.png; sourceTree = "<group>"; };
+		272E1D001F420BE200C7E1CF /* ic_blooming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_blooming.png; sourceTree = "<group>"; };
+		272E1D011F420BE200C7E1CF /* ic_cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_cloudy.png; sourceTree = "<group>"; };
+		272E1D021F420BE200C7E1CF /* ic_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_clear.png; sourceTree = "<group>"; };
 		276BE26A1F31AE8400779507 /* SwiftyHue.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyHue.framework; path = Carthage/Build/iOS/SwiftyHue.framework; sourceTree = "<group>"; };
 		276BE26C1F31AEC100779507 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
-		278DEB9D1F3F262600EAD25B /* LazyHue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LazyHue-Bridging-Header.h"; sourceTree = "<group>"; };
-		278DEB9E1F3F262600EAD25B /* ConvertCordinate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConvertCordinate.cpp; sourceTree = "<group>"; };
-		278DEB9F1F3F262600EAD25B /* ConvertCordinate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ConvertCordinate.hpp; sourceTree = "<group>"; };
-		278DEBA31F3F27D100EAD25B /* WeatherParserJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherParserJSON.swift; sourceTree = "<group>"; };
 		27A664A21F309CAB00299A6F /* ic_vibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_vibrate.png; sourceTree = "<group>"; };
 		27A664A41F30A00A00299A6F /* ic_music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_music.png; sourceTree = "<group>"; };
 		27A664A61F30B6D100299A6F /* ic_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_question.png; sourceTree = "<group>"; };
 		27A664A81F30B74E00299A6F /* ic_fireworks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_fireworks.png; sourceTree = "<group>"; };
 		27C11A8C1F34D3DB002C02C9 /* BridgeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeConfig.swift; sourceTree = "<group>"; };
+		27C569EB1F40941D0026B91B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +97,7 @@
 				274532C71F34B96600EA5FC6 /* Gloss.framework in Frameworks */,
 				27A6276C1F34B4C500B1A2B5 /* SwiftyHue.framework in Frameworks */,
 				274532C51F34B96100EA5FC6 /* Alamofire.framework in Frameworks */,
+				27C569EC1F40941D0026B91B /* SwiftyJSON.framework in Frameworks */,
 				274532C61F34B96300EA5FC6 /* CocoaAsyncSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				2712F71F1F38B3C700433468 /* BasicData.swift */,
+				271BBAD81F41944300B097AB /* WeatherData.swift */,
+				271C362D1F41C20600D83D14 /* ConfigData.swift */,
+				271C362F1F41D66200D83D14 /* ErrorData.swift */,
 			);
 			name = Basic;
 			sourceTree = "<group>";
@@ -121,7 +136,7 @@
 		271577A61F2F084F00875C73 /* LazyHue */ = {
 			isa = PBXGroup;
 			children = (
-				278DEB9C1F3F25B900EAD25B /* Parser */,
+				271BBADA1F41A3D400B097AB /* LazyHue-Bridging-Header.h */,
 				2712F71E1F38B3AF00433468 /* Basic */,
 				27C11A8B1F34D382002C02C9 /* Configuration */,
 				271B2DC21F2F77C900A4915F /* Image */,
@@ -150,6 +165,10 @@
 		271B2DC21F2F77C900A4915F /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				272E1CFF1F420BE200C7E1CF /* ic_over.png */,
+				272E1D001F420BE200C7E1CF /* ic_blooming.png */,
+				272E1D011F420BE200C7E1CF /* ic_cloudy.png */,
+				272E1D021F420BE200C7E1CF /* ic_clear.png */,
 				27A664A81F30B74E00299A6F /* ic_fireworks.png */,
 				27A664A61F30B6D100299A6F /* ic_question.png */,
 				27A664A41F30A00A00299A6F /* ic_music.png */,
@@ -168,6 +187,7 @@
 		276BE2691F31AE8300779507 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27C569EB1F40941D0026B91B /* SwiftyJSON.framework */,
 				270E6E891F34B3270076FAAE /* Log.framework */,
 				270E6E871F34B3240076FAAE /* Gloss.framework */,
 				270E6E851F34B3210076FAAE /* CocoaAsyncSocket.framework */,
@@ -176,17 +196,6 @@
 				276BE26A1F31AE8400779507 /* SwiftyHue.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		278DEB9C1F3F25B900EAD25B /* Parser */ = {
-			isa = PBXGroup;
-			children = (
-				278DEB9E1F3F262600EAD25B /* ConvertCordinate.cpp */,
-				278DEB9F1F3F262600EAD25B /* ConvertCordinate.hpp */,
-				278DEB9D1F3F262600EAD25B /* LazyHue-Bridging-Header.h */,
-				278DEBA31F3F27D100EAD25B /* WeatherParserJSON.swift */,
-			);
-			name = Parser;
 			sourceTree = "<group>";
 		};
 		27C11A8B1F34D382002C02C9 /* Configuration */ = {
@@ -267,11 +276,15 @@
 				27A664A91F30B74E00299A6F /* ic_fireworks.png in Resources */,
 				2728E6D71F304D38009C086B /* ic_timer_white.png in Resources */,
 				2728E6D91F3051FD009C086B /* ic_alarm_add_white.png in Resources */,
+				272E1D061F420BE200C7E1CF /* ic_clear.png in Resources */,
+				272E1D031F420BE200C7E1CF /* ic_over.png in Resources */,
+				272E1D041F420BE200C7E1CF /* ic_blooming.png in Resources */,
 				271577AF1F2F084F00875C73 /* Assets.xcassets in Resources */,
 				271577AD1F2F084F00875C73 /* Main.storyboard in Resources */,
 				2728E6D51F304D38009C086B /* ic_queue_music_white.png in Resources */,
 				271B2DBE1F2F64B000A4915F /* BMJUA_otf.otf in Resources */,
 				27A664A31F309CAB00299A6F /* ic_vibrate.png in Resources */,
+				272E1D051F420BE200C7E1CF /* ic_cloudy.png in Resources */,
 				27A664A51F30A00A00299A6F /* ic_music.png in Resources */,
 				2728E6D41F304D38009C086B /* ic_mic_none_white.png in Resources */,
 				271B2DC01F2F64B000A4915F /* BMDOHYEON_otf.otf in Resources */,
@@ -295,6 +308,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyHue.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CocoaAsyncSocket.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);
@@ -311,11 +325,12 @@
 			files = (
 				27112BBC1F387BFE00B528D7 /* BridgeControl.swift in Sources */,
 				271577AA1F2F084F00875C73 /* ViewController.swift in Sources */,
+				271C362E1F41C20600D83D14 /* ConfigData.swift in Sources */,
 				2712F7201F38B3C700433468 /* BasicData.swift in Sources */,
-				278DEBA41F3F27D100EAD25B /* WeatherParserJSON.swift in Sources */,
 				27C11A8D1F34D3DB002C02C9 /* BridgeConfig.swift in Sources */,
 				271577A81F2F084F00875C73 /* AppDelegate.swift in Sources */,
-				278DEBA01F3F262600EAD25B /* ConvertCordinate.cpp in Sources */,
+				271C36301F41D66200D83D14 /* ErrorData.swift in Sources */,
+				271BBAD91F41944300B097AB /* WeatherData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

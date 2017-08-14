@@ -10,44 +10,70 @@ import Gloss        /* Json API */
 import SwiftyHue    /* Philips Hue API */
 import Foundation
 
+struct Color:Glossy
+{
+    let Red:Float?
+    let Green:Float?
+    let Blue:Float?
+    let Hue:Float?
+    
+    init?(json: JSON)
+    {
+        self.Red = "Red" <~~ json
+        self.Green = "Green" <~~ json
+        self.Blue = "Blue" <~~ json
+        self.Hue = "Hue" <~~ json
+    }
+    
+    func toJSON() -> JSON?
+    { return jsonify(["Red" ~~> self.Red, "Green" ~~> self.Green, "Blue" ~~> self.Blue, "Hue" ~~> self.Hue]) }
+}
+
 class BridgeConfig
 {
-    /* MARK - fileprivate */
-    fileprivate let bridgeAccessConfigUserDefaultsKey = "BridgeAccessConfig"
-    fileprivate let bridgeLightConfigDefaultsKey = "BridgeResourceConfig"
     fileprivate let userDefaults = UserDefaults.standard
     
     /* MARK - Import Setting Value Method */
-    final func readBridgeAccessConfig() -> BridgeAccessConfig?
+    final func readJSONConfig(type:Int) -> Any
     {
-        let bridgeAccessConfigJSON = userDefaults.object(forKey: bridgeAccessConfigUserDefaultsKey) as? JSON
+        /* POINT : - Return Value */
+        var result:Any? = nil
         
-        var bridgeAccessConfig: BridgeAccessConfig?
-        if let bridgeAccessConfigJSON = bridgeAccessConfigJSON
-        { bridgeAccessConfig = BridgeAccessConfig(json: bridgeAccessConfigJSON) }
+        switch type
+        {
+            case ConfigData.CONFIG_ACCESS_CODE:
+                let configAccessJSON = userDefaults.object(forKey: ConfigData.BRIDGE_ACCESS_CONFIG_KEY) as? JSON
+                
+                guard let configAccess = configAccessJSON else { print("Error, Empty Access JSON File."); break }
+                result = BridgeAccessConfig(json: configAccess)
+            
+            case ConfigData.CONFIG_LIGHT_CODE:
+                let configLightJSON = userDefaults.object(forKey: ConfigData.BRIDGE_LIGHT_CONFIG_KEY) as? JSON
+                
+                guard let configLight = configLightJSON else { print("Error, Empty Light JSON File."); break }
+                let jColor = Color(json: configLight)
+                result = ["Red":jColor?.Red, "Green":jColor?.Green, "Blue":jColor?.Blue, "Hue":jColor?.Hue]
+            
+            default : print("Error, Read JSON File.")
+        }
         
-        return bridgeAccessConfig
-    }
-    final func readBridgeLightConfig() -> BridgeResourcesCache?
-    {
-        let bridgeResourceConfigJSON = userDefaults.object(forKey: bridgeLightConfigDefaultsKey) as? JSON
-        
-        var bridgeResourceConfig:BridgeResourcesCache?
-        if let bridgeResouceConfigJSON = bridgeResourceConfigJSON
-        { bridgeResourceConfig = BridgeResourcesCache(json: bridgeResouceConfigJSON) }
-        
-        return bridgeResourceConfig
+        return result as Any
     }
     
     /* MARK - Export Bridge Setting Value Method */
-    final func writeBridgeAccessConfig(bridgeAccessConfig:BridgeAccessConfig)
+    final func writeJSONConfig(config:Any, type:Int)
     {
-        let bridgeAccessConfigJSON = bridgeAccessConfig.toJSON()
-        userDefaults.set(bridgeAccessConfigJSON, forKey: bridgeAccessConfigUserDefaultsKey)
-    }
-    final func writeBridgeLightConfig(bridgeResourceConfig:BridgeResourcesCache)
-    {
-        let bridgeResourceConfigJSON = bridgeResourceConfig.toJSON()
-        userDefaults.set(bridgeResourceConfigJSON, forKey: bridgeLightConfigDefaultsKey)
+        switch type
+        {
+            case ConfigData.CONFIG_ACCESS_CODE :
+                let accessConfigJSON = (config as! BridgeAccessConfig).toJSON()
+                userDefaults.set(accessConfigJSON, forKey: ConfigData.BRIDGE_ACCESS_CONFIG_KEY)
+            
+            case ConfigData.CONFIG_LIGHT_CODE :
+                let sColor = Color(json: config as! JSON)
+                userDefaults.set(sColor?.toJSON(), forKey: ConfigData.BRIDGE_LIGHT_CONFIG_KEY)
+            
+            default : print("Error, Write JSON File.")
+        }
     }
 }

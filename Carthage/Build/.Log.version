@@ -1,8 +1,26 @@
 {
-  "commitish" : "v1.0",
   "iOS" : [
     {
-      "hash" : "fc9f83f473e514e858c39c89506f00d9d1e04f7f068f78d7d1fe8717700ea485",
+      "hash" : "48515b9f9aa8b293f0456e832c8c942e6f0ee2148b3ba1adc22bfe07889a5e5c",
+      "name" : "Log"
+    }
+  ],
+  "commitish" : "v1.0",
+  "watchOS" : [
+    {
+      "hash" : "ec5e03d5111d193ed67143e06229c09ab9fb844c81198e7f25dbcc32e13e7550",
+      "name" : "Log"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "f9844dc1a8b60d7611ebfd57687f75ba0f5a75678f3301d62ea55b79f4a7436b",
+      "name" : "Log"
+    }
+  ],
+  "Mac" : [
+    {
+      "hash" : "221b3d0da9c72e77137d9e5f63feebe0bca02ec6c83cdc79d73ed259488e9bcd",
       "name" : "Log"
     }
   ]
