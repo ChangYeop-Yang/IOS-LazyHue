@@ -36,7 +36,6 @@
 		274532C61F34B96300EA5FC6 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E6E851F34B3210076FAAE /* CocoaAsyncSocket.framework */; };
 		274532C71F34B96600EA5FC6 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E6E871F34B3240076FAAE /* Gloss.framework */; };
 		274532C81F34B96900EA5FC6 /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E6E891F34B3270076FAAE /* Log.framework */; };
-		2746554D1F45C20600EA676B /* ConvertXY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2746554C1F45C20600EA676B /* ConvertXY.swift */; };
 		27A6276C1F34B4C500B1A2B5 /* SwiftyHue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276BE26A1F31AE8400779507 /* SwiftyHue.framework */; };
 		27A664A31F309CAB00299A6F /* ic_vibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A664A21F309CAB00299A6F /* ic_vibrate.png */; };
 		27A664A51F30A00A00299A6F /* ic_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A664A41F30A00A00299A6F /* ic_music.png */; };
@@ -79,7 +78,6 @@
 		272E1D001F420BE200C7E1CF /* ic_blooming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_blooming.png; sourceTree = "<group>"; };
 		272E1D011F420BE200C7E1CF /* ic_cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_cloudy.png; sourceTree = "<group>"; };
 		272E1D021F420BE200C7E1CF /* ic_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_clear.png; sourceTree = "<group>"; };
-		2746554C1F45C20600EA676B /* ConvertXY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertXY.swift; sourceTree = "<group>"; };
 		276BE26A1F31AE8400779507 /* SwiftyHue.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyHue.framework; path = Carthage/Build/iOS/SwiftyHue.framework; sourceTree = "<group>"; };
 		276BE26C1F31AEC100779507 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
 		27A664A21F309CAB00299A6F /* ic_vibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_vibrate.png; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				271BBADA1F41A3D400B097AB /* LazyHue-Bridging-Header.h */,
-				274655461F45AECF00EA676B /* Location */,
 				2712F71E1F38B3AF00433468 /* Basic */,
 				27C11A8B1F34D382002C02C9 /* Configuration */,
 				271B2DC21F2F77C900A4915F /* Image */,
@@ -185,14 +182,6 @@
 				271B2DC31F2F77DD00A4915F /* Add_Image.png */,
 			);
 			name = Image;
-			sourceTree = "<group>";
-		};
-		274655461F45AECF00EA676B /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				2746554C1F45C20600EA676B /* ConvertXY.swift */,
-			);
-			name = Location;
 			sourceTree = "<group>";
 		};
 		276BE2691F31AE8300779507 /* Frameworks */ = {
@@ -339,7 +328,6 @@
 				271C362E1F41C20600D83D14 /* ConfigData.swift in Sources */,
 				2712F7201F38B3C700433468 /* BasicData.swift in Sources */,
 				27C11A8D1F34D3DB002C02C9 /* BridgeConfig.swift in Sources */,
-				2746554D1F45C20600EA676B /* ConvertXY.swift in Sources */,
 				271577A81F2F084F00875C73 /* AppDelegate.swift in Sources */,
 				271C36301F41D66200D83D14 /* ErrorData.swift in Sources */,
 				271BBAD91F41944300B097AB /* WeatherData.swift in Sources */,

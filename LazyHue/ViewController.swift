@@ -10,11 +10,12 @@ import UIKit
 import Alamofire    /* Alamofire API */
 import SwiftyHue    /* Philips Hue API */
 import SwiftyJSON   /* Swifty JSON API */
+import CoreLocation /* GPS Location API */
 
 /* MARK : - Public Variable */
 var swiftyHue:SwiftyHue = SwiftyHue()
 
-class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticatorDelegate
+class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticatorDelegate, CLLocationManagerDelegate
 {
     /* MARK : - fileprivate */
     fileprivate var bridge:HueBridge!
@@ -22,6 +23,10 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     fileprivate let bridgeControl:BridgeControl = BridgeControl(swiftyHue: swiftyHue)
     fileprivate let bridgeFinder:BridgeFinder = BridgeFinder()
     fileprivate var bridgeAuthenticator:BridgeAuthenticator?
+    
+    /* MARK : - Location */
+    fileprivate var locationManager:CLLocationManager = CLLocationManager()
+    fileprivate var startLocation:CLLocation! = nil
     
     /* MARK : - Slider Outlet */
     @IBOutlet weak var sliderRed: UISlider!
@@ -84,9 +89,11 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
             }
         }
         
-        /* POINT : - Import KMA Server. */
-        let sRequestURL:String = createRequestAddress(latitude: 0.0, longitude: 0.0)
-        importKMAWeatherData(sURL: sRequestURL)
+        /* POINT : - Location Manager */
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     override func didReceiveMemoryWarning() {
@@ -107,11 +114,13 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         
+        let convertXY = ConvertXY().convertMap(lon: longitude, lat: latitude)
+        
         var sRequestURL:String = "http://newsky2.kma.go.kr/service/SecndSrtpdFrcstInfoService2/ForecastTimeData?serviceKey="
         sRequestURL.append(WeatherData.KMA_API_KEY)
-        sRequestURL.append("&base_date=\(dateFormatter.string(from: NSDate() as Date))"); dateFormatter.dateFormat = "HHmm"
-        sRequestURL.append("&base_time=\(dateFormatter.string(from: NSDate() as Date))")
-        sRequestURL.append("&nx=60&ny=127&numOfRows=30&pageSize=10&pageNo=1&startPage=1&_type=json")
+        sRequestURL.append("&base_date=\(dateFormatter.string(from: NSDate() as Date))"); sRequestURL.append("&base_time=0630")
+        sRequestURL.append("&nx=\(convertXY.mapX)&ny=\(convertXY.mapY)")
+        sRequestURL.append("&numOfRows=30&pageSize=10&pageNo=1&startPage=1&_type=json")
         
         return sRequestURL
     }
@@ -159,7 +168,7 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
                     {
                         switch item.1["category"]
                         {
-                            case "T1H" : self.labelTemperature.text = "⌘ 기온 : \(item.1["fcstValue"].stringValue) &deg"
+                            case "T1H" : self.labelTemperature.text = "⌘ 기온 : \(item.1["fcstValue"].stringValue) ℃"
                             case "RN1" : self.labelPrecipitation.text = "⌘ 강수량 : \(item.1["fcstValue"].intValue) mm"
                             case "SKY" : self.setWeatherState(type: item.1["fcstValue"].intValue)
                             case "REH" : self.labelHumidity.text = "⌘ 습도 : \(item.1["fcstValue"].intValue) %"
@@ -184,7 +193,7 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
         bridgeAuthenticator!.start()
     }
     
-    /* MARK : - BridgeAuthenticatorDelegate */
+    /* MARK : - Bridge Authenticator Delegate */
     func bridgeAuthenticatorDidTimeout(_ authenticator: BridgeAuthenticator) {
         print("Timeout")
     }
@@ -209,6 +218,25 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     func bridgeAuthenticatorRequiresLinkButtonPress(_ authenticator: BridgeAuthenticator, secondsLeft: TimeInterval) {
         print("Please, Push top bridge button.")
     }
+    
+    /* MARK : - GPS Location Delegate */
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let lastestLocation:CLLocation = locations[locations.count - 1]
+        
+        if startLocation == nil
+        {
+            startLocation = lastestLocation
+            
+            /* POINT : - Import KMA Server. */
+            let sRequestURL:String =
+                createRequestAddress(latitude: startLocation.coordinate.latitude, longitude: startLocation.coordinate.longitude)
+            importKMAWeatherData(sURL: sRequestURL)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    { print("Error, Import GPS Location Value.") }
     
     /* MARK : - IBAction Method */
     @IBAction func actPowerSwitch(_ sender: UISwitch)
