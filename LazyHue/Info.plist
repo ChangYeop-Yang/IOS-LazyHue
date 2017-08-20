@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>App needs location servers for stuff.</string>
+	<string>App needs Location service for stuff.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>App needs Camera service for stuff. </string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App needs Photo service for stuff.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>ko_KR</string>
 	<key>CFBundleDisplayName</key>

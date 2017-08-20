@@ -7,15 +7,17 @@
 //
 
 import UIKit
-import Alamofire    /* Alamofire API */
-import SwiftyHue    /* Philips Hue API */
-import SwiftyJSON   /* Swifty JSON API */
-import CoreLocation /* GPS Location API */
+import Alamofire            /* Alamofire API */
+import SwiftyHue            /* Philips Hue API */
+import SwiftyJSON           /* Swifty JSON API */
+import CoreLocation         /* GPS Location API */
+import AudioToolbox         /* Audio API */
+import MobileCoreServices   /* Media API */
 
 /* MARK : - Public Variable */
 var swiftyHue:SwiftyHue = SwiftyHue()
 
-class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticatorDelegate, CLLocationManagerDelegate
+class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticatorDelegate, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     /* MARK : - fileprivate */
     fileprivate var bridge:HueBridge!
@@ -23,6 +25,9 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     fileprivate let bridgeControl:BridgeControl = BridgeControl(swiftyHue: swiftyHue)
     fileprivate let bridgeFinder:BridgeFinder = BridgeFinder()
     fileprivate var bridgeAuthenticator:BridgeAuthenticator?
+    
+    /* MARK : - Image Picker Controller */
+    fileprivate let imagePicker:UIImagePickerController = UIImagePickerController()
     
     /* MARK : - Location */
     fileprivate var locationManager:CLLocationManager = CLLocationManager()
@@ -94,6 +99,13 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        /* POINT : - Action ImageView Alert Event */
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedImageView(tapGestureRecognizer:)))
+        //let tapLongGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector())
+        imagePaint.isUserInteractionEnabled = true
+        imagePaint.addGestureRecognizer(tapGestureRecognizer)
+        //imagePaint.addGestureRecognizer(tapLongGestureRecognizer)
     }
     
     override func didReceiveMemoryWarning() {
@@ -106,6 +118,50 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     {
         let aSliderValue = ["Red":sliderRed.value, "Green":sliderGreen.value, "Blue":sliderBlue.value, "Hue":sliderHue.value]
         bridgeConfig.writeJSONConfig(config: aSliderValue, type: ConfigData.CONFIG_LIGHT_CODE)
+    }
+    
+    /* MARK : - Tapped ImageView Method */
+    func tappedImageView(tapGestureRecognizer:UITapGestureRecognizer)
+    {
+        AudioServicesPlaySystemSound(4095)
+        
+        /* POINT : - Define Paint UIimageView */
+        if imagePaint.tag == 20
+        {
+            /* MARK : - Alert */
+            let pictureAlert =
+                UIAlertController(title: "즐겨찾는 사진 가져오기", message: "카메라 또는 갤러리를 통해서 사진을 가져오시겠습니까?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let cameraAction = UIAlertAction(title: "촬영", style: UIAlertActionStyle.default) { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(.camera)
+                {
+                    self.imagePicker.delegate = self
+                    self.imagePicker.sourceType = .camera
+                    self.imagePicker.mediaTypes = [kUTTypeImage as String]
+                    self.imagePicker.allowsEditing = false
+                    
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                }
+            }
+            
+            let galleryAction = UIAlertAction(title: "갤러리", style: UIAlertActionStyle.default) { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
+                {
+                    self.imagePicker.delegate = self
+                    self.imagePicker.sourceType = .photoLibrary
+                    self.imagePicker.mediaTypes = [kUTTypeImage as String]
+                    self.imagePicker.allowsEditing = true
+                    
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                }
+            }
+            
+            let cancelAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: nil)
+            
+            pictureAlert.addAction(cameraAction); pictureAlert.addAction(galleryAction); pictureAlert.addAction(cancelAction)
+            
+            present(pictureAlert, animated: true, completion: nil)
+        }
     }
     
     /* MARK : - User Custom Method */
@@ -237,6 +293,22 @@ class ViewController: UIViewController, BridgeFinderDelegate, BridgeAuthenticato
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     { print("Error, Import GPS Location Value.") }
+    
+    /* MARK : - Image Picker Delegate */
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        let mediaType = info[UIImagePickerControllerMediaType] as! NSString
+        
+        if mediaType.isEqual(to: kUTTypeImage as String)
+        {
+            let captureImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            
+            self.imagePaint.image = captureImage
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) { dismiss(animated: true, completion: nil) }
     
     /* MARK : - IBAction Method */
     @IBAction func actPowerSwitch(_ sender: UISwitch)

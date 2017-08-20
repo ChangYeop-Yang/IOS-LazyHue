@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270EF3E51F46ED9B00C087B1 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EF3E41F46ED9B00C087B1 /* MediaViewController.swift */; };
 		2710876D1F30425200A02992 /* ic_settings_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2710876C1F30425200A02992 /* ic_settings_white.png */; };
 		27112BBC1F387BFE00B528D7 /* BridgeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27112BBB1F387BFE00B528D7 /* BridgeControl.swift */; };
 		2712F7201F38B3C700433468 /* BasicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712F71F1F38B3C700433468 /* BasicData.swift */; };
@@ -51,6 +52,7 @@
 		270E6E851F34B3210076FAAE /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		270E6E871F34B3240076FAAE /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		270E6E891F34B3270076FAAE /* Log.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Log.framework; path = Carthage/Build/iOS/Log.framework; sourceTree = "<group>"; };
+		270EF3E41F46ED9B00C087B1 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		2710876C1F30425200A02992 /* ic_settings_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_white.png; sourceTree = "<group>"; };
 		27112BBB1F387BFE00B528D7 /* BridgeControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeControl.swift; sourceTree = "<group>"; };
 		2712F71F1F38B3C700433468 /* BasicData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicData.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				271B2DB91F2F648D00A4915F /* Font */,
 				271577A71F2F084F00875C73 /* AppDelegate.swift */,
 				271577A91F2F084F00875C73 /* ViewController.swift */,
+				270EF3E41F46ED9B00C087B1 /* MediaViewController.swift */,
 				271577AB1F2F084F00875C73 /* Main.storyboard */,
 				271577AE1F2F084F00875C73 /* Assets.xcassets */,
 				271577B01F2F084F00875C73 /* LaunchScreen.storyboard */,
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27112BBC1F387BFE00B528D7 /* BridgeControl.swift in Sources */,
+				270EF3E51F46ED9B00C087B1 /* MediaViewController.swift in Sources */,
 				271577AA1F2F084F00875C73 /* ViewController.swift in Sources */,
 				271C362E1F41C20600D83D14 /* ConfigData.swift in Sources */,
 				2712F7201F38B3C700433468 /* BasicData.swift in Sources */,

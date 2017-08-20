@@ -50,7 +50,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add_Image.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wb3-F0-nLC">
+                                                    <imageView userInteractionEnabled="NO" tag="19" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add_Image.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wb3-F0-nLC">
                                                         <rect key="frame" x="10" y="34" width="200" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="Cjv-pv-JB6"/>
@@ -120,7 +120,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add_Image.png" translatesAutoresizingMaskIntoConstraints="NO" id="jIU-4e-ODr">
+                                            <imageView userInteractionEnabled="NO" tag="20" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add_Image.png" translatesAutoresizingMaskIntoConstraints="NO" id="jIU-4e-ODr">
                                                 <rect key="frame" x="10" y="34" width="355" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="355" id="RXo-eA-j0t"/>
