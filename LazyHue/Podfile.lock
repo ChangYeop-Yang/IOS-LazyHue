@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.5.1)
+  - CocoaAsyncSocket (7.6.2)
+  - Gloss (2.0.0)
+  - SwiftyHue (0.4.1):
+    - SwiftyHue/Base (= 0.4.1)
+    - SwiftyHue/BridgeServices (= 0.4.1)
+  - SwiftyHue/Base (0.4.1):
+    - Alamofire (= 4.5.1)
+    - Gloss (= 2.0.0)
+  - SwiftyHue/BridgeServices (0.4.1):
+    - Alamofire (= 4.5.1)
+    - CocoaAsyncSocket (= 7.6.2)
+    - Gloss (= 2.0.0)
+  - Whisper (6.0.2)
+
+DEPENDENCIES:
+  - SwiftyHue (= 0.4.1)
+  - Whisper
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CocoaAsyncSocket
+    - Gloss
+    - SwiftyHue
+    - Whisper
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  CocoaAsyncSocket: 3541e024f48c54b251638ef72d51dd42808de932
+  Gloss: b67617f327406adfd47adf20172d00680a3a31bd
+  SwiftyHue: 9dfa91b75ec025c15c3e1078ce195a7b1a8d48aa
+  Whisper: 169760fc4bab0abf24d5529f9276f95c25cf1025
+
+PODFILE CHECKSUM: 605522b789c8186ee52bd6ee05ea9fad40bc9c47
+
+COCOAPODS: 1.5.2

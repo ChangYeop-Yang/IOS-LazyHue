@@ -1,0 +1,6 @@
+framework module Pods_LazyHUE {
+  umbrella header "Pods-LazyHUE-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,25 @@
+project 'LazyHUE.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'LazyHUE' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for LazyHUE
+
+  target 'LazyHUETests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'LazyHUEUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+  
+  pod 'SwiftyHue', '0.4.1'
+  pod 'Whisper'
+
+end

@@ -1,0 +1,738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101BE20DA4C1A00360816 /* AppDelegate.swift */; };
+		0C6101C120DA4C1A00360816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101C020DA4C1A00360816 /* ViewController.swift */; };
+		0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C6101C220DA4C1A00360816 /* Main.storyboard */; };
+		0C6101C620DA4C1C00360816 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C6101C520DA4C1C00360816 /* Assets.xcassets */; };
+		0C6101C920DA4C1C00360816 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C6101C720DA4C1C00360816 /* LaunchScreen.storyboard */; };
+		0C6101D420DA4C1C00360816 /* LazyHUETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101D320DA4C1C00360816 /* LazyHUETests.swift */; };
+		0C6101DF20DA4C1C00360816 /* LazyHUEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101DE20DA4C1C00360816 /* LazyHUEUITests.swift */; };
+		91F3B3F11FC79F49951764C8 /* Pods_LazyHUE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5522D1D2B5574E7149052458 /* Pods_LazyHUE.framework */; };
+		997BF484531D644198E12D1D /* Pods_LazyHUETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4972D49D51B19AF1FF345A6B /* Pods_LazyHUETests.framework */; };
+		C29B28C3046A042C0601A5AB /* Pods_LazyHUEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C6101D020DA4C1C00360816 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C6101B320DA4C1A00360816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C6101BA20DA4C1A00360816;
+			remoteInfo = LazyHUE;
+		};
+		0C6101DB20DA4C1C00360816 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C6101B320DA4C1A00360816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C6101BA20DA4C1A00360816;
+			remoteInfo = LazyHUE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C6101BB20DA4C1A00360816 /* LazyHUE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyHUE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C6101BE20DA4C1A00360816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0C6101C020DA4C1A00360816 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0C6101C320DA4C1A00360816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0C6101C520DA4C1C00360816 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0C6101C820DA4C1C00360816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0C6101CA20DA4C1C00360816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C6101CF20DA4C1C00360816 /* LazyHUETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyHUETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C6101D320DA4C1C00360816 /* LazyHUETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyHUETests.swift; sourceTree = "<group>"; };
+		0C6101D520DA4C1C00360816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C6101DA20DA4C1C00360816 /* LazyHUEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyHUEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C6101DE20DA4C1C00360816 /* LazyHUEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyHUEUITests.swift; sourceTree = "<group>"; };
+		0C6101E020DA4C1C00360816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28DF5B79636001DF4BDE6191 /* Pods-LazyHUEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3DFF578642A6497A39D2524E /* Pods-LazyHUETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.release.xcconfig"; sourceTree = "<group>"; };
+		45D3F0044EDA16C3DF068F17 /* Pods-LazyHUE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUE.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE.release.xcconfig"; sourceTree = "<group>"; };
+		4972D49D51B19AF1FF345A6B /* Pods_LazyHUETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5522D1D2B5574E7149052458 /* Pods_LazyHUE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C22630F62F2A2CAA48275BF /* Pods-LazyHUEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.release.xcconfig"; sourceTree = "<group>"; };
+		901DCF77BF5D43B75A445C52 /* Pods-LazyHUE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE.debug.xcconfig"; sourceTree = "<group>"; };
+		9FD4BA4143EAA63FCC5099E3 /* Pods-LazyHUETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C6101B820DA4C1A00360816 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91F3B3F11FC79F49951764C8 /* Pods_LazyHUE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6101CC20DA4C1C00360816 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997BF484531D644198E12D1D /* Pods_LazyHUETests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6101D720DA4C1C00360816 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C29B28C3046A042C0601A5AB /* Pods_LazyHUEUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C6101B220DA4C1A00360816 = {
+			isa = PBXGroup;
+			children = (
+				0C6101BD20DA4C1A00360816 /* LazyHUE */,
+				0C6101D220DA4C1C00360816 /* LazyHUETests */,
+				0C6101DD20DA4C1C00360816 /* LazyHUEUITests */,
+				0C6101BC20DA4C1A00360816 /* Products */,
+				522276929D1EF27E9A53C7F2 /* Pods */,
+				65F1A44B92A4CC70367D67D5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0C6101BC20DA4C1A00360816 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C6101BB20DA4C1A00360816 /* LazyHUE.app */,
+				0C6101CF20DA4C1C00360816 /* LazyHUETests.xctest */,
+				0C6101DA20DA4C1C00360816 /* LazyHUEUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C6101BD20DA4C1A00360816 /* LazyHUE */ = {
+			isa = PBXGroup;
+			children = (
+				0C6101ED20DA4C4A00360816 /* StroyBoard Files */,
+				0C6101EC20DA4C2D00360816 /* ViewController Files */,
+				0C6101BE20DA4C1A00360816 /* AppDelegate.swift */,
+				0C6101C520DA4C1C00360816 /* Assets.xcassets */,
+				0C6101CA20DA4C1C00360816 /* Info.plist */,
+			);
+			path = LazyHUE;
+			sourceTree = "<group>";
+		};
+		0C6101D220DA4C1C00360816 /* LazyHUETests */ = {
+			isa = PBXGroup;
+			children = (
+				0C6101D320DA4C1C00360816 /* LazyHUETests.swift */,
+				0C6101D520DA4C1C00360816 /* Info.plist */,
+			);
+			path = LazyHUETests;
+			sourceTree = "<group>";
+		};
+		0C6101DD20DA4C1C00360816 /* LazyHUEUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0C6101DE20DA4C1C00360816 /* LazyHUEUITests.swift */,
+				0C6101E020DA4C1C00360816 /* Info.plist */,
+			);
+			path = LazyHUEUITests;
+			sourceTree = "<group>";
+		};
+		0C6101EC20DA4C2D00360816 /* ViewController Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C6101C020DA4C1A00360816 /* ViewController.swift */,
+			);
+			path = "ViewController Files";
+			sourceTree = "<group>";
+		};
+		0C6101ED20DA4C4A00360816 /* StroyBoard Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C6101C220DA4C1A00360816 /* Main.storyboard */,
+				0C6101C720DA4C1C00360816 /* LaunchScreen.storyboard */,
+			);
+			path = "StroyBoard Files";
+			sourceTree = "<group>";
+		};
+		522276929D1EF27E9A53C7F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				901DCF77BF5D43B75A445C52 /* Pods-LazyHUE.debug.xcconfig */,
+				45D3F0044EDA16C3DF068F17 /* Pods-LazyHUE.release.xcconfig */,
+				9FD4BA4143EAA63FCC5099E3 /* Pods-LazyHUETests.debug.xcconfig */,
+				3DFF578642A6497A39D2524E /* Pods-LazyHUETests.release.xcconfig */,
+				28DF5B79636001DF4BDE6191 /* Pods-LazyHUEUITests.debug.xcconfig */,
+				7C22630F62F2A2CAA48275BF /* Pods-LazyHUEUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		65F1A44B92A4CC70367D67D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5522D1D2B5574E7149052458 /* Pods_LazyHUE.framework */,
+				4972D49D51B19AF1FF345A6B /* Pods_LazyHUETests.framework */,
+				006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C6101BA20DA4C1A00360816 /* LazyHUE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C6101E320DA4C1C00360816 /* Build configuration list for PBXNativeTarget "LazyHUE" */;
+			buildPhases = (
+				D9326E4701D31DE6DDFC6C74 /* [CP] Check Pods Manifest.lock */,
+				0C6101B720DA4C1A00360816 /* Sources */,
+				0C6101B820DA4C1A00360816 /* Frameworks */,
+				0C6101B920DA4C1A00360816 /* Resources */,
+				B4CFA17A6E28920DA4B4808E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LazyHUE;
+			productName = LazyHUE;
+			productReference = 0C6101BB20DA4C1A00360816 /* LazyHUE.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0C6101CE20DA4C1C00360816 /* LazyHUETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C6101E620DA4C1C00360816 /* Build configuration list for PBXNativeTarget "LazyHUETests" */;
+			buildPhases = (
+				059F921D4555A0754F03509B /* [CP] Check Pods Manifest.lock */,
+				0C6101CB20DA4C1C00360816 /* Sources */,
+				0C6101CC20DA4C1C00360816 /* Frameworks */,
+				0C6101CD20DA4C1C00360816 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C6101D120DA4C1C00360816 /* PBXTargetDependency */,
+			);
+			name = LazyHUETests;
+			productName = LazyHUETests;
+			productReference = 0C6101CF20DA4C1C00360816 /* LazyHUETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0C6101D920DA4C1C00360816 /* LazyHUEUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C6101E920DA4C1C00360816 /* Build configuration list for PBXNativeTarget "LazyHUEUITests" */;
+			buildPhases = (
+				A4DA2A3AEFA76C17368D5469 /* [CP] Check Pods Manifest.lock */,
+				0C6101D620DA4C1C00360816 /* Sources */,
+				0C6101D720DA4C1C00360816 /* Frameworks */,
+				0C6101D820DA4C1C00360816 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C6101DC20DA4C1C00360816 /* PBXTargetDependency */,
+			);
+			name = LazyHUEUITests;
+			productName = LazyHUEUITests;
+			productReference = 0C6101DA20DA4C1C00360816 /* LazyHUEUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C6101B320DA4C1A00360816 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "양창엽";
+				TargetAttributes = {
+					0C6101BA20DA4C1A00360816 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					0C6101CE20DA4C1C00360816 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 0C6101BA20DA4C1A00360816;
+					};
+					0C6101D920DA4C1C00360816 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 0C6101BA20DA4C1A00360816;
+					};
+				};
+			};
+			buildConfigurationList = 0C6101B620DA4C1A00360816 /* Build configuration list for PBXProject "LazyHUE" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0C6101B220DA4C1A00360816;
+			productRefGroup = 0C6101BC20DA4C1A00360816 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C6101BA20DA4C1A00360816 /* LazyHUE */,
+				0C6101CE20DA4C1C00360816 /* LazyHUETests */,
+				0C6101D920DA4C1C00360816 /* LazyHUEUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C6101B920DA4C1A00360816 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6101C920DA4C1C00360816 /* LaunchScreen.storyboard in Resources */,
+				0C6101C620DA4C1C00360816 /* Assets.xcassets in Resources */,
+				0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6101CD20DA4C1C00360816 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6101D820DA4C1C00360816 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		059F921D4555A0754F03509B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LazyHUETests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4DA2A3AEFA76C17368D5469 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LazyHUEUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4CFA17A6E28920DA4B4808E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyHue/SwiftyHue.framework",
+				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyHue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9326E4701D31DE6DDFC6C74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LazyHUE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C6101B720DA4C1A00360816 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6101C120DA4C1A00360816 /* ViewController.swift in Sources */,
+				0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6101CB20DA4C1C00360816 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6101D420DA4C1C00360816 /* LazyHUETests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6101D620DA4C1C00360816 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6101DF20DA4C1C00360816 /* LazyHUEUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C6101D120DA4C1C00360816 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C6101BA20DA4C1A00360816 /* LazyHUE */;
+			targetProxy = 0C6101D020DA4C1C00360816 /* PBXContainerItemProxy */;
+		};
+		0C6101DC20DA4C1C00360816 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C6101BA20DA4C1A00360816 /* LazyHUE */;
+			targetProxy = 0C6101DB20DA4C1C00360816 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0C6101C220DA4C1A00360816 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C6101C320DA4C1A00360816 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0C6101C720DA4C1C00360816 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C6101C820DA4C1C00360816 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0C6101E120DA4C1C00360816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0C6101E220DA4C1C00360816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0C6101E420DA4C1C00360816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 901DCF77BF5D43B75A445C52 /* Pods-LazyHUE.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G325PL7HW2;
+				INFOPLIST_FILE = LazyHUE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0C6101E520DA4C1C00360816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D3F0044EDA16C3DF068F17 /* Pods-LazyHUE.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G325PL7HW2;
+				INFOPLIST_FILE = LazyHUE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		0C6101E720DA4C1C00360816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FD4BA4143EAA63FCC5099E3 /* Pods-LazyHUETests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G325PL7HW2;
+				INFOPLIST_FILE = LazyHUETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyHUE.app/LazyHUE";
+			};
+			name = Debug;
+		};
+		0C6101E820DA4C1C00360816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DFF578642A6497A39D2524E /* Pods-LazyHUETests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G325PL7HW2;
+				INFOPLIST_FILE = LazyHUETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyHUE.app/LazyHUE";
+			};
+			name = Release;
+		};
+		0C6101EA20DA4C1C00360816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28DF5B79636001DF4BDE6191 /* Pods-LazyHUEUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G325PL7HW2;
+				INFOPLIST_FILE = LazyHUEUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUEUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LazyHUE;
+			};
+			name = Debug;
+		};
+		0C6101EB20DA4C1C00360816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C22630F62F2A2CAA48275BF /* Pods-LazyHUEUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G325PL7HW2;
+				INFOPLIST_FILE = LazyHUEUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUEUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LazyHUE;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C6101B620DA4C1A00360816 /* Build configuration list for PBXProject "LazyHUE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C6101E120DA4C1C00360816 /* Debug */,
+				0C6101E220DA4C1C00360816 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C6101E320DA4C1C00360816 /* Build configuration list for PBXNativeTarget "LazyHUE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C6101E420DA4C1C00360816 /* Debug */,
+				0C6101E520DA4C1C00360816 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C6101E620DA4C1C00360816 /* Build configuration list for PBXNativeTarget "LazyHUETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C6101E720DA4C1C00360816 /* Debug */,
+				0C6101E820DA4C1C00360816 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C6101E920DA4C1C00360816 /* Build configuration list for PBXNativeTarget "LazyHUEUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C6101EA20DA4C1C00360816 /* Debug */,
+				0C6101EB20DA4C1C00360816 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C6101B320DA4C1A00360816 /* Project object */;
+}
