@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101BE20DA4C1A00360816 /* AppDelegate.swift */; };
-		0C6101C120DA4C1A00360816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101C020DA4C1A00360816 /* ViewController.swift */; };
+		0C6101C120DA4C1A00360816 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101C020DA4C1A00360816 /* HomeViewController.swift */; };
 		0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C6101C220DA4C1A00360816 /* Main.storyboard */; };
 		0C6101C620DA4C1C00360816 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C6101C520DA4C1C00360816 /* Assets.xcassets */; };
 		0C6101C920DA4C1C00360816 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C6101C720DA4C1C00360816 /* LaunchScreen.storyboard */; };
 		0C6101D420DA4C1C00360816 /* LazyHUETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101D320DA4C1C00360816 /* LazyHUETests.swift */; };
 		0C6101DF20DA4C1C00360816 /* LazyHUEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101DE20DA4C1C00360816 /* LazyHUEUITests.swift */; };
+		0C99CE96211813CA009A3403 /* CameraStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE95211813CA009A3403 /* CameraStoryboard.storyboard */; };
+		0C99CE98211813E0009A3403 /* GestureStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE97211813E0009A3403 /* GestureStoryboard.storyboard */; };
+		0C99CE9A211813FA009A3403 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */; };
+		0C99CE9C2118141A009A3403 /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE9B2118141A009A3403 /* SettingStoryboard.storyboard */; };
+		0C99CEA1211822FE009A3403 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99CEA0211822FE009A3403 /* CardView.swift */; };
 		91F3B3F11FC79F49951764C8 /* Pods_LazyHUE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5522D1D2B5574E7149052458 /* Pods_LazyHUE.framework */; };
 		997BF484531D644198E12D1D /* Pods_LazyHUETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4972D49D51B19AF1FF345A6B /* Pods_LazyHUETests.framework */; };
 		C29B28C3046A042C0601A5AB /* Pods_LazyHUEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */; };
@@ -40,7 +45,7 @@
 		006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C6101BB20DA4C1A00360816 /* LazyHUE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyHUE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C6101BE20DA4C1A00360816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0C6101C020DA4C1A00360816 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0C6101C020DA4C1A00360816 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0C6101C320DA4C1A00360816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C6101C520DA4C1C00360816 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C6101C820DA4C1C00360816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +56,11 @@
 		0C6101DA20DA4C1C00360816 /* LazyHUEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyHUEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C6101DE20DA4C1C00360816 /* LazyHUEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyHUEUITests.swift; sourceTree = "<group>"; };
 		0C6101E020DA4C1C00360816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C99CE95211813CA009A3403 /* CameraStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraStoryboard.storyboard; sourceTree = "<group>"; };
+		0C99CE97211813E0009A3403 /* GestureStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GestureStoryboard.storyboard; sourceTree = "<group>"; };
+		0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
+		0C99CE9B2118141A009A3403 /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
+		0C99CEA0211822FE009A3403 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		28DF5B79636001DF4BDE6191 /* Pods-LazyHUEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3DFF578642A6497A39D2524E /* Pods-LazyHUETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.release.xcconfig"; sourceTree = "<group>"; };
 		45D3F0044EDA16C3DF068F17 /* Pods-LazyHUE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUE.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,8 +126,9 @@
 			children = (
 				0C6101ED20DA4C4A00360816 /* StroyBoard Files */,
 				0C6101EC20DA4C2D00360816 /* ViewController Files */,
-				0C6101BE20DA4C1A00360816 /* AppDelegate.swift */,
+				0C99CE9F21182291009A3403 /* Custome Design Files */,
 				0C6101C520DA4C1C00360816 /* Assets.xcassets */,
+				0C6101BE20DA4C1A00360816 /* AppDelegate.swift */,
 				0C6101CA20DA4C1C00360816 /* Info.plist */,
 			);
 			path = LazyHUE;
@@ -144,7 +155,7 @@
 		0C6101EC20DA4C2D00360816 /* ViewController Files */ = {
 			isa = PBXGroup;
 			children = (
-				0C6101C020DA4C1A00360816 /* ViewController.swift */,
+				0C6101C020DA4C1A00360816 /* HomeViewController.swift */,
 			);
 			path = "ViewController Files";
 			sourceTree = "<group>";
@@ -152,10 +163,22 @@
 		0C6101ED20DA4C4A00360816 /* StroyBoard Files */ = {
 			isa = PBXGroup;
 			children = (
-				0C6101C220DA4C1A00360816 /* Main.storyboard */,
 				0C6101C720DA4C1C00360816 /* LaunchScreen.storyboard */,
+				0C6101C220DA4C1A00360816 /* Main.storyboard */,
+				0C99CE95211813CA009A3403 /* CameraStoryboard.storyboard */,
+				0C99CE97211813E0009A3403 /* GestureStoryboard.storyboard */,
+				0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */,
+				0C99CE9B2118141A009A3403 /* SettingStoryboard.storyboard */,
 			);
 			path = "StroyBoard Files";
+			sourceTree = "<group>";
+		};
+		0C99CE9F21182291009A3403 /* Custome Design Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C99CEA0211822FE009A3403 /* CardView.swift */,
+			);
+			path = "Custome Design Files";
 			sourceTree = "<group>";
 		};
 		522276929D1EF27E9A53C7F2 /* Pods */ = {
@@ -289,9 +312,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C99CE9A211813FA009A3403 /* HomeStoryboard.storyboard in Resources */,
+				0C99CE96211813CA009A3403 /* CameraStoryboard.storyboard in Resources */,
 				0C6101C920DA4C1C00360816 /* LaunchScreen.storyboard in Resources */,
+				0C99CE98211813E0009A3403 /* GestureStoryboard.storyboard in Resources */,
 				0C6101C620DA4C1C00360816 /* Assets.xcassets in Resources */,
 				0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */,
+				0C99CE9C2118141A009A3403 /* SettingStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +426,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C6101C120DA4C1A00360816 /* ViewController.swift in Sources */,
+				0C6101C120DA4C1A00360816 /* HomeViewController.swift in Sources */,
+				0C99CEA1211822FE009A3403 /* CardView.swift in Sources */,
 				0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

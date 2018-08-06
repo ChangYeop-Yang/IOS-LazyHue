@@ -7,7 +7,7 @@
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>CocoaAsyncSocket.xcscheme</key>
 		<dict>
@@ -34,15 +34,20 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>SwiftyHue.xcscheme</key>
+		<key>SwiftSVG.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>Whisper.xcscheme</key>
+		<key>SwiftyHue.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>Whisper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 	</dict>
 </dict>
