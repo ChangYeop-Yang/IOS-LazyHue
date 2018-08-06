@@ -16,7 +16,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LKu-db-qmp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="6bD-l4-eXe">
                                 <cells>
@@ -52,10 +53,15 @@
                             <outlet property="delegate" destination="RAb-cY-2ri" id="TZw-eh-BSm"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="SETTING" image="baseline_settings_black_24dp" id="8tC-kR-yko"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5g-gW-DXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="114" y="161"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="baseline_settings_black_24dp" width="24" height="24"/>
+    </resources>
 </document>

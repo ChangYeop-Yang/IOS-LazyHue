@@ -15,7 +15,7 @@
                 <tabBarController id="66b-jj-scc" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iAF-Ou-TeV">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="iAF-Ou-TeV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,7 +65,7 @@
         <scene sceneID="jMI-Hq-6Cg">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="HomeStoryBoard" storyboardName="HomeStoryboard" referencedIdentifier="HomeStoryBoard" id="glO-W8-gAX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="HOME" image="baseline_home_black_24dp" selectedImage="baseline_home_black_24dp" springLoaded="YES" id="Q5A-QT-4St"/>
+                    <tabBarItem key="tabBarItem" title="HOME" image="baseline_home_black_24dp" springLoaded="YES" id="Q5A-QT-4St"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Nk-mo-72o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
