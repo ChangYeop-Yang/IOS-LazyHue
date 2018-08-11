@@ -309,7 +309,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dustLB" destination="pcO-UF-Yma" id="drY-US-Xm8"/>
+                        <outlet property="humidityLB" destination="ozV-U4-G7I" id="I9h-8X-heV"/>
                         <outlet property="locationLB" destination="gW6-ZF-Ic3" id="ODk-Ru-jtX"/>
+                        <outlet property="precipitationLB" destination="NmH-lu-Elc" id="AWk-wS-BT6"/>
+                        <outlet property="temperatureLB" destination="RAe-K7-NkB" id="t4C-Gy-AZa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZY-K8-5NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

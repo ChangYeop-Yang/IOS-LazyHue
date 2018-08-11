@@ -6,6 +6,7 @@
 //  Copyright © 2018년 양창엽. All rights reserved.
 //
 
+import UIKit
 import CoreLocation
 
 public class Location: NSObject {
@@ -14,15 +15,20 @@ public class Location: NSObject {
     public static let locationInstance: Location = Location()
     public var currentLocation: CLLocation?
     public var currentAddress: String = ""
+    public let locationGruop: DispatchGroup = DispatchGroup()
     private var locationManager: CLLocationManager = CLLocationManager()
     
     // MARK: - Method
     private override init() {}
     final public func startLocation() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        
+        locationGruop.enter()
+        DispatchQueue.main.async(group: locationGruop, execute: { [unowned self] in
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            self.locationManager.delegate = self
+            self.locationManager.requestWhenInUseAuthorization()
+            self.locationManager.startUpdatingLocation()
+        })
     }
     final public func getCurrentAddress(group: DispatchGroup) {
         
@@ -57,8 +63,12 @@ extension Location: CLLocationManagerDelegate {
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if let coordinate = manager.location?.coordinate {
-            currentLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        if locations.count > 0, let location: CLLocation = locations.last {
+            if location.horizontalAccuracy < 100 {
+                currentLocation = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                locationGruop.leave()
+                locationManager.stopUpdatingLocation()
+            }
         }
     }
 }
