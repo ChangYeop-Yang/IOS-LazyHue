@@ -130,8 +130,11 @@
                                                     <constraint firstAttribute="width" constant="24" id="VPx-M2-x6M"/>
                                                 </constraints>
                                                 <state key="normal" image="baseline_my_location_black_24dp"/>
+                                                <connections>
+                                                    <action selector="loadCurrentLocation:" destination="gLI-f0-SBj" eventType="touchUpInside" id="z30-tC-1gZ"/>
+                                                </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW6-ZF-Ic3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, push next to text." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW6-ZF-Ic3">
                                                 <rect key="frame" x="42" y="0.0" width="283" height="60"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -304,6 +307,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="HOME" image="baseline_home_black_24dp" id="xpA-TH-VM4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dustLB" destination="pcO-UF-Yma" id="drY-US-Xm8"/>
+                        <outlet property="locationLB" destination="gW6-ZF-Ic3" id="ODk-Ru-jtX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZY-K8-5NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

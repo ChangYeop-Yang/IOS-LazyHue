@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -233,7 +233,7 @@
 		087F441772F62471CB27D5430153D597 /* Pods-LazyHUETests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LazyHUETests.modulemap"; sourceTree = "<group>"; };
 		09D352CB9DFCD60BCCEDB1BB23FC5860 /* OpenCloseSensorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenCloseSensorConfig.swift; path = Sources/Base/BridgeResourceModels/Sensors/OpenCloseSensor/OpenCloseSensorConfig.swift; sourceTree = "<group>"; };
 		0A2D650207D91A6560961FB115ACF53C /* PresenceSensorState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresenceSensorState.swift; path = Sources/Base/BridgeResourceModels/Sensors/PresenceSensor/PresenceSensorState.swift; sourceTree = "<group>"; };
-		0BF56BEF5DAD8CCFC4BD4F89398022CD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BF56BEF5DAD8CCFC4BD4F89398022CD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECD3D8B4704EBBA23B24B8FD5ECB2AB /* Whisper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whisper-prefix.pch"; sourceTree = "<group>"; };
 		1041C7C59751796F3BC32446B97D0571 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		10F5760C543E1436CD124B1289E82B56 /* Scene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = Sources/Base/BridgeResourceModels/Scene.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 		1877C34837D3477B8EF79A6EEF645F58 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		189B18CF19A9003E85B09122E89A24EF /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
 		1A89778F74BC2EA64950A488BF160C3A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		1C2CFF9FC5ACE751B75C008E4D512FA8 /* Pods_LazyHUEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LazyHUEUITests.framework; path = "Pods-LazyHUEUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C2CFF9FC5ACE751B75C008E4D512FA8 /* Pods_LazyHUEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDED357BC46D680C06003B1D33DC5C0 /* SwiftyHue.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyHue.xcconfig; sourceTree = "<group>"; };
 		1E841C5D3DB317CDB05D675AB6AA647C /* Schedule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = Sources/Base/BridgeResourceModels/Schedule/Schedule.swift; sourceTree = "<group>"; };
 		1F27B41121F65481AE4A9D03BC3EDB49 /* GenericStatusSensorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericStatusSensorConfig.swift; path = Sources/Base/BridgeResourceModels/Sensors/GenericStatusSensor/GenericStatusSensorConfig.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		2491AC1F9F837769EDD2298CFB3F8678 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		260F7BFCA12A3C69FEA5A431A770766C /* HeartbeatManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeartbeatManager.swift; path = Sources/Base/HeartbeatManager.swift; sourceTree = "<group>"; };
 		26F6D52F9FF9160DE08AA89CE5B2996E /* Pods-LazyHUEUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LazyHUEUITests-resources.sh"; sourceTree = "<group>"; };
-		2751B13710C5530A6A83DBF2B1A5DD77 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2751B13710C5530A6A83DBF2B1A5DD77 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D108D6FA0020C27CFDDE1548AA91775 /* SSDPScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSDPScanner.swift; path = Sources/BridgeServices/BridgeFinder/Scanner/SSDPScanner.swift; sourceTree = "<group>"; };
 		2D6AA8CD1318E8036D1291780CAE4472 /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
 		2D9B2D1A424573CE6F13174B9B6695DA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -322,8 +322,8 @@
 		791550FB9380AB17421F851EF6FFEFA6 /* BridgeSendAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BridgeSendAPI.swift; path = Sources/Base/BridgeSendAPI.swift; sourceTree = "<group>"; };
 		7C231094D40994B6D01F4C31FF18F38A /* IPScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPScanner.swift; path = Sources/BridgeServices/BridgeFinder/Scanner/IPScanner.swift; sourceTree = "<group>"; };
 		7DB2662427BEAEE91E0DED2112624764 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		7EAD41218DCF0FF4740903DD91864512 /* Pods_LazyHUETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LazyHUETests.framework; path = "Pods-LazyHUETests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F8A90C6B1FDA36ED5DA50FAC351CCEE /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gloss.framework; path = Gloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EAD41218DCF0FF4740903DD91864512 /* Pods_LazyHUETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F8A90C6B1FDA36ED5DA50FAC351CCEE /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8D1EAFAC093280018488B3AB4E73DC /* RuleCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleCondition.swift; path = Sources/Base/BridgeResourceModels/Rule/RuleCondition.swift; sourceTree = "<group>"; };
 		83BFCC5316D350409205634D013535CB /* LightState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightState.swift; path = Sources/Base/BridgeResourceModels/LightState.swift; sourceTree = "<group>"; };
 		84ADAE22D026043754EAC1BEDC611C6B /* Pods-LazyHUE-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LazyHUE-frameworks.sh"; sourceTree = "<group>"; };
@@ -340,10 +340,10 @@
 		8FE6E233FB551986284692460FD5E6CD /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		915EB7303B272F68ED527E347F1FDECB /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
 		9197268F303D513653F7EA2F9423C736 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95B401BA92E0CC0D44A6C0373627DE3E /* BridgeFinderDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BridgeFinderDelegate.swift; path = Sources/BridgeServices/BridgeFinder/BridgeFinderDelegate.swift; sourceTree = "<group>"; };
 		963FD07E00F557918FD11E9B452C2110 /* SwitchSensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchSensor.swift; path = Sources/Base/BridgeResourceModels/Sensors/SwitchSensor/SwitchSensor.swift; sourceTree = "<group>"; };
-		97A897FA0E2EC1D5D274ECE40F5D6A1F /* Pods_LazyHUE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LazyHUE.framework; path = "Pods-LazyHUE.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97A897FA0E2EC1D5D274ECE40F5D6A1F /* Pods_LazyHUE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9868EBBCE00FD6921885A09DE03F7191 /* BridgeAuthenticator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BridgeAuthenticator.swift; path = Sources/BridgeServices/BridgeAuthenticator/BridgeAuthenticator.swift; sourceTree = "<group>"; };
 		98DE6FACA108B800754BAF1143F90B82 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Sources/Base/Utilities.swift; sourceTree = "<group>"; };
 		99BA2FAAFA43E20168DE7335C70D1E74 /* UIView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Source/UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -394,10 +394,10 @@
 		E53D2C97D458A517BF07E3C84A83FE7E /* ExtensionDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionDecodable.swift; path = Sources/ExtensionDecodable.swift; sourceTree = "<group>"; };
 		E5CA6874A33EB69C50976CBA942F12CD /* Rule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rule.swift; path = Sources/Base/BridgeResourceModels/Rule/Rule.swift; sourceTree = "<group>"; };
 		E79044D9FB2346B469D6F34C1615A264 /* Whisper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whisper-umbrella.h"; sourceTree = "<group>"; };
-		E963B65C9CD495288A71D0415D5ADAA7 /* Whisper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Whisper.framework; path = Whisper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E963B65C9CD495288A71D0415D5ADAA7 /* Whisper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Whisper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC59813EE5CBD68AF15AD4CE91986D21 /* Pods-LazyHUEUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LazyHUEUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EE272670D17EBAFF3583688EB0BA0F31 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		EE7E3B8DA6F50FE8470622BB85076538 /* SwiftyHue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyHue.framework; path = SwiftyHue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE7E3B8DA6F50FE8470622BB85076538 /* SwiftyHue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyHue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32E01804D9E223E79DA8B2EB4991E6D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		F52A0BDBB37D20BA03CE7F601C1BB36A /* Pods-LazyHUE-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LazyHUE-resources.sh"; sourceTree = "<group>"; };
 		F547C3340C03D12CE2D2552A30AAC6AA /* TemperatureSensorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemperatureSensorConfig.swift; path = Sources/Base/BridgeResourceModels/Sensors/TemperatureSensor/TemperatureSensorConfig.swift; sourceTree = "<group>"; };
@@ -517,7 +517,6 @@
 				A0FE5A7DA79781F39BBFE3089A61E6E9 /* Validation.swift */,
 				364FE08E6560B011F05AB6B87A290D6A /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -533,7 +532,6 @@
 				915EB7303B272F68ED527E347F1FDECB /* Operators.swift */,
 				B8C9161F7DDCF0C0C2AA89BD1FA8F026 /* Support Files */,
 			);
-			name = Gloss;
 			path = Gloss;
 			sourceTree = "<group>";
 		};
@@ -678,7 +676,6 @@
 				31452FFD492D299C5DE0664F65E6A41B /* GCDAsyncUdpSocket.m */,
 				274B8E83B7E7950F52A7CF87CBF4E2BF /* Support Files */,
 			);
-			name = CocoaAsyncSocket;
 			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
@@ -690,7 +687,6 @@
 				860B0559B33CF5CE9693D69DA2EFB83D /* BridgeServices */,
 				568375F7405F803EDFE37549DF3A1E9D /* Support Files */,
 			);
-			name = SwiftyHue;
 			path = SwiftyHue;
 			sourceTree = "<group>";
 		};
@@ -785,7 +781,6 @@
 				12436975A85AC6927E2146DAD77691FC /* WhistleFactory.swift */,
 				25B005C59DC9755E5ADE9C101BAEBD2E /* Support Files */,
 			);
-			name = Whisper;
 			path = Whisper;
 			sourceTree = "<group>";
 		};
@@ -1076,7 +1071,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1357,11 +1352,7 @@
 				INFOPLIST_FILE = "Target Support Files/Gloss/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Gloss/Gloss.modulemap";
 				PRODUCT_MODULE_NAME = Gloss;
 				PRODUCT_NAME = Gloss;
@@ -1395,11 +1386,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-LazyHUETests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1432,11 +1419,7 @@
 				INFOPLIST_FILE = "Target Support Files/Whisper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Whisper/Whisper.modulemap";
 				PRODUCT_MODULE_NAME = Whisper;
 				PRODUCT_NAME = Whisper;
@@ -1470,11 +1453,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-LazyHUE/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-LazyHUE/Pods-LazyHUE.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1573,11 +1552,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-LazyHUETests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1612,11 +1587,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-LazyHUEUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1649,11 +1620,7 @@
 				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
 				PRODUCT_MODULE_NAME = CocoaAsyncSocket;
 				PRODUCT_NAME = CocoaAsyncSocket;
@@ -1685,11 +1652,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-LazyHUE/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-LazyHUE/Pods-LazyHUE.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1724,11 +1687,7 @@
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				PRODUCT_MODULE_NAME = Alamofire;
 				PRODUCT_NAME = Alamofire;
@@ -1798,6 +1757,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -1820,11 +1780,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-LazyHUEUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1858,11 +1814,7 @@
 				INFOPLIST_FILE = "Target Support Files/SwiftyHue/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftyHue/SwiftyHue.modulemap";
 				PRODUCT_MODULE_NAME = SwiftyHue;
 				PRODUCT_NAME = SwiftyHue;
@@ -1895,11 +1847,7 @@
 				INFOPLIST_FILE = "Target Support Files/SwiftyHue/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftyHue/SwiftyHue.modulemap";
 				PRODUCT_MODULE_NAME = SwiftyHue;
 				PRODUCT_NAME = SwiftyHue;
@@ -1931,11 +1879,7 @@
 				INFOPLIST_FILE = "Target Support Files/Whisper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Whisper/Whisper.modulemap";
 				PRODUCT_MODULE_NAME = Whisper;
 				PRODUCT_NAME = Whisper;
@@ -1967,11 +1911,7 @@
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				PRODUCT_MODULE_NAME = Alamofire;
 				PRODUCT_NAME = Alamofire;
@@ -2003,11 +1943,7 @@
 				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
 				PRODUCT_MODULE_NAME = CocoaAsyncSocket;
 				PRODUCT_NAME = CocoaAsyncSocket;
@@ -2039,11 +1975,7 @@
 				INFOPLIST_FILE = "Target Support Files/Gloss/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Gloss/Gloss.modulemap";
 				PRODUCT_MODULE_NAME = Gloss;
 				PRODUCT_NAME = Gloss;

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C2F7949211EE6C100E3A9B9 /* Dust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F7948211EE6C100E3A9B9 /* Dust.swift */; };
+		0C3B65952119C6CD00E8886C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3B65942119C6CD00E8886C /* Location.swift */; };
+		0C3B65972119C8D700E8886C /* LocationMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3B65962119C8D700E8886C /* LocationMethods.swift */; };
 		0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101BE20DA4C1A00360816 /* AppDelegate.swift */; };
 		0C6101C120DA4C1A00360816 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101C020DA4C1A00360816 /* HomeViewController.swift */; };
 		0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C6101C220DA4C1A00360816 /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2F7948211EE6C100E3A9B9 /* Dust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dust.swift; sourceTree = "<group>"; };
+		0C3B65942119C6CD00E8886C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		0C3B65962119C8D700E8886C /* LocationMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMethods.swift; sourceTree = "<group>"; };
 		0C6101BB20DA4C1A00360816 /* LazyHUE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyHUE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C6101BE20DA4C1A00360816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C6101C020DA4C1A00360816 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +105,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C2F7947211EE69F00E3A9B9 /* Weather Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F7948211EE6C100E3A9B9 /* Dust.swift */,
+			);
+			path = "Weather Files";
+			sourceTree = "<group>";
+		};
+		0C3B65932119C69A00E8886C /* Locations Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C3B65942119C6CD00E8886C /* Location.swift */,
+				0C3B65962119C8D700E8886C /* LocationMethods.swift */,
+			);
+			path = "Locations Files";
+			sourceTree = "<group>";
+		};
 		0C6101B220DA4C1A00360816 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +147,8 @@
 		0C6101BD20DA4C1A00360816 /* LazyHUE */ = {
 			isa = PBXGroup;
 			children = (
+				0C2F7947211EE69F00E3A9B9 /* Weather Files */,
+				0C3B65932119C69A00E8886C /* Locations Files */,
 				0C6101ED20DA4C4A00360816 /* StroyBoard Files */,
 				0C6101EC20DA4C2D00360816 /* ViewController Files */,
 				0C99CE9F21182291009A3403 /* Custome Design Files */,
@@ -427,7 +452,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C6101C120DA4C1A00360816 /* HomeViewController.swift in Sources */,
+				0C2F7949211EE6C100E3A9B9 /* Dust.swift in Sources */,
 				0C99CEA1211822FE009A3403 /* CardView.swift in Sources */,
+				0C3B65952119C6CD00E8886C /* Location.swift in Sources */,
+				0C3B65972119C8D700E8886C /* LocationMethods.swift in Sources */,
 				0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
