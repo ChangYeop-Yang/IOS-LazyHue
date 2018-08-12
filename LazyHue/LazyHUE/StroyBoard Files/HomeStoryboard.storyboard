@@ -201,6 +201,7 @@
                                                     </stackView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVv-bA-NEg">
                                                         <rect key="frame" x="8" y="8" width="100" height="98"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="ZLB-Vq-VC1"/>
                                                         </constraints>
@@ -316,6 +317,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZY-K8-5NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Vya-Y3-Kaz">
+                    <connections>
+                        <action selector="loadWeatherInformation:" destination="gLI-f0-SBj" id="1Ir-1k-73g"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="156" y="149.77511244377811"/>
         </scene>

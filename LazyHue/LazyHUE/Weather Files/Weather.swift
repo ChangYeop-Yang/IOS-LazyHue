@@ -52,7 +52,7 @@ public class Weather: NSObject {
         return dateformatter.string(from: currentDate)
     }
     public func receiveWeatherData(group: DispatchGroup) {
-        print(Location.locationInstance.currentLocation)
+        
         guard let location: CLLocation = Location.locationInstance.currentLocation else {
             fatalError("Error, Getting Current Coordinate.")
         }

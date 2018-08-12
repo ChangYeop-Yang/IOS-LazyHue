@@ -10,6 +10,7 @@
 		0C08E617211F1B2C00C0EE4A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08E616211F1B2C00C0EE4A /* Weather.swift */; };
 		0C08E61A211F1E2000C0EE4A /* WhisperToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08E619211F1E2000C0EE4A /* WhisperToast.swift */; };
 		0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08E61B211F1EF600C0EE4A /* UIColor.swift */; };
+		0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C7322211FF90800335573 /* CameraViewController.swift */; };
 		0C2F7949211EE6C100E3A9B9 /* Dust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F7948211EE6C100E3A9B9 /* Dust.swift */; };
 		0C3B65952119C6CD00E8886C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3B65942119C6CD00E8886C /* Location.swift */; };
 		0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101BE20DA4C1A00360816 /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		0C08E616211F1B2C00C0EE4A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		0C08E619211F1E2000C0EE4A /* WhisperToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperToast.swift; sourceTree = "<group>"; };
 		0C08E61B211F1EF600C0EE4A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		0C0C7322211FF90800335573 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		0C2F7948211EE6C100E3A9B9 /* Dust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dust.swift; sourceTree = "<group>"; };
 		0C3B65942119C6CD00E8886C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0C6101BB20DA4C1A00360816 /* LazyHUE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyHUE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				0C6101C020DA4C1A00360816 /* HomeViewController.swift */,
+				0C0C7322211FF90800335573 /* CameraViewController.swift */,
 			);
 			path = "ViewController Files";
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */,
 				0C08E617211F1B2C00C0EE4A /* Weather.swift in Sources */,
 				0C08E61A211F1E2000C0EE4A /* WhisperToast.swift in Sources */,
+				0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="486" y="212"/>
         </scene>
-        <!--SettingStoryBoard-->
+        <!--SettingStroyBoard-->
         <scene sceneID="EMd-3J-Vpb">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SettingStoryBoard" storyboardName="SettingStoryboard" referencedIdentifier="SettingStoryBoard" id="YHX-pL-FGe" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="SettingStoryBoard" storyboardName="SettingStoryboard" referencedIdentifier="SettingStroyBoard" id="YHX-pL-FGe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="SETTING" image="baseline_settings_black_24dp" selectedImage="baseline_settings_black_24dp" springLoaded="YES" id="7Pc-Et-WM4"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2V-PG-0K2" userLabel="First Responder" sceneMemberID="firstResponder"/>

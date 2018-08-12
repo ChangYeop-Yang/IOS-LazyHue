@@ -28,9 +28,8 @@ class HomeViewController: UIViewController {
         getTodayFineDust(label: dustLB)
         
         // MARK: Weather Information
-        Location.locationInstance.startLocation()
-        Location.locationInstance.locationGruop.notify(queue: .main, execute: { [unowned self] in
-            self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB)
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [unowned self] _ in
+           self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB)
         })
     }
 
@@ -58,7 +57,7 @@ class HomeViewController: UIViewController {
         Location.locationInstance.getCurrentAddress(group: group)
         
         group.notify(queue: .main, execute: {
-            showWhisperToast(title: "Success Search Current Address", background: .moss, textColor: .white)
+            showWhisperToast(title: "Success search current address", background: .moss, textColor: .white)
             label.text = Location.locationInstance.currentAddress
         })
     }
@@ -66,15 +65,19 @@ class HomeViewController: UIViewController {
         
         let weatherGroup: DispatchGroup = DispatchGroup()
         Weather.weatherInstance.receiveWeatherData(group: weatherGroup)
-        temperatureLB.text      = "오늘의 온도 : \(Weather.weatherInstance.weatherData.temperature)℃"
-        humidityLB.text         = "오늘의 습도 : \(Weather.weatherInstance.weatherData.humidity)%"
-        precipitationLB.text    = "오늘의 강수확률 : \(Weather.weatherInstance.weatherData.rain)%"
+        
+        weatherGroup.notify(queue: .main, execute: {
+            temperatureLB.text      = "오늘의 온도 : \(Weather.weatherInstance.weatherData.temperature)℃"
+            humidityLB.text         = "오늘의 습도 : \(Weather.weatherInstance.weatherData.humidity)%"
+            precipitationLB.text    = "오늘의 강수확률 : \(Weather.weatherInstance.weatherData.rain)%"
+        })
     }
     
     // MARK: - IBAction Method
     @IBAction func loadCurrentLocation(_ sender: UIButton) {
         AudioServicesPlaySystemSound(4095)
         getCurrentAddress(label: locationLB)
+        getCurrentWeather(temperatureLB: temperatureLB, humidityLB: humidityLB, precipitationLB: precipitationLB)
     }
 }
 
