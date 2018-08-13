@@ -317,11 +317,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZY-K8-5NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Vya-Y3-Kaz">
-                    <connections>
-                        <action selector="loadWeatherInformation:" destination="gLI-f0-SBj" id="1Ir-1k-73g"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="156" y="149.77511244377811"/>
         </scene>

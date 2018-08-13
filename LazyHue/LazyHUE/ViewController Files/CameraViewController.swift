@@ -14,6 +14,7 @@ class CameraViewController: UIViewController {
     // MARK: - Variables
     private var session: AVCaptureSession?
     private var stillImageOutput: AVCaptureStillImageOutput?
+    private var previewLayout: AVCaptureVideoPreviewLayer?
     
     // MARK: - IBOutlet
     
@@ -26,4 +27,9 @@ class CameraViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+}
+
+// MARK: - Delegate
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
+    
 }

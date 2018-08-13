@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         getTodayFineDust(label: dustLB)
         
         // MARK: Weather Information
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [unowned self] _ in
+        Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: { [unowned self] _ in
            self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB)
         })
     }
