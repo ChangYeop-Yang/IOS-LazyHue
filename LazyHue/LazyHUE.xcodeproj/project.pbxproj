@@ -13,6 +13,7 @@
 		0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C7322211FF90800335573 /* CameraViewController.swift */; };
 		0C2F7949211EE6C100E3A9B9 /* Dust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F7948211EE6C100E3A9B9 /* Dust.swift */; };
 		0C3B65952119C6CD00E8886C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3B65942119C6CD00E8886C /* Location.swift */; };
+		0C4666A621246F1700333E8E /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4666A521246F1700333E8E /* Defaults.swift */; };
 		0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101BE20DA4C1A00360816 /* AppDelegate.swift */; };
 		0C6101C120DA4C1A00360816 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101C020DA4C1A00360816 /* HomeViewController.swift */; };
 		0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C6101C220DA4C1A00360816 /* Main.storyboard */; };
@@ -25,6 +26,9 @@
 		0C99CE9A211813FA009A3403 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */; };
 		0C99CE9C2118141A009A3403 /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE9B2118141A009A3403 /* SettingStoryboard.storyboard */; };
 		0C99CEA1211822FE009A3403 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99CEA0211822FE009A3403 /* CardView.swift */; };
+		0CFECBA9212458930021D8C9 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFECBA8212458930021D8C9 /* Hue.swift */; };
+		0CFECBAF21245A4C0021D8C9 /* PressHueBridge.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFECBAD21245A4C0021D8C9 /* PressHueBridge.xib */; };
+		0CFECBB021245A4C0021D8C9 /* PressHueBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFECBAE21245A4C0021D8C9 /* PressHueBridge.swift */; };
 		91F3B3F11FC79F49951764C8 /* Pods_LazyHUE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5522D1D2B5574E7149052458 /* Pods_LazyHUE.framework */; };
 		997BF484531D644198E12D1D /* Pods_LazyHUETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4972D49D51B19AF1FF345A6B /* Pods_LazyHUETests.framework */; };
 		C29B28C3046A042C0601A5AB /* Pods_LazyHUEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */; };
@@ -55,6 +59,7 @@
 		0C0C7322211FF90800335573 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		0C2F7948211EE6C100E3A9B9 /* Dust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dust.swift; sourceTree = "<group>"; };
 		0C3B65942119C6CD00E8886C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		0C4666A521246F1700333E8E /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		0C6101BB20DA4C1A00360816 /* LazyHUE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyHUE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C6101BE20DA4C1A00360816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C6101C020DA4C1A00360816 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +78,9 @@
 		0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		0C99CE9B2118141A009A3403 /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		0C99CEA0211822FE009A3403 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0CFECBA8212458930021D8C9 /* Hue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = "../../../../iOS-LazyHUE/LazyHUE/LazyHUE/Philips Hue Files/Hue.swift"; sourceTree = "<group>"; };
+		0CFECBAD21245A4C0021D8C9 /* PressHueBridge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PressHueBridge.xib; sourceTree = "<group>"; };
+		0CFECBAE21245A4C0021D8C9 /* PressHueBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressHueBridge.swift; sourceTree = "<group>"; };
 		28DF5B79636001DF4BDE6191 /* Pods-LazyHUEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3DFF578642A6497A39D2524E /* Pods-LazyHUETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.release.xcconfig"; sourceTree = "<group>"; };
 		45D3F0044EDA16C3DF068F17 /* Pods-LazyHUE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUE.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +136,14 @@
 			path = "Locations Files";
 			sourceTree = "<group>";
 		};
+		0C4666A421246EF500333E8E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C4666A521246F1700333E8E /* Defaults.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
 		0C6101B220DA4C1A00360816 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +169,8 @@
 		0C6101BD20DA4C1A00360816 /* LazyHUE */ = {
 			isa = PBXGroup;
 			children = (
+				0C4666A421246EF500333E8E /* Support Files */,
+				0CFECBA72124586A0021D8C9 /* Philips Hue Files */,
 				0C2F7947211EE69F00E3A9B9 /* Weather Files */,
 				0C3B65932119C69A00E8886C /* Locations Files */,
 				0C6101ED20DA4C4A00360816 /* StroyBoard Files */,
@@ -208,11 +226,29 @@
 		0C99CE9F21182291009A3403 /* Custome Design Files */ = {
 			isa = PBXGroup;
 			children = (
+				0CFECBAC212459B30021D8C9 /* NIB Files */,
 				0C08E61B211F1EF600C0EE4A /* UIColor.swift */,
 				0C99CEA0211822FE009A3403 /* CardView.swift */,
 				0C08E619211F1E2000C0EE4A /* WhisperToast.swift */,
 			);
 			path = "Custome Design Files";
+			sourceTree = "<group>";
+		};
+		0CFECBA72124586A0021D8C9 /* Philips Hue Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CFECBA8212458930021D8C9 /* Hue.swift */,
+			);
+			path = "Philips Hue Files";
+			sourceTree = "<group>";
+		};
+		0CFECBAC212459B30021D8C9 /* NIB Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CFECBAE21245A4C0021D8C9 /* PressHueBridge.swift */,
+				0CFECBAD21245A4C0021D8C9 /* PressHueBridge.xib */,
+			);
+			path = "NIB Files";
 			sourceTree = "<group>";
 		};
 		522276929D1EF27E9A53C7F2 /* Pods */ = {
@@ -353,6 +389,7 @@
 				0C6101C620DA4C1C00360816 /* Assets.xcassets in Resources */,
 				0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */,
 				0C99CE9C2118141A009A3403 /* SettingStoryboard.storyboard in Resources */,
+				0CFECBAF21245A4C0021D8C9 /* PressHueBridge.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CFECBA9212458930021D8C9 /* Hue.swift in Sources */,
 				0C6101C120DA4C1A00360816 /* HomeViewController.swift in Sources */,
 				0C2F7949211EE6C100E3A9B9 /* Dust.swift in Sources */,
 				0C99CEA1211822FE009A3403 /* CardView.swift in Sources */,
@@ -468,6 +506,8 @@
 				0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */,
 				0C08E617211F1B2C00C0EE4A /* Weather.swift in Sources */,
 				0C08E61A211F1E2000C0EE4A /* WhisperToast.swift in Sources */,
+				0C4666A621246F1700333E8E /* Defaults.swift in Sources */,
+				0CFECBB021245A4C0021D8C9 /* PressHueBridge.swift in Sources */,
 				0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

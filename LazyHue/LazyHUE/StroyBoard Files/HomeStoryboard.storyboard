@@ -26,6 +26,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_settings_remote_white_48dp" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nTr-1a-cCB">
                                                 <rect key="frame" x="155.5" y="15" width="48" height="48"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="48" id="gx6-x2-X0T"/>
                                                     <constraint firstAttribute="height" constant="48" id="osf-aa-FdT"/>
@@ -43,8 +44,11 @@
                                                                     <constraint firstAttribute="width" constant="48" id="tTb-nj-b8D"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="125" minValue="0.0" maxValue="255" maximumValueImage="baseline_add_black_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="gs5-EP-fYd">
+                                                            <slider opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="125" minValue="0.0" maxValue="255" maximumValueImage="baseline_add_black_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="gs5-EP-fYd">
                                                                 <rect key="frame" x="64" y="8" width="271" height="36.5"/>
+                                                                <connections>
+                                                                    <action selector="changeColorsValue:" destination="gLI-f0-SBj" eventType="touchUpInside" id="0Lk-KT-DEx"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,8 +72,11 @@
                                                                     <constraint firstAttribute="width" constant="48" id="ke5-ec-Bp4"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="125" minValue="0.0" maxValue="255" maximumValueImage="baseline_add_black_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="Kpj-Kg-Qca">
+                                                            <slider opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="125" minValue="0.0" maxValue="255" maximumValueImage="baseline_add_black_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="Kpj-Kg-Qca">
                                                                 <rect key="frame" x="64" y="8" width="271" height="37"/>
+                                                                <connections>
+                                                                    <action selector="changeColorsValue:" destination="gLI-f0-SBj" eventType="touchUpInside" id="C4P-Zp-C1Q"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,8 +99,11 @@
                                                                     <constraint firstAttribute="width" constant="48" id="dir-cv-uNX"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="125" minValue="0.0" maxValue="255" maximumValueImage="baseline_add_black_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="D40-pF-L3x">
+                                                            <slider opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="125" minValue="0.0" maxValue="255" maximumValueImage="baseline_add_black_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="D40-pF-L3x">
                                                                 <rect key="frame" x="64" y="8" width="271" height="36.5"/>
+                                                                <connections>
+                                                                    <action selector="changeColorsValue:" destination="gLI-f0-SBj" eventType="touchUpInside" id="s3p-7y-hPE"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -309,14 +319,19 @@
                     <tabBarItem key="tabBarItem" title="HOME" image="baseline_home_black_24dp" id="xpA-TH-VM4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="blueSlider" destination="D40-pF-L3x" id="Siw-tX-Ovv"/>
                         <outlet property="dustLB" destination="pcO-UF-Yma" id="drY-US-Xm8"/>
+                        <outlet property="greenSlider" destination="Kpj-Kg-Qca" id="jS4-bF-3JN"/>
                         <outlet property="humidityLB" destination="ozV-U4-G7I" id="I9h-8X-heV"/>
                         <outlet property="locationLB" destination="gW6-ZF-Ic3" id="ODk-Ru-jtX"/>
                         <outlet property="precipitationLB" destination="NmH-lu-Elc" id="AWk-wS-BT6"/>
+                        <outlet property="redSlider" destination="gs5-EP-fYd" id="QBv-U1-ddu"/>
+                        <outlet property="remoteIMG" destination="nTr-1a-cCB" id="hDr-6y-88L"/>
                         <outlet property="temperatureLB" destination="RAe-K7-NkB" id="t4C-Gy-AZa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZY-K8-5NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="arp-Jo-H2J"/>
             </objects>
             <point key="canvasLocation" x="156" y="149.77511244377811"/>
         </scene>
