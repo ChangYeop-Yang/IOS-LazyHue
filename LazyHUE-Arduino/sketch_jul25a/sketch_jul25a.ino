@@ -67,7 +67,7 @@ void setup() {
   pinMode(TILT_DPIN, INPUT);
 
   // MARK: setting Collect Sensor Date Timmer 300000
-  sensorTimer.every(60000, collectSensorDate);
+  sensorTimer.every(100000, collectSensorDate);
 }
 
 void loop() {
@@ -92,10 +92,11 @@ void settingESP8266() {
     if ( esp8266_Serial.find("OK") ) {
       Serial.println("⌘ ESP8266 module is operating success.");
       
+      esp8266_Serial.println("AT+RST\r\n");
       esp8266_Serial.println("AT+CIOBAUD?\r\n");
       esp8266_Serial.println("AT+CWMODE=3\r\n");
       esp8266_Serial.println("AT+CWJAP=\"YCY-Android-Note7\",\"1q2w3e4r!\"\r\n");
-      esp8266_Serial.println("AT+CIPMUX=0\r\n");
+      esp8266_Serial.println("AT+CIPMUX=1\r\n");
       esp8266_Serial.println("AT+CIPSERVER=1,80\r\n");
 
       digitalWrite(LED_GREEN_DPIN, HIGH); delay(1000);
@@ -123,12 +124,19 @@ void collectSensorDate() {
 
   sensoryDatas.co2 = measurementCO2;
   sensoryDatas.noise = measurementNoise;
+
+  // MARK: Send to micro server.
+  sendSensorData(sensoryDatas.temperature, sensoryDatas.cds, sensoryDatas.noise, sensoryDatas.humidity, sensoryDatas.co2);
 }
 
 void sendNetworkButton(const bool isPush) {
 
   if (isPush == HIGH) {
     Serial.println("⌘ 현재 센서 정보를 서버로 전송합니다. 잠시만 기다려주세요.");
+    
+    // MARK: Send to micro server.
+    sendSensorData(sensoryDatas.temperature, sensoryDatas.cds, sensoryDatas.noise, sensoryDatas.humidity, sensoryDatas.co2);
+    
     delay(3000);    
   }
   
@@ -180,30 +188,38 @@ void detectTilt() {
   }
 }
 
-bool sendSensorData(int temp, int cmd, int noise) {
+bool sendSensorData(float temp, int cds, int noise, float hum, int gas) {
   
-//  const String basic_serverURL = "coldy24.iptime.org";
-//
-//  if ( esp8266_Serial.find("OK") ) {
-//        Serial.println("- Main Server TCP Connection Ready.");
-//        
-//        String query;
-//        query.concat("GET /setKitchenData?TEMP=");  query.concat(temp);
-//        query.concat("&CMD=");                  query.concat(cmd);  
-//        query.concat("&NOISE=");                query.concat(noise);
-//        query.concat("&FLARE=");                query.concat(currentState.flare_Flag);
-//        query.concat("&GAS=");                  query.concat(analogRead(GAS_APIN));     query.concat("\r\n");
-//    
-//        if ( esp8266_Serial.find(">") ) {
-//            delay(5000);
-//            Serial.println("- Please, Input GET Request Query.");
-//            esp8266_Serial.println(query);
-//          
-//            if ( esp8266_Serial.find("SEND OK") ) {
-//                Serial.println("- Success send server packet.");
-//              }
-//              
-//            esp8266_Serial.println("AT+CIPCLOSE\r");
-//        }
-//  } 
+  const String basic_serverURL = "106.10.52.101";
+  delay(5000);
+
+  esp8266_Serial.println("AT+CIPSTART=\"TCP\",\"" + basic_serverURL + "\",80\r");
+  if ( esp8266_Serial.find("OK") ) {
+        Serial.println("- Main Server TCP Connection Ready.");
+        
+        String query;
+        query.concat("GET /Arduino/insertArduino.php?TEMP=");  query.concat(temp);
+        query.concat("&HUM=");                  query.concat(hum);
+        query.concat("&NOIZE=");                query.concat(noise);
+        query.concat("&GAS=");                  query.concat(gas);       
+        query.concat("&CDS=");                  query.concat(cds);
+        query.concat("\r\n");
+
+        delay(5000);
+        const String sendCommand = "AT+CIPSEND=";
+        esp8266_Serial.print(sendCommand);
+        esp8266_Serial.println(query.length());
+
+        if ( esp8266_Serial.find(">") ) {
+            delay(5000);
+            Serial.println("- Please, Input GET Request Query.");
+            esp8266_Serial.println(query);
+          
+            if ( esp8266_Serial.find("SEND OK") ) {
+                Serial.println("- Success send server packet.");
+              }
+              
+            esp8266_Serial.println("AT+CIPCLOSE\r");
+        }
+  } 
 }
