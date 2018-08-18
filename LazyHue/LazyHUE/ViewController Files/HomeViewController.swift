@@ -23,6 +23,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var remoteIMG: UIImageView!
+    @IBOutlet weak var updateDateLB: UILabel!
+    @IBOutlet weak var innerHumidityLB: UILabel!
+    @IBOutlet weak var innerTemputerLB: UILabel!
+    @IBOutlet weak var innertNoiseCo2LB: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +36,17 @@ class HomeViewController: UIViewController {
         getTodayFineDust(label: dustLB)
         
         // MARK: Weather Information
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [unowned self] _ in
-           self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB)
-        })
+//        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [unowned self] _ in
+//           self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB)
+//        })
         
         // MARK: UIImageView Gesture
         let gesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(gestureChangePower(longGestureRecognizer:)))
         remoteIMG.isUserInteractionEnabled = true
         remoteIMG.addGestureRecognizer(gesture)
+        
+        // MARK: Arduino Information
+        getArduinoSensory(dateLabel: updateDateLB, tempLabel: innerTemputerLB, humidity: innerHumidityLB, co2AndNoise: innertNoiseCo2LB)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,6 +68,18 @@ class HomeViewController: UIViewController {
     }
 
     // MARK: - Method
+    private func getArduinoSensory(dateLabel: UILabel, tempLabel: UILabel, humidity: UILabel, co2AndNoise: UILabel) {
+        
+        let arduinoGroup: DispatchGroup = DispatchGroup()
+        Sensory.sensoryInstance.parsorSensorDataJSON(url: "http://106.10.52.101/Arduino/selectArduino.php", group: arduinoGroup)
+        
+        arduinoGroup.notify(queue: .main, execute: {
+            dateLabel.text      = "측정 날짜 - \(String(describing: Sensory.sensoryInstance.dateList.first!))"
+            tempLabel.text      = "실내 온도 - \(String(describing: Sensory.sensoryInstance.temputuerList.first!.rounded()))℃"
+            humidity.text       = "실내 습도 - \(String(describing: Sensory.sensoryInstance.humidityList.first!.rounded()))%"
+            co2AndNoise.text    = "\(Sensory.sensoryInstance.gasList.first!.rounded())% | \(Sensory.sensoryInstance.noiseList.first!.rounded())dB | \(Sensory.sensoryInstance.cdsList.first!.rounded())Lx"
+        })
+    }
     private func getTodayFineDust(label: UILabel) {
         
         let dustGroup: DispatchGroup = DispatchGroup()
