@@ -181,36 +181,36 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="114"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Wd-sM-qTY">
-                                                        <rect key="frame" x="116" y="8" width="235" height="98"/>
+                                                        <rect key="frame" x="130" y="8" width="221" height="98"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAe-K7-NkB">
-                                                                <rect key="frame" x="0.0" y="0.0" width="235" height="24.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAe-K7-NkB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="221" height="24.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozV-U4-G7I">
-                                                                <rect key="frame" x="0.0" y="24.5" width="235" height="24.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozV-U4-G7I">
+                                                                <rect key="frame" x="0.0" y="24.5" width="221" height="24.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmH-lu-Elc">
-                                                                <rect key="frame" x="0.0" y="49" width="235" height="24.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmH-lu-Elc">
+                                                                <rect key="frame" x="0.0" y="49" width="221" height="24.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcO-UF-Yma">
-                                                                <rect key="frame" x="0.0" y="73.5" width="235" height="24.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcO-UF-Yma">
+                                                                <rect key="frame" x="0.0" y="73.5" width="221" height="24.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVv-bA-NEg">
-                                                        <rect key="frame" x="8" y="8" width="100" height="98"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVv-bA-NEg">
+                                                        <rect key="frame" x="15" y="8" width="100" height="98"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="ZLB-Vq-VC1"/>
@@ -220,11 +220,11 @@
                                                 <color key="backgroundColor" red="1" green="0.85490196078431369" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="EVv-bA-NEg" firstAttribute="top" secondItem="ceQ-Zh-sgU" secondAttribute="top" constant="8" id="09H-DN-mgj"/>
-                                                    <constraint firstItem="EVv-bA-NEg" firstAttribute="leading" secondItem="ceQ-Zh-sgU" secondAttribute="leading" constant="8" id="AD9-95-T3i"/>
+                                                    <constraint firstItem="EVv-bA-NEg" firstAttribute="leading" secondItem="ceQ-Zh-sgU" secondAttribute="leading" constant="15" id="AD9-95-T3i"/>
                                                     <constraint firstAttribute="trailing" secondItem="7Wd-sM-qTY" secondAttribute="trailing" constant="8" id="XlO-4S-hht"/>
                                                     <constraint firstAttribute="bottom" secondItem="7Wd-sM-qTY" secondAttribute="bottom" constant="8" id="dKe-Tl-KSM"/>
                                                     <constraint firstItem="7Wd-sM-qTY" firstAttribute="top" secondItem="ceQ-Zh-sgU" secondAttribute="top" constant="8" id="eXs-oA-uFn"/>
-                                                    <constraint firstItem="7Wd-sM-qTY" firstAttribute="leading" secondItem="EVv-bA-NEg" secondAttribute="trailing" constant="8" id="iC8-C7-7BA"/>
+                                                    <constraint firstItem="7Wd-sM-qTY" firstAttribute="leading" secondItem="EVv-bA-NEg" secondAttribute="trailing" constant="15" id="iC8-C7-7BA"/>
                                                     <constraint firstAttribute="bottom" secondItem="EVv-bA-NEg" secondAttribute="bottom" constant="8" id="pFt-Ko-vjW"/>
                                                 </constraints>
                                             </view>
@@ -332,6 +332,7 @@
                         <outlet property="remoteIMG" destination="nTr-1a-cCB" id="hDr-6y-88L"/>
                         <outlet property="temperatureLB" destination="RAe-K7-NkB" id="t4C-Gy-AZa"/>
                         <outlet property="updateDateLB" destination="9AB-eY-KJg" id="VW5-YC-cKn"/>
+                        <outlet property="weatherStateIMG" destination="EVv-bA-NEg" id="cbK-T5-zhJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZY-K8-5NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,10 +346,10 @@
         <image name="baseline_home_black_24dp" width="24" height="24"/>
         <image name="baseline_my_location_black_24dp" width="24" height="24"/>
         <image name="baseline_settings_remote_white_48dp" width="48" height="48"/>
+        <image name="cloudy" width="128" height="128"/>
         <image name="icons8-arduino-48" width="900" height="650"/>
         <image name="map" width="32" height="32"/>
         <image name="one" width="32" height="32"/>
-        <image name="sun" width="512" height="512"/>
         <image name="three" width="32" height="32"/>
         <image name="two" width="32" height="32"/>
     </resources>

@@ -13,7 +13,13 @@ import AudioToolbox
 class HomeViewController: UIViewController {
 
     // MARK: - IBOutlet
-    @IBOutlet weak var weatherSVG: UIView!
+    @IBOutlet weak var weatherStateIMG: UIImageView! {
+        didSet {
+            weatherStateIMG.clipsToBounds = true;
+            weatherStateIMG.layer.masksToBounds = true
+            weatherStateIMG.layer.cornerRadius = weatherStateIMG.frame.width / 2
+        }
+    }
     @IBOutlet weak var locationLB: UILabel!
     @IBOutlet weak var humidityLB: UILabel!
     @IBOutlet weak var precipitationLB: UILabel!
@@ -36,9 +42,9 @@ class HomeViewController: UIViewController {
         getTodayFineDust(label: dustLB)
         
         // MARK: Weather Information
-//        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [unowned self] _ in
-//           self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB)
-//        })
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [unowned self] _ in
+            self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB, stateIMG: self.weatherStateIMG)
+        })
         
         // MARK: UIImageView Gesture
         let gesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(gestureChangePower(longGestureRecognizer:)))
@@ -90,7 +96,7 @@ class HomeViewController: UIViewController {
                 label.text = "오늘의 미세먼지 : \(findDustValue)㎍/㎥"
                 
                 switch findDustValue {
-                    case 0..<50: label.textColor = UIColor.green
+                    case 0..<50: label.textColor = UIColor.black
                     case 50..<100: label.textColor = UIColor.yellow
                     case 100..<150: label.textColor = UIColor.red
                     default: label.textColor = UIColor.purple
@@ -107,15 +113,16 @@ class HomeViewController: UIViewController {
             label.text = Location.locationInstance.currentAddress
         })
     }
-    private func getCurrentWeather(temperatureLB: UILabel, humidityLB: UILabel, precipitationLB: UILabel) {
+    private func getCurrentWeather(temperatureLB: UILabel, humidityLB: UILabel, precipitationLB: UILabel, stateIMG: UIImageView) {
         
         let weatherGroup: DispatchGroup = DispatchGroup()
-        Weather.weatherInstance.receiveWeatherData(group: weatherGroup)
+        Weather.weatherInstance.receiveWeatherData(group: weatherGroup, language: "ko")
         
         weatherGroup.notify(queue: .main, execute: {
-            temperatureLB.text      = "오늘의 온도 : \(Weather.weatherInstance.weatherData.temperature)℃"
-            humidityLB.text         = "오늘의 습도 : \(Weather.weatherInstance.weatherData.humidity)%"
-            precipitationLB.text    = "오늘의 강수확률 : \(Weather.weatherInstance.weatherData.rain)%"
+            temperatureLB.text      = "오늘의 날씨 - \(Weather.weatherInstance.weatherData.sky)"
+            humidityLB.text         = "\(Weather.weatherInstance.weatherData.temperature) ℃ | \(Weather.weatherInstance.weatherData.humidity * 100) %"
+            precipitationLB.text    = "\(Weather.weatherInstance.weatherData.ozone) PPM | \(Weather.weatherInstance.weatherData.visibility) KM"
+            stateIMG.image = UIImage(named: Weather.weatherInstance.weatherData.icon)
         })
     }
     @objc private func gestureChangePower(longGestureRecognizer: UILongPressGestureRecognizer) {
@@ -145,7 +152,7 @@ class HomeViewController: UIViewController {
     @IBAction func loadCurrentLocation(_ sender: UIButton) {
         AudioServicesPlaySystemSound(4095)
         getCurrentAddress(label: locationLB)
-        getCurrentWeather(temperatureLB: temperatureLB, humidityLB: humidityLB, precipitationLB: precipitationLB)
+        getCurrentWeather(temperatureLB: temperatureLB, humidityLB: humidityLB, precipitationLB: precipitationLB, stateIMG: weatherStateIMG)
     }
 }
 

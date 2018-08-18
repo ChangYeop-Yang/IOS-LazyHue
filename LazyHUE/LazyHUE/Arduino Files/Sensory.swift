@@ -39,7 +39,7 @@ class Sensory: NSObject {
         group.enter()
         DispatchQueue.global(qos: .userInteractive).async(group: group, execute: {
             Alamofire.request(url).responseJSON(completionHandler: { [unowned self] response in
-                print(url)
+                
                 guard response.result.isSuccess else {
                     group.leave()
                     fatalError("Error, Not Receive Data From NRP Server.")
