@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C08941D21285BF900E0C636 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08941C21285BF900E0C636 /* SettingViewController.swift */; };
 		0C08E617211F1B2C00C0EE4A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08E616211F1B2C00C0EE4A /* Weather.swift */; };
 		0C08E61A211F1E2000C0EE4A /* WhisperToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08E619211F1E2000C0EE4A /* WhisperToast.swift */; };
 		0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08E61B211F1EF600C0EE4A /* UIColor.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C08941C21285BF900E0C636 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0C08E616211F1B2C00C0EE4A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		0C08E619211F1E2000C0EE4A /* WhisperToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperToast.swift; sourceTree = "<group>"; };
 		0C08E61B211F1EF600C0EE4A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				0C6101C020DA4C1A00360816 /* HomeViewController.swift */,
 				0C0C7322211FF90800335573 /* CameraViewController.swift */,
+				0C08941C21285BF900E0C636 /* SettingViewController.swift */,
 			);
 			path = "ViewController Files";
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyHue/SwiftyHue.framework",
 				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
 			);
@@ -475,6 +479,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyHue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
 			);
@@ -513,6 +518,7 @@
 				0C2F7949211EE6C100E3A9B9 /* Dust.swift in Sources */,
 				0C383E2521271F5000D2FA3E /* Sensory.swift in Sources */,
 				0C99CEA1211822FE009A3403 /* CardView.swift in Sources */,
+				0C08941D21285BF900E0C636 /* SettingViewController.swift in Sources */,
 				0C3B65952119C6CD00E8886C /* Location.swift in Sources */,
 				0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */,
 				0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */,

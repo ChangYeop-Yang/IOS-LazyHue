@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Whisper
+import SwiftSpinner
 import AudioToolbox
 
 class HomeViewController: UIViewController {
@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         didSet {
             weatherStateIMG.clipsToBounds = true;
             weatherStateIMG.layer.masksToBounds = true
-            weatherStateIMG.layer.cornerRadius = weatherStateIMG.frame.width / 2
+            weatherStateIMG.layer.cornerRadius = 10
         }
     }
     @IBOutlet weak var locationLB: UILabel!
@@ -38,13 +38,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // MARK: Weather Dust Information
-        getTodayFineDust(label: dustLB)
-        
         // MARK: Weather Information
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [unowned self] _ in
             self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB, stateIMG: self.weatherStateIMG)
         })
+        
+        // MARK: Weather Dust Information
+        getTodayFineDust(label: dustLB)
         
         // MARK: UIImageView Gesture
         let gesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(gestureChangePower(longGestureRecognizer:)))
@@ -52,11 +52,16 @@ class HomeViewController: UIViewController {
         remoteIMG.addGestureRecognizer(gesture)
         
         // MARK: Arduino Information
-        getArduinoSensory(dateLabel: updateDateLB, tempLabel: innerTemputerLB, humidity: innerHumidityLB, co2AndNoise: innertNoiseCo2LB)
+        if UserDefaults.standard.bool(forKey: ARUDINO_ENABLE_KEY) {
+            getArduinoSensory(dateLabel: updateDateLB, tempLabel: innerTemputerLB, humidity: innerHumidityLB, co2AndNoise: innertNoiseCo2LB)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // MARK: Spinner
+        if Weather.weatherInstance.weatherData.sky == "정보없음" { SwiftSpinner.show("Just a minute.", animated: true) }
         
         // MARK: Check Connecting Philips hue bridge.
         if !Hue.hueInstance.connectHueBridge(), let pressView = UINib(nibName: "PressHueBridge", bundle: nil).instantiate(withOwner: self, options: nil).first as? PressHueBridge {
@@ -123,6 +128,9 @@ class HomeViewController: UIViewController {
             humidityLB.text         = "\(Weather.weatherInstance.weatherData.temperature) ℃ | \(Weather.weatherInstance.weatherData.humidity * 100) %"
             precipitationLB.text    = "\(Weather.weatherInstance.weatherData.ozone) PPM | \(Weather.weatherInstance.weatherData.visibility) KM"
             stateIMG.image = UIImage(named: Weather.weatherInstance.weatherData.icon)
+            
+            // MARK: Spinner
+            if SwiftSpinner.sharedInstance.animating { SwiftSpinner.hide() }
         })
     }
     @objc private func gestureChangePower(longGestureRecognizer: UILongPressGestureRecognizer) {

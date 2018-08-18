@@ -13,7 +13,7 @@ public class Weather: NSObject {
     
     // MARK: - Variables
     public static let weatherInstance: Weather = Weather()
-    public var weatherData: (temperature: Double, humidity: Double, visibility: Double, ozone: Double, sky: String, icon: String) = (0.0, 0.0, 0.0, 0.0, "흐림", "partly-cloudy-night")
+    public var weatherData: (temperature: Double, humidity: Double, visibility: Double, ozone: Double, sky: String, icon: String) = (0.0, 0.0, 0.0, 0.0, "정보없음", "partly-cloudy-night")
     private let serviceKey: String = "1dce873b7cac9c395f9e708343303309"
     
     // MARK: - Method
