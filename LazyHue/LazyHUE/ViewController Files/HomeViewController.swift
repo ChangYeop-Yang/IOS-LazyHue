@@ -160,8 +160,13 @@ class HomeViewController: UIViewController {
 
     // MARK: - Motion Event Method
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if UserDefaults.standard.bool(forKey: MOTION_ENABLE_KEY) {
-            Hue.hueInstance.changeHuePower()
+        
+        switch motion {
+            case .motionShake:
+                if UserDefaults.standard.bool(forKey: MOTION_ENABLE_KEY) {
+                    Hue.hueInstance.changeHuePower()
+                }
+            default: break;
         }
     }
 }
