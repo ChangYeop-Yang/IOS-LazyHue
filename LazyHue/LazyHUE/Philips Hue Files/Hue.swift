@@ -8,6 +8,7 @@
 
 import Gloss
 import SwiftyHue
+import AudioToolbox
 
 class Hue: NSObject {
     
@@ -93,6 +94,10 @@ class Hue: NSObject {
                 print("Error, Not Change the Philips hue light Power. \(String(describing: error))")
             })
         }
+        
+        AudioServicesPlaySystemSound(4095)
+        print("- Change all philips hue power.")
+        showWhisperToast(title: "Change all philips hue lamps power.", background: .moss, textColor: .white)
     }
     private func readHueBridgeAccessConfig() -> BridgeAccessConfig?
     {

@@ -17,6 +17,8 @@ class SettingViewController: UIViewController {
         case developerINFO = 100
         case sendEMAIL     = 200
         case opensource    = 300
+        case arduino       = 500
+        case motion        = 600
     }
     
     // MARK: - Typealias
@@ -29,7 +31,7 @@ class SettingViewController: UIViewController {
     // MARK: - Variables
     private let settingTableIndexPath: [Index] = [
         (IndexPath(row: 0, section: 0), "Arduino"),
-        (IndexPath(row: 1, section: 0), "Developer Infromation")
+        (IndexPath(row: 1, section: 0), "Motion")
     ]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,12 +49,29 @@ class SettingViewController: UIViewController {
         let arduinoSW: UISwitch = settingTV.cellForRow(at: settingTableIndexPath.first!.index)!.accessoryView as! UISwitch
         arduinoSW.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
         arduinoSW.setOn(userDefault.bool(forKey: ARUDINO_ENABLE_KEY), animated: false)
+        
+        let motionSW: UISwitch = settingTV.cellForRow(at: settingTableIndexPath[1].index)?.accessoryView as! UISwitch
+        motionSW.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
+        motionSW.setOn(userDefault.bool(forKey: MOTION_ENABLE_KEY), animated: false)
     }
     
     // MARK: - Action Method
     @objc private func switchChanged(mySwitch: UISwitch) {
-        userDefault.set(mySwitch.isOn, forKey: ARUDINO_ENABLE_KEY)
-        showWhisperToast(title: "Success change arduino function state.", background: .moss, textColor: .white)
+        
+        if let tagValue: tag = SettingViewController.tag(rawValue: mySwitch.tag) {
+            switch tagValue {
+                
+                case .arduino :
+                    userDefault.set(mySwitch.isOn, forKey: ARUDINO_ENABLE_KEY)
+                    showWhisperToast(title: "Success change arduino function state.", background: .moss, textColor: .white)
+                
+                case .motion :
+                    userDefault.set(mySwitch.isOn, forKey: MOTION_ENABLE_KEY)
+                    showWhisperToast(title: "Success change motion function state.", background: .moss, textColor: .white)
+    
+                default: break
+            }
+        }
     }
 }
 
@@ -80,6 +99,7 @@ extension SettingViewController: UITableViewDelegate {
                     if let url: URL = URL(string: "http://yeop9657.blog.me/221067037683") {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
+                default: break
             }
         }
     }

@@ -12,9 +12,12 @@
 		0C08E61A211F1E2000C0EE4A /* WhisperToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08E619211F1E2000C0EE4A /* WhisperToast.swift */; };
 		0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08E61B211F1EF600C0EE4A /* UIColor.swift */; };
 		0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C7322211FF90800335573 /* CameraViewController.swift */; };
+		0C21240C21327CAB000CC0DF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21240B21327CAB000CC0DF /* UIImage.swift */; };
 		0C2F7949211EE6C100E3A9B9 /* Dust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F7948211EE6C100E3A9B9 /* Dust.swift */; };
 		0C383E2521271F5000D2FA3E /* Sensory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C383E2421271F5000D2FA3E /* Sensory.swift */; };
 		0C3B65952119C6CD00E8886C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3B65942119C6CD00E8886C /* Location.swift */; };
+		0C40EADC2132745900A6AC88 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C40EADB2132745900A6AC88 /* MNIST.mlmodel */; };
+		0C40EADE2132754A00A6AC88 /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C40EADD2132754A00A6AC88 /* GestureViewController.swift */; };
 		0C4666A621246F1700333E8E /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4666A521246F1700333E8E /* Defaults.swift */; };
 		0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101BE20DA4C1A00360816 /* AppDelegate.swift */; };
 		0C6101C120DA4C1A00360816 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101C020DA4C1A00360816 /* HomeViewController.swift */; };
@@ -60,9 +63,12 @@
 		0C08E619211F1E2000C0EE4A /* WhisperToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperToast.swift; sourceTree = "<group>"; };
 		0C08E61B211F1EF600C0EE4A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0C0C7322211FF90800335573 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		0C21240B21327CAB000CC0DF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0C2F7948211EE6C100E3A9B9 /* Dust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dust.swift; sourceTree = "<group>"; };
 		0C383E2421271F5000D2FA3E /* Sensory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensory.swift; sourceTree = "<group>"; };
 		0C3B65942119C6CD00E8886C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		0C40EADB2132745900A6AC88 /* MNIST.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNIST.mlmodel; sourceTree = "<group>"; };
+		0C40EADD2132754A00A6AC88 /* GestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
 		0C4666A521246F1700333E8E /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		0C6101BB20DA4C1A00360816 /* LazyHUE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyHUE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C6101BE20DA4C1A00360816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0C4666A521246F1700333E8E /* Defaults.swift */,
+				0C40EADB2132745900A6AC88 /* MNIST.mlmodel */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 			children = (
 				0C6101C020DA4C1A00360816 /* HomeViewController.swift */,
 				0C0C7322211FF90800335573 /* CameraViewController.swift */,
+				0C40EADD2132754A00A6AC88 /* GestureViewController.swift */,
 				0C08941C21285BF900E0C636 /* SettingViewController.swift */,
 			);
 			path = "ViewController Files";
@@ -242,6 +250,7 @@
 			children = (
 				0CFECBAC212459B30021D8C9 /* NIB Files */,
 				0C08E61B211F1EF600C0EE4A /* UIColor.swift */,
+				0C21240B21327CAB000CC0DF /* UIImage.swift */,
 				0C99CEA0211822FE009A3403 /* CardView.swift */,
 				0C08E619211F1E2000C0EE4A /* WhisperToast.swift */,
 			);
@@ -516,7 +525,10 @@
 				0CFECBA9212458930021D8C9 /* Hue.swift in Sources */,
 				0C6101C120DA4C1A00360816 /* HomeViewController.swift in Sources */,
 				0C2F7949211EE6C100E3A9B9 /* Dust.swift in Sources */,
+				0C40EADC2132745900A6AC88 /* MNIST.mlmodel in Sources */,
+				0C40EADE2132754A00A6AC88 /* GestureViewController.swift in Sources */,
 				0C383E2521271F5000D2FA3E /* Sensory.swift in Sources */,
+				0C21240C21327CAB000CC0DF /* UIImage.swift in Sources */,
 				0C99CEA1211822FE009A3403 /* CardView.swift in Sources */,
 				0C08941D21285BF900E0C636 /* SettingViewController.swift in Sources */,
 				0C3B65952119C6CD00E8886C /* Location.swift in Sources */,

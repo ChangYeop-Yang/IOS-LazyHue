@@ -136,11 +136,6 @@ class HomeViewController: UIViewController {
     @objc private func gestureChangePower(longGestureRecognizer: UILongPressGestureRecognizer) {
         
         if longGestureRecognizer.state == .ended {
-            
-            AudioServicesPlaySystemSound(4095)
-            print("- Change all philips hue power.")
-            showWhisperToast(title: "Change all philips hue lamps power.", background: .moss, textColor: .white)
-            
             Hue.hueInstance.changeHuePower()
         }
     }
@@ -161,6 +156,13 @@ class HomeViewController: UIViewController {
         AudioServicesPlaySystemSound(4095)
         getCurrentAddress(label: locationLB)
         getCurrentWeather(temperatureLB: temperatureLB, humidityLB: humidityLB, precipitationLB: precipitationLB, stateIMG: weatherStateIMG)
+    }
+
+    // MARK: - Motion Event Method
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if UserDefaults.standard.bool(forKey: MOTION_ENABLE_KEY) {
+            Hue.hueInstance.changeHuePower()
+        }
     }
 }
 

@@ -13,7 +13,7 @@
         <!--GESTURE-->
         <scene sceneID="7f8-mB-ZqE">
             <objects>
-                <viewController storyboardIdentifier="GestureStoryBoard" title="GESTURE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9ld-or-JSL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GestureStoryBoard" title="GESTURE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9ld-or-JSL" customClass="GestureViewController" customModule="LazyHUE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jUC-tg-u16">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,22 +37,21 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJD-kL-QZf">
-                                                <rect key="frame" x="0.0" y="89" width="335" height="469"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2o6-sW-RCO">
+                                                <rect key="frame" x="0.0" y="99" width="335" height="459"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="GAw-Ab-v8L" firstAttribute="centerX" secondItem="yv9-li-hsc" secondAttribute="centerX" id="8hc-IL-a2p"/>
                                             <constraint firstItem="ne6-XM-taj" firstAttribute="top" secondItem="GAw-Ab-v8L" secondAttribute="bottom" constant="10" id="Hxp-jp-zTd"/>
                                             <constraint firstAttribute="trailing" secondItem="ne6-XM-taj" secondAttribute="trailing" constant="10" id="Q3d-eQ-ghm"/>
-                                            <constraint firstItem="hJD-kL-QZf" firstAttribute="leading" secondItem="yv9-li-hsc" secondAttribute="leading" id="T4N-Fj-as3"/>
-                                            <constraint firstItem="hJD-kL-QZf" firstAttribute="top" secondItem="ne6-XM-taj" secondAttribute="bottom" id="Zp8-Bl-VHn"/>
-                                            <constraint firstAttribute="trailing" secondItem="hJD-kL-QZf" secondAttribute="trailing" id="iBa-hQ-xDa"/>
+                                            <constraint firstAttribute="trailing" secondItem="2o6-sW-RCO" secondAttribute="trailing" id="U3z-bk-yjo"/>
+                                            <constraint firstItem="2o6-sW-RCO" firstAttribute="leading" secondItem="yv9-li-hsc" secondAttribute="leading" id="Yvq-s9-Qnf"/>
+                                            <constraint firstItem="2o6-sW-RCO" firstAttribute="top" secondItem="ne6-XM-taj" secondAttribute="bottom" constant="10" id="bLy-3i-SeR"/>
+                                            <constraint firstAttribute="bottom" secondItem="2o6-sW-RCO" secondAttribute="bottom" id="c2r-FG-0sM"/>
                                             <constraint firstItem="GAw-Ab-v8L" firstAttribute="top" secondItem="yv9-li-hsc" secondAttribute="top" constant="10" id="jJM-mC-652"/>
                                             <constraint firstItem="ne6-XM-taj" firstAttribute="leading" secondItem="yv9-li-hsc" secondAttribute="leading" constant="10" id="uA4-NB-bA1"/>
-                                            <constraint firstAttribute="bottom" secondItem="hJD-kL-QZf" secondAttribute="bottom" id="vI6-dz-prH"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -76,6 +75,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="GESTURE" image="baseline_gesture_black_24dp" id="Ang-pF-ewj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="gestureIMG" destination="2o6-sW-RCO" id="cuD-zN-lcU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="79l-6b-VJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
