@@ -7,29 +7,56 @@
 //
 
 import UIKit
-import AVFoundation
+import AVKit
 
 class CameraViewController: UIViewController {
 
     // MARK: - Variables
-    private var session: AVCaptureSession?
-    private var stillImageOutput: AVCaptureStillImageOutput?
-    private var previewLayout: AVCaptureVideoPreviewLayer?
     
     // MARK: - IBOutlet
+    @IBOutlet weak var weatherIMG: UIImageView!
+    @IBOutlet weak var weatherStateLB: UILabel!
+    @IBOutlet weak var preview: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // MARK: Weather Information
+        weatherIMG.image = UIImage(named: Weather.weatherInstance.weatherData.icon)
+        weatherStateLB.text = Weather.weatherInstance.weatherData.sky
+        
+        // MARK: Camera Preview
+        previewCamera()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    // MARK: - Method
+    private func previewCamera() {
+        
+        let captureSession: AVCaptureSession = AVCaptureSession()
+        captureSession.sessionPreset = .photo
+        
+        guard let captureDevice: AVCaptureDevice = AVCaptureDevice.default(for: .video) else {
+            fatalError("- Error AVCapture Device.")
+        }
+        
+        if let input = try? AVCaptureDeviceInput(device: captureDevice) {
+            captureSession.addInput(input)
+            captureSession.startRunning()
+            
+            let view: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            view.videoGravity = .resizeAspectFill
+            view.connection?.videoOrientation = .portrait
+            view.frame = preview.bounds
+            preview.layer.addSublayer(view)
+            
+            let dataOutPut: AVCaptureVideoDataOutput = AVCaptureVideoDataOutput()
+            dataOutPut.setSampleBufferDelegate(self, queue: DispatchQueue(label: "VideoQueue"))
+            captureSession.addOutput(dataOutPut)
+        }
     }
 }
 
 // MARK: - Delegate
-extension CameraViewController: AVCapturePhotoCaptureDelegate {
+extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
 }

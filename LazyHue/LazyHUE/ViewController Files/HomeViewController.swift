@@ -33,13 +33,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var innerHumidityLB: UILabel!
     @IBOutlet weak var innerTemputerLB: UILabel!
     @IBOutlet weak var innertNoiseCo2LB: UILabel!
+    @IBOutlet weak var outsideArduinoCV: CardView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // MARK: Weather Information
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [unowned self] _ in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [unowned self] _ in
             self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB, stateIMG: self.weatherStateIMG)
         })
         
@@ -53,6 +54,7 @@ class HomeViewController: UIViewController {
         
         // MARK: Arduino Information
         if UserDefaults.standard.bool(forKey: ARUDINO_ENABLE_KEY) {
+            outsideArduinoCV.isHidden = true
             getArduinoSensory(dateLabel: updateDateLB, tempLabel: innerTemputerLB, humidity: innerHumidityLB, co2AndNoise: innertNoiseCo2LB)
         }
     }
