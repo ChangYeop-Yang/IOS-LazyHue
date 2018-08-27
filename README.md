@@ -4,6 +4,10 @@
 
 ## ★ Application UI/UX
 
+|HOME DISPLAY 1|HOME DISPLAY 2|
+|:------------:|:------------:|
+|![](https://user-images.githubusercontent.com/20036523/44664163-6a742380-aa4d-11e8-9536-153cdb0c5e3e.jpg)|![]()|
+
 ## ★ Demo Play
 
 ## ★ Reference URL
