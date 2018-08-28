@@ -58,6 +58,7 @@ class SettingViewController: UIViewController {
     // MARK: - Action Method
     @objc private func switchChanged(mySwitch: UISwitch) {
         
+        AudioServicesPlaySystemSound(4095)
         if let tagValue: tag = SettingViewController.tag(rawValue: mySwitch.tag) {
             switch tagValue {
                 
@@ -80,6 +81,7 @@ extension SettingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        AudioServicesPlaySystemSound(4095)
         if let tagVal: Int = tableView.cellForRow(at: indexPath)?.tag, let tagNum = tag(rawValue: tagVal) {
             switch tagNum {
                 case .developerINFO:
