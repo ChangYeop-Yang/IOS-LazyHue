@@ -12,9 +12,11 @@
 
 ## ★ Reference URL
 1. [LazyHUE - OpenSource List](http://yeop9657.blog.me/221067037683)
+2. [Google Sign-In Quickstart - Github](https://github.com/googlesamples/google-services/tree/master/ios/signin)
  
 ## ★ Open Source List 
 1. [SwiftyHue - OpenSource](https://github.com/Spriter/SwiftyHue)
 2. [SwiftSpinner - OpenSource](https://github.com/icanzilb/SwiftSpinner)
 3. [Dark Sky - OpenSource](https://darksky.net/dev)
 4. [Alamofire - OpenSource](https://github.com/Alamofire/Alamofire)
+5. [Google Sign-In for iOS - Google](https://developers.google.com/identity/sign-in/ios/)
