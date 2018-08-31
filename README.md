@@ -8,6 +8,12 @@
 |:------------:|:------------:|
 |![](https://user-images.githubusercontent.com/20036523/44664163-6a742380-aa4d-11e8-9536-153cdb0c5e3e.jpg)|![](https://user-images.githubusercontent.com/20036523/44664298-c9399d00-aa4d-11e8-8183-c5a4281cfeec.jpg)|
 
+* * *
+
+|SETTING DISPLAY 1|SETTING DISPLAY 2|
+|:------------:|:------------:|
+|![](https://user-images.githubusercontent.com/20036523/44926548-c364f400-ad8c-11e8-978d-15392a9e12cc.png)|![](https://user-images.githubusercontent.com/20036523/44926549-c3fd8a80-ad8c-11e8-8d14-1a212672142e.png)|
+
 ## ★ Demo Play
 
 ## ★ Reference URL
