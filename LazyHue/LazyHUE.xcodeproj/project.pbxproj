@@ -27,6 +27,7 @@
 		0C6101D420DA4C1C00360816 /* LazyHUETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101D320DA4C1C00360816 /* LazyHUETests.swift */; };
 		0C6101DF20DA4C1C00360816 /* LazyHUEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6101DE20DA4C1C00360816 /* LazyHUEUITests.swift */; };
 		0C647F67213441C200B75B23 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C647F66213441C200B75B23 /* CALayer.swift */; };
+		0C6E3BC821394F8F00E29324 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C6E3BC721394F8F00E29324 /* credentials.plist */; };
 		0C99CE96211813CA009A3403 /* CameraStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE95211813CA009A3403 /* CameraStoryboard.storyboard */; };
 		0C99CE98211813E0009A3403 /* GestureStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE97211813E0009A3403 /* GestureStoryboard.storyboard */; };
 		0C99CE9A211813FA009A3403 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */; };
@@ -85,6 +86,7 @@
 		0C6101DE20DA4C1C00360816 /* LazyHUEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyHUEUITests.swift; sourceTree = "<group>"; };
 		0C6101E020DA4C1C00360816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C647F66213441C200B75B23 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		0C6E3BC721394F8F00E29324 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		0C99CE95211813CA009A3403 /* CameraStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraStoryboard.storyboard; sourceTree = "<group>"; };
 		0C99CE97211813E0009A3403 /* GestureStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GestureStoryboard.storyboard; sourceTree = "<group>"; };
 		0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				0C6101C520DA4C1C00360816 /* Assets.xcassets */,
 				0C6101BE20DA4C1A00360816 /* AppDelegate.swift */,
 				0C6101CA20DA4C1C00360816 /* Info.plist */,
+				0C6E3BC721394F8F00E29324 /* credentials.plist */,
 			);
 			path = LazyHUE;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				0C6101B820DA4C1A00360816 /* Frameworks */,
 				0C6101B920DA4C1A00360816 /* Resources */,
 				B4CFA17A6E28920DA4B4808E /* [CP] Embed Pods Frameworks */,
+				58127030C4F351FED004DF22 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -415,6 +419,7 @@
 				0C6101C620DA4C1C00360816 /* Assets.xcassets in Resources */,
 				0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */,
 				0C99CE9C2118141A009A3403 /* SettingStoryboard.storyboard in Resources */,
+				0C6E3BC821394F8F00E29324 /* credentials.plist in Resources */,
 				0CFECBAF21245A4C0021D8C9 /* PressHueBridge.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +459,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		58127030C4F351FED004DF22 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A4DA2A3AEFA76C17368D5469 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,7 +504,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyHue/SwiftyHue.framework",
 				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
@@ -490,7 +516,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyHue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",

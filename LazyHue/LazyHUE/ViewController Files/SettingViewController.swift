@@ -8,8 +8,11 @@
 
 import UIKit
 import MessageUI
+import SwiftSpinner
 import AudioToolbox
+import GoogleSignIn
 
+@IBDesignable
 class SettingViewController: UIViewController {
     
     // MARK: - Enum
@@ -19,19 +22,24 @@ class SettingViewController: UIViewController {
         case opensource    = 300
         case arduino       = 500
         case motion        = 600
+        case google        = 700
     }
     
     // MARK: - Typealias
     private typealias Index = (index: IndexPath, name: String)
 
     // MARK: - Outlet Variables
-    private var settingTV: UITableView!
-    private let userDefault: UserDefaults = UserDefaults.standard
+    @IBOutlet weak var userIMG: UIImageView!
+    @IBOutlet weak var userNameLB: UILabel!
     
     // MARK: - Variables
+    private var isShowDisplay: Bool = true
+    private var settingTV: UITableView!
+    private let userDefault: UserDefaults = UserDefaults.standard
     private let settingTableIndexPath: [Index] = [
         (IndexPath(row: 0, section: 0), "Arduino"),
-        (IndexPath(row: 1, section: 0), "Motion")
+        (IndexPath(row: 1, section: 0), "Motion"),
+        (IndexPath(row: 0, section: 3), "Google")
     ]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,17 +50,32 @@ class SettingViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // MARK: Google GIDSignInDelegate
+        GIDSignIn.sharedInstance().clientID = "950023856140-shsbi6srb83v66ks1cu26r9a0ovju2us.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        if userDefault.bool(forKey: GOOGLE_ENABLE_KEY) { GIDSignIn.sharedInstance().signIn() }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // MARK: UserDefaults
-        let arduinoSW: UISwitch = settingTV.cellForRow(at: settingTableIndexPath.first!.index)!.accessoryView as! UISwitch
-        arduinoSW.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
-        arduinoSW.setOn(userDefault.bool(forKey: ARUDINO_ENABLE_KEY), animated: false)
-        
-        let motionSW: UISwitch = settingTV.cellForRow(at: settingTableIndexPath[1].index)?.accessoryView as! UISwitch
-        motionSW.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
-        motionSW.setOn(userDefault.bool(forKey: MOTION_ENABLE_KEY), animated: false)
+        if isShowDisplay {
+            isShowDisplay = false
+            
+            // MARK: UserDefaults
+            let arduinoSW: UISwitch = settingTV.cellForRow(at: settingTableIndexPath.first!.index)!.accessoryView as! UISwitch
+            arduinoSW.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
+            arduinoSW.setOn(userDefault.bool(forKey: ARUDINO_ENABLE_KEY), animated: false)
+            
+            let motionSW: UISwitch = settingTV.cellForRow(at: settingTableIndexPath[1].index)?.accessoryView as! UISwitch
+            motionSW.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
+            motionSW.setOn(userDefault.bool(forKey: MOTION_ENABLE_KEY), animated: false)
+        }
     }
     
     // MARK: - Action Method
@@ -69,7 +92,7 @@ class SettingViewController: UIViewController {
                 case .motion :
                     userDefault.set(mySwitch.isOn, forKey: MOTION_ENABLE_KEY)
                     showWhisperToast(title: "Success change motion function state.", background: .moss, textColor: .white)
-    
+                
                 default: break
             }
         }
@@ -81,14 +104,15 @@ extension SettingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        AudioServicesPlaySystemSound(4095)
         if let tagVal: Int = tableView.cellForRow(at: indexPath)?.tag, let tagNum = tag(rawValue: tagVal) {
             switch tagNum {
                 case .developerINFO:
+                    AudioServicesPlaySystemSound(4095)
                     if let url: URL = URL(string: "http://yeop9657.blog.me") {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
                 case .sendEMAIL:
+                    AudioServicesPlaySystemSound(4095)
                     if MFMailComposeViewController.canSendMail() {
                         let mail: MFMailComposeViewController = MFMailComposeViewController()
                         mail.mailComposeDelegate = self
@@ -98,8 +122,18 @@ extension SettingViewController: UITableViewDelegate {
                         present(mail, animated: true, completion: nil)
                     }
                 case .opensource:
+                    AudioServicesPlaySystemSound(4095)
                     if let url: URL = URL(string: "http://yeop9657.blog.me/221067037683") {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                case .google:
+                    AudioServicesPlaySystemSound(4095)
+                    if userDefault.bool(forKey: GOOGLE_ENABLE_KEY) {
+                        GIDSignIn.sharedInstance().signOut()
+                        userDefault.set(false, forKey: GOOGLE_ENABLE_KEY)
+                        showWhisperToast(title: "Success, Disconnect google social login.", background: .moss, textColor: .white)
+                    } else {
+                        GIDSignIn.sharedInstance().signIn()
                     }
                 default: break
             }
@@ -123,5 +157,42 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
         }
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+    }
+}
+
+// MARK: - GIDSignInUIDelegate
+extension SettingViewController: GIDSignInUIDelegate {
+    
+    // Present a view that prompts the user to sign in with Google
+    private func signIn(signIn: GIDSignIn!,
+                presentViewController viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    private func signIn(signIn: GIDSignIn!,
+                dismissViewController viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - GIDSignInDelegate Extension
+extension SettingViewController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        userDefault.set(true, forKey: GOOGLE_ENABLE_KEY)
+        showWhisperToast(title: "Success, Connect google social login.", background: .moss, textColor: .white)
+        
+        // MARK: Setting ImageView
+        self.userIMG.layer.masksToBounds = false
+        self.userIMG.layer.cornerRadius = self.userIMG.frame.height / 2
+        self.userIMG.clipsToBounds = true
+        
+        DispatchQueue.main.async(execute: { [unowned self] in
+            if let imageData: Data = try? Data(contentsOf: user.profile.imageURL(withDimension: 400)) {
+                self.userNameLB.text = user.profile.email
+                self.userIMG.image = UIImage(data: imageData)
+            }
+        })
     }
 }

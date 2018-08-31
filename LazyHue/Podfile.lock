@@ -2,6 +2,26 @@ PODS:
   - Alamofire (4.5.1)
   - CocoaAsyncSocket (7.6.2)
   - Gloss (2.0.0)
+  - GoogleSignIn (4.2.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
+    - GoogleToolboxForMac/DebugUtils (= 2.1.4)
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.2.0):
+    - GTMSessionFetcher/Full (= 1.2.0)
+  - GTMSessionFetcher/Core (1.2.0)
+  - GTMSessionFetcher/Full (1.2.0):
+    - GTMSessionFetcher/Core (= 1.2.0)
   - SwiftSpinner (1.5.0)
   - SwiftyHue (0.4.1):
     - SwiftyHue/Base (= 0.4.1)
@@ -16,6 +36,7 @@ PODS:
   - Whisper (6.0.2)
 
 DEPENDENCIES:
+  - GoogleSignIn
   - SwiftSpinner
   - SwiftyHue (= 0.4.1)
   - Whisper
@@ -25,6 +46,10 @@ SPEC REPOS:
     - Alamofire
     - CocoaAsyncSocket
     - Gloss
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMOAuth2
+    - GTMSessionFetcher
     - SwiftSpinner
     - SwiftyHue
     - Whisper
@@ -33,10 +58,14 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   CocoaAsyncSocket: 3541e024f48c54b251638ef72d51dd42808de932
   Gloss: b67617f327406adfd47adf20172d00680a3a31bd
+  GoogleSignIn: 591e46382014e591269f862ba6e7bc0fbd793532
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
+  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
   SwiftyHue: 9dfa91b75ec025c15c3e1078ce195a7b1a8d48aa
   Whisper: 169760fc4bab0abf24d5529f9276f95c25cf1025
 
-PODFILE CHECKSUM: 7f4f8bccd37ce8705c312b8bc3a8ef846cd0d5cc
+PODFILE CHECKSUM: 7e86a283e288d2de7a6a5480eaae24e411cf13a5
 
 COCOAPODS: 1.5.2
