@@ -12,7 +12,7 @@
 
 |SETTING DISPLAY 1|SETTING DISPLAY 2|
 |:------------:|:------------:|
-|![](https://user-images.githubusercontent.com/20036523/44926548-c364f400-ad8c-11e8-978d-15392a9e12cc.png)|![](https://user-images.githubusercontent.com/20036523/44926549-c3fd8a80-ad8c-11e8-8d14-1a212672142e.png)|
+|![](https://user-images.githubusercontent.com/20036523/44945564-286d2800-ae27-11e8-98f9-c2d9c77bae24.png)|![](https://user-images.githubusercontent.com/20036523/44945563-286d2800-ae27-11e8-898d-7dafaafa4563.png)|
 
 ## ★ Demo Play
 
