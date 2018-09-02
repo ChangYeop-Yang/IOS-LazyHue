@@ -183,11 +183,6 @@ extension SettingViewController: GIDSignInDelegate {
         userDefault.set(true, forKey: GOOGLE_ENABLE_KEY)
         showWhisperToast(title: "Success, Connect google social login.", background: .moss, textColor: .white)
         
-        // MARK: Setting ImageView
-        self.userIMG.layer.masksToBounds = false
-        self.userIMG.layer.cornerRadius = self.userIMG.frame.height / 2
-        self.userIMG.clipsToBounds = true
-        
         DispatchQueue.main.async(execute: { [unowned self] in
             if let imageData: Data = try? Data(contentsOf: user.profile.imageURL(withDimension: 400)) {
                 self.userNameLB.text = user.profile.email

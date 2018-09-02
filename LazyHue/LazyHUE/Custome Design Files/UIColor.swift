@@ -9,6 +9,18 @@
 import UIKit
 
 extension UIColor {
+    
+    // MARK: - Variables
+    public var hexString: String {
+        let components = self.cgColor.components
+        
+        let red = Float((components?[0])!)
+        let green = Float((components?[1])!)
+        let blue = Float((components?[2])!)
+        return String(format: "#%02lX%02lX%02lX", lroundf(red * 255), lroundf(green * 255), lroundf(blue * 255))
+    }
+    
+    // MARK: - Static Variables
     static let blanchedalmond: UIColor = UIColor(red: 255/255, green: 235/255, blue: 205/255, alpha: 100)
     static let aquamarine: UIColor = UIColor(red: 127/255, green: 255/255, blue: 212/255, alpha: 100)
     static let lightcoral: UIColor = UIColor(red: 240/255, green: 128/255, blue: 128/255, alpha: 100)

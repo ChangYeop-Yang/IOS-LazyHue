@@ -76,6 +76,26 @@ class Hue: NSObject {
             })
         }
     }
+    public func changeHueColor(color: UIColor) {
+        
+        guard let lights = swiftyHue.resourceCache?.lights else {
+            print("Error, Not Load the philips hue lights.")
+            return
+        }
+        
+        // Change Light Color State loop
+        for light in lights {
+            let colorXY = HueUtilities.calculateXY(color, forModel: light.key)
+            
+            var lightState: LightState = LightState()
+            lightState.brightness = 255
+            lightState.xy = [Float(colorXY.x), Float(colorXY.y)]
+            
+            swiftyHue.bridgeSendAPI.updateLightStateForId(light.key, withLightState: lightState, completionHandler: { error in
+                print("Error, Not Change the philips hue light color. \(String(describing: error))")
+            })
+        }
+    }
     public func changeHuePower() {
         
         guard let lights = swiftyHue.resourceCache?.lights else {

@@ -7,17 +7,19 @@
 //
 
 import UIKit
-import AVKit
+import AudioToolbox
+import AVFoundation
 
 class CameraViewController: UIViewController {
-
-    // MARK: - Variables
-    private var layerPreView: AVCaptureVideoPreviewLayer!
     
-    // MARK: - IBOutlet
+    // MARK: - Variables
+    private var imageOutputData: AVCapturePhotoOutput  = AVCapturePhotoOutput()
+    
+    // MARK: - IBOutlet Variables
     @IBOutlet weak var weatherIMG: UIImageView!
     @IBOutlet weak var weatherStateLB: UILabel!
-    @IBOutlet weak var preview: UIView!
+    @IBOutlet weak var previewIMG: UIImageView!
+    @IBOutlet weak var previewV: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,33 +46,81 @@ class CameraViewController: UIViewController {
             captureSession.addInput(input)
             captureSession.startRunning()
             
-            layerPreView = AVCaptureVideoPreviewLayer(session: captureSession)
-            layerPreView.videoGravity = .resizeAspectFill
-            layerPreView.connection?.videoOrientation = .portrait
-            layerPreView.frame = preview.bounds
-            preview.layer.addSublayer(layerPreView)
+            let previewLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            previewLayer.videoGravity = .resizeAspectFill
+            previewLayer.connection?.videoOrientation = .portrait
+            previewLayer.frame = previewV.bounds
+            previewV.layer.addSublayer(previewLayer)
             
-            let dataOutPut: AVCaptureVideoDataOutput = AVCaptureVideoDataOutput()
-            dataOutPut.setSampleBufferDelegate(self, queue: DispatchQueue(label: "VideoQueue"))
-            captureSession.addOutput(dataOutPut)
+            captureSession.addOutput(imageOutputData)
         }
     }
     
+    private func getImageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage? {
+        
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+            return nil
+        }
+        
+        CVPixelBufferLockBaseAddress(pixelBuffer, .readOnly)
+        let baseAddress = CVPixelBufferGetBaseAddress(pixelBuffer)
+        let width = CVPixelBufferGetWidth(pixelBuffer)
+        let height = CVPixelBufferGetHeight(pixelBuffer)
+        let bytesPerRow = CVPixelBufferGetBytesPerRow(pixelBuffer)
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue)
+        
+        guard let context = CGContext(data: baseAddress, width: width, height: height, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo.rawValue) else {
+            return nil
+        }
+        guard let cgImage = context.makeImage() else {
+            return nil
+        }
+        
+        let image: UIImage = UIImage(cgImage: cgImage, scale: 1, orientation: .right)
+        CVPixelBufferUnlockBaseAddress(pixelBuffer, .readOnly)
+        return image
+    }
+    
+    // MARK: - Action Method
+    @IBAction func takePicture(_ sender: UIButton) {
+        let settings: AVCapturePhotoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+        imageOutputData.capturePhoto(with: settings, delegate: self)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let position = touch.location(in: preview)
-            print(position)
-            print(layerPreView.colorOfPoint(point: layerPreView.captureDevicePointConverted(fromLayerPoint: position)))
+        
+        guard previewIMG.image != nil else { return }
+        
+        if let touch: UITouch = touches.first {
+            let color: UIColor = previewIMG.getPixelColorAt(point: touch.location(in: previewIMG))
+            Hue.hueInstance.changeHueColor(color: color)
+            
+            AudioServicesPlaySystemSound(4095)
+            showWhisperToast(title: "Success change hue lamp color.", background: color, textColor: .white)
+            print("- Current HEX Color: \(color.hexString)")
         }
     }
-    @IBAction func tapCameraPreview(_ sender: UITapGestureRecognizer) {
+    
+    // MARK: - Motion Method
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         
+        if motion == .motionShake {
+            previewIMG.image = nil
+            AudioServicesPlaySystemSound(4095)
+        }
     }
 }
 
 // MARK: - Delegate
-extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         
+        guard let imageData = photo.fileDataRepresentation() else {
+            fatalError("- Error: Get image from camera.")
+        }
+        
+        let image = UIImage(data: imageData)
+        self.previewIMG.image = image
     }
 }
