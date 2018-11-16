@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dx-WN-gaK">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Connect View Controller-->
+        <scene sceneID="yaR-Ku-3Id">
+            <objects>
+                <viewController id="6dx-WN-gaK" customClass="ConnectViewController" customModule="LazyHUE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fxq-M1-WDG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3df-7D-RXc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.52941176470588236" green="0.80784313725490198" blue="0.98039215686274506" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGg-Ns-QLS">
+                                <rect key="frame" x="143" y="244" width="128" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-idea-50" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whP-SC-w8x">
+                                        <rect key="frame" x="32" y="32" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="HAd-jq-s7L"/>
+                                            <constraint firstAttribute="width" constant="64" id="Q95-Kp-xei"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="whP-SC-w8x" firstAttribute="centerX" secondItem="MGg-Ns-QLS" secondAttribute="centerX" id="aE2-sW-Aat"/>
+                                    <constraint firstAttribute="height" constant="128" id="j5p-vZ-HK2"/>
+                                    <constraint firstItem="whP-SC-w8x" firstAttribute="centerY" secondItem="MGg-Ns-QLS" secondAttribute="centerY" id="oYj-NR-jJv"/>
+                                    <constraint firstAttribute="width" constant="128" id="z2n-B6-Snh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRK-m6-W6z" customClass="CardView" customModule="LazyHUE" customModuleProvider="target">
+                                <rect key="frame" x="20" y="654" width="374" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syb-xa-8Uf">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <inset key="imageEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Connect to Philips Hue" image="icons8-philips-hue-go-filled-32">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="syb-xa-8Uf" secondAttribute="trailing" id="Dpe-UR-SoF"/>
+                                    <constraint firstItem="syb-xa-8Uf" firstAttribute="top" secondItem="fRK-m6-W6z" secondAttribute="top" id="FhJ-6a-iX0"/>
+                                    <constraint firstAttribute="bottom" secondItem="syb-xa-8Uf" secondAttribute="bottom" id="Ldi-QY-FXU"/>
+                                    <constraint firstAttribute="height" constant="64" id="VoO-Gm-QWf"/>
+                                    <constraint firstItem="syb-xa-8Uf" firstAttribute="leading" secondItem="fRK-m6-W6z" secondAttribute="leading" id="tNT-oi-38C"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VT0-E9-Pg1" customClass="CardView" customModule="LazyHUE" customModuleProvider="target">
+                                <rect key="frame" x="20" y="748" width="374" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvf-HO-WWN">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <inset key="imageEdgeInsets" minX="-100" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Apply to Google Login" image="search">
+                                            <color key="titleColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wvf-HO-WWN" secondAttribute="trailing" id="8Lz-4e-7Rv"/>
+                                    <constraint firstItem="Wvf-HO-WWN" firstAttribute="top" secondItem="VT0-E9-Pg1" secondAttribute="top" id="LWI-ds-AE3"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wvf-HO-WWN" secondAttribute="bottom" id="Yra-Aa-GVg"/>
+                                    <constraint firstItem="Wvf-HO-WWN" firstAttribute="leading" secondItem="VT0-E9-Pg1" secondAttribute="leading" id="l6U-Ni-VHX"/>
+                                    <constraint firstAttribute="height" constant="64" id="rmj-a5-6OZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OLs-1v-Q9K" firstAttribute="trailing" secondItem="VT0-E9-Pg1" secondAttribute="trailing" constant="20" id="2no-MM-CPP"/>
+                            <constraint firstAttribute="bottom" secondItem="3df-7D-RXc" secondAttribute="bottom" id="46e-eo-6h2"/>
+                            <constraint firstItem="MGg-Ns-QLS" firstAttribute="top" secondItem="OLs-1v-Q9K" secondAttribute="top" constant="200" id="BDy-3B-7PX"/>
+                            <constraint firstItem="fRK-m6-W6z" firstAttribute="leading" secondItem="OLs-1v-Q9K" secondAttribute="leading" constant="20" id="E3M-Kk-yX2"/>
+                            <constraint firstItem="VT0-E9-Pg1" firstAttribute="top" secondItem="fRK-m6-W6z" secondAttribute="bottom" constant="30" id="IcD-aN-ALe"/>
+                            <constraint firstItem="3df-7D-RXc" firstAttribute="trailing" secondItem="OLs-1v-Q9K" secondAttribute="trailing" id="LUz-TQ-BFv"/>
+                            <constraint firstItem="MGg-Ns-QLS" firstAttribute="centerX" secondItem="Fxq-M1-WDG" secondAttribute="centerX" id="Rhk-hB-lRq"/>
+                            <constraint firstItem="OLs-1v-Q9K" firstAttribute="bottom" secondItem="VT0-E9-Pg1" secondAttribute="bottom" constant="50" id="ba8-Sa-938"/>
+                            <constraint firstItem="OLs-1v-Q9K" firstAttribute="trailing" secondItem="fRK-m6-W6z" secondAttribute="trailing" constant="20" id="bdE-Eg-xTJ"/>
+                            <constraint firstItem="3df-7D-RXc" firstAttribute="leading" secondItem="OLs-1v-Q9K" secondAttribute="leading" id="c4A-9V-lNT"/>
+                            <constraint firstItem="VT0-E9-Pg1" firstAttribute="leading" secondItem="OLs-1v-Q9K" secondAttribute="leading" constant="20" id="vlo-Kr-WnO"/>
+                            <constraint firstItem="3df-7D-RXc" firstAttribute="top" secondItem="Fxq-M1-WDG" secondAttribute="top" id="wGr-l0-r7g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OLs-1v-Q9K"/>
+                    </view>
+                    <connections>
+                        <outlet property="topView" destination="MGg-Ns-QLS" id="Rhl-Jq-HQR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TES-gg-KaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-89.855072463768124" y="-94.419642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-idea-50" width="75" height="75"/>
+        <image name="icons8-philips-hue-go-filled-32" width="24" height="24"/>
+        <image name="search" width="24" height="24"/>
+    </resources>
+</document>

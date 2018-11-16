@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gLI-f0-SBj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gLI-f0-SBj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -375,15 +374,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="baseline_add_black_24dp" width="24" height="24"/>
-        <image name="baseline_home_black_24dp" width="24" height="24"/>
-        <image name="baseline_my_location_black_24dp" width="24" height="24"/>
-        <image name="baseline_settings_remote_white_48dp" width="48" height="48"/>
+        <image name="baseline_add_black_24dp" width="48" height="48"/>
+        <image name="baseline_home_black_24dp" width="48" height="48"/>
+        <image name="baseline_my_location_black_24dp" width="48" height="48"/>
+        <image name="baseline_settings_remote_white_48dp" width="96" height="96"/>
         <image name="cloudy" width="128" height="128"/>
         <image name="icons8-arduino-48" width="900" height="650"/>
         <image name="map" width="32" height="32"/>
-        <image name="one" width="32" height="32"/>
-        <image name="three" width="32" height="32"/>
+        <image name="one" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="three" width="25.600000381469727" height="25.600000381469727"/>
         <image name="two" width="32" height="32"/>
     </resources>
 </document>

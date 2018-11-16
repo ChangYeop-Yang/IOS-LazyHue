@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftSpinner
 import AudioToolbox
 
 class HomeViewController: UIViewController {
@@ -63,7 +62,7 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // MARK: Spinner
-        if Weather.weatherInstance.weatherData.sky == "정보없음" { SwiftSpinner.show("Just a minute.", animated: true) }
+        //if Weather.weatherInstance.weatherData.sky == "정보없음" { SwiftSpinner.show("Just a minute.", animated: true) }
         
         // MARK: Check Connecting Philips hue bridge.
         if !Hue.hueInstance.connectHueBridge(), let pressView = UINib(nibName: "PressHueBridge", bundle: nil).instantiate(withOwner: self, options: nil).first as? PressHueBridge {
@@ -132,7 +131,7 @@ class HomeViewController: UIViewController {
             stateIMG.image = UIImage(named: Weather.weatherInstance.weatherData.icon)
             
             // MARK: Spinner
-            if SwiftSpinner.sharedInstance.animating { SwiftSpinner.hide() }
+            //if SwiftSpinner.sharedInstance.animating { SwiftSpinner.hide() }
         })
     }
     @objc private func gestureChangePower(longGestureRecognizer: UILongPressGestureRecognizer) {

@@ -32,13 +32,15 @@
 		0C99CE9A211813FA009A3403 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */; };
 		0C99CE9C2118141A009A3403 /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C99CE9B2118141A009A3403 /* SettingStoryboard.storyboard */; };
 		0C99CEA1211822FE009A3403 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99CEA0211822FE009A3403 /* CardView.swift */; };
+		0C9B0AF5219ECF210051DCAF /* ConnectStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B0AF4219ECF210051DCAF /* ConnectStoryboard.storyboard */; };
 		0CAD5615213AD9E70084B64B /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD5614213AD9E70084B64B /* CircleImageView.swift */; };
+		0CD9F3EB219EDC1000EC7A40 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */; };
 		0CFECBA9212458930021D8C9 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFECBA8212458930021D8C9 /* Hue.swift */; };
 		0CFECBAF21245A4C0021D8C9 /* PressHueBridge.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFECBAD21245A4C0021D8C9 /* PressHueBridge.xib */; };
 		0CFECBB021245A4C0021D8C9 /* PressHueBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFECBAE21245A4C0021D8C9 /* PressHueBridge.swift */; };
-		91F3B3F11FC79F49951764C8 /* Pods_LazyHUE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5522D1D2B5574E7149052458 /* Pods_LazyHUE.framework */; };
-		997BF484531D644198E12D1D /* Pods_LazyHUETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4972D49D51B19AF1FF345A6B /* Pods_LazyHUETests.framework */; };
-		C29B28C3046A042C0601A5AB /* Pods_LazyHUEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */; };
+		1AC9F3C3A9E46BD3445DC09C /* Pods_LazyHUEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA02D5F76A7B5DBE17C6BC /* Pods_LazyHUEUITests.framework */; };
+		31E0134E28EB78E5D20DBCD8 /* Pods_LazyHUETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4C23151D42AC428A80A297 /* Pods_LazyHUETests.framework */; };
+		C55A32E5784766BFCB2157EF /* Pods_LazyHUE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777BD8CD1C52A53C845BADA9 /* Pods_LazyHUE.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C08941C21285BF900E0C636 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0C08E616211F1B2C00C0EE4A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		0C08E619211F1E2000C0EE4A /* WhisperToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperToast.swift; sourceTree = "<group>"; };
@@ -91,18 +92,21 @@
 		0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		0C99CE9B2118141A009A3403 /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		0C99CEA0211822FE009A3403 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0C9B0AF4219ECF210051DCAF /* ConnectStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectStoryboard.storyboard; sourceTree = "<group>"; };
 		0CAD5614213AD9E70084B64B /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		0CFECBA8212458930021D8C9 /* Hue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = "../../../../iOS-LazyHUE/LazyHUE/LazyHUE/Philips Hue Files/Hue.swift"; sourceTree = "<group>"; };
 		0CFECBAD21245A4C0021D8C9 /* PressHueBridge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PressHueBridge.xib; sourceTree = "<group>"; };
 		0CFECBAE21245A4C0021D8C9 /* PressHueBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressHueBridge.swift; sourceTree = "<group>"; };
-		28DF5B79636001DF4BDE6191 /* Pods-LazyHUEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3DFF578642A6497A39D2524E /* Pods-LazyHUETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.release.xcconfig"; sourceTree = "<group>"; };
-		45D3F0044EDA16C3DF068F17 /* Pods-LazyHUE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUE.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE.release.xcconfig"; sourceTree = "<group>"; };
-		4972D49D51B19AF1FF345A6B /* Pods_LazyHUETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5522D1D2B5574E7149052458 /* Pods_LazyHUE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C22630F62F2A2CAA48275BF /* Pods-LazyHUEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.release.xcconfig"; sourceTree = "<group>"; };
-		901DCF77BF5D43B75A445C52 /* Pods-LazyHUE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE.debug.xcconfig"; sourceTree = "<group>"; };
-		9FD4BA4143EAA63FCC5099E3 /* Pods-LazyHUETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.debug.xcconfig"; sourceTree = "<group>"; };
+		75F770558E2A4AAB8EF0A5F3 /* Pods-LazyHUEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.release.xcconfig"; sourceTree = "<group>"; };
+		777BD8CD1C52A53C845BADA9 /* Pods_LazyHUE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		845C7FD952811C2136821AE2 /* Pods-LazyHUEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C107E0B852C903464B51BE4B /* Pods-LazyHUE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUE.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE.release.xcconfig"; sourceTree = "<group>"; };
+		C6A9F72C51DA16B3F26B11F0 /* Pods-LazyHUETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.release.xcconfig"; sourceTree = "<group>"; };
+		D3D4BA90CB7A9EF9F99897E1 /* Pods-LazyHUETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUETests/Pods-LazyHUETests.debug.xcconfig"; sourceTree = "<group>"; };
+		D7D50B3C1A324918B3920C28 /* Pods-LazyHUE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE.debug.xcconfig"; sourceTree = "<group>"; };
+		E3AA02D5F76A7B5DBE17C6BC /* Pods_LazyHUEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF4C23151D42AC428A80A297 /* Pods_LazyHUETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91F3B3F11FC79F49951764C8 /* Pods_LazyHUE.framework in Frameworks */,
+				C55A32E5784766BFCB2157EF /* Pods_LazyHUE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				997BF484531D644198E12D1D /* Pods_LazyHUETests.framework in Frameworks */,
+				31E0134E28EB78E5D20DBCD8 /* Pods_LazyHUETests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,13 +130,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C29B28C3046A042C0601A5AB /* Pods_LazyHUEUITests.framework in Frameworks */,
+				1AC9F3C3A9E46BD3445DC09C /* Pods_LazyHUEUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012C3B26EFE5CB211BE50B5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7D50B3C1A324918B3920C28 /* Pods-LazyHUE.debug.xcconfig */,
+				C107E0B852C903464B51BE4B /* Pods-LazyHUE.release.xcconfig */,
+				D3D4BA90CB7A9EF9F99897E1 /* Pods-LazyHUETests.debug.xcconfig */,
+				C6A9F72C51DA16B3F26B11F0 /* Pods-LazyHUETests.release.xcconfig */,
+				845C7FD952811C2136821AE2 /* Pods-LazyHUEUITests.debug.xcconfig */,
+				75F770558E2A4AAB8EF0A5F3 /* Pods-LazyHUEUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		0C2F7947211EE69F00E3A9B9 /* Weather Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +191,8 @@
 				0C6101D220DA4C1C00360816 /* LazyHUETests */,
 				0C6101DD20DA4C1C00360816 /* LazyHUEUITests */,
 				0C6101BC20DA4C1A00360816 /* Products */,
-				522276929D1EF27E9A53C7F2 /* Pods */,
-				65F1A44B92A4CC70367D67D5 /* Frameworks */,
+				012C3B26EFE5CB211BE50B5B /* Pods */,
+				5334253B957792681D08E59A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +250,7 @@
 				0C0C7322211FF90800335573 /* CameraViewController.swift */,
 				0C40EADD2132754A00A6AC88 /* GestureViewController.swift */,
 				0C08941C21285BF900E0C636 /* SettingViewController.swift */,
+				0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */,
 			);
 			path = "ViewController Files";
 			sourceTree = "<group>";
@@ -246,6 +264,7 @@
 				0C99CE97211813E0009A3403 /* GestureStoryboard.storyboard */,
 				0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */,
 				0C99CE9B2118141A009A3403 /* SettingStoryboard.storyboard */,
+				0C9B0AF4219ECF210051DCAF /* ConnectStoryboard.storyboard */,
 			);
 			path = "StroyBoard Files";
 			sourceTree = "<group>";
@@ -280,25 +299,12 @@
 			path = "NIB Files";
 			sourceTree = "<group>";
 		};
-		522276929D1EF27E9A53C7F2 /* Pods */ = {
+		5334253B957792681D08E59A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				901DCF77BF5D43B75A445C52 /* Pods-LazyHUE.debug.xcconfig */,
-				45D3F0044EDA16C3DF068F17 /* Pods-LazyHUE.release.xcconfig */,
-				9FD4BA4143EAA63FCC5099E3 /* Pods-LazyHUETests.debug.xcconfig */,
-				3DFF578642A6497A39D2524E /* Pods-LazyHUETests.release.xcconfig */,
-				28DF5B79636001DF4BDE6191 /* Pods-LazyHUEUITests.debug.xcconfig */,
-				7C22630F62F2A2CAA48275BF /* Pods-LazyHUEUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		65F1A44B92A4CC70367D67D5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5522D1D2B5574E7149052458 /* Pods_LazyHUE.framework */,
-				4972D49D51B19AF1FF345A6B /* Pods_LazyHUETests.framework */,
-				006AF20A943CEBC76469E2D0 /* Pods_LazyHUEUITests.framework */,
+				777BD8CD1C52A53C845BADA9 /* Pods_LazyHUE.framework */,
+				FF4C23151D42AC428A80A297 /* Pods_LazyHUETests.framework */,
+				E3AA02D5F76A7B5DBE17C6BC /* Pods_LazyHUEUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -310,12 +316,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C6101E320DA4C1C00360816 /* Build configuration list for PBXNativeTarget "LazyHUE" */;
 			buildPhases = (
-				D9326E4701D31DE6DDFC6C74 /* [CP] Check Pods Manifest.lock */,
+				4FC24DB44A3F3ABCCE70B885 /* [CP] Check Pods Manifest.lock */,
 				0C6101B720DA4C1A00360816 /* Sources */,
 				0C6101B820DA4C1A00360816 /* Frameworks */,
 				0C6101B920DA4C1A00360816 /* Resources */,
-				B4CFA17A6E28920DA4B4808E /* [CP] Embed Pods Frameworks */,
-				58127030C4F351FED004DF22 /* [CP] Copy Pods Resources */,
+				2F41FD4154D14F6F6C2C05E3 /* [CP] Embed Pods Frameworks */,
+				18419B76CB4C8DA5C00BEC38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,7 +336,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C6101E620DA4C1C00360816 /* Build configuration list for PBXNativeTarget "LazyHUETests" */;
 			buildPhases = (
-				059F921D4555A0754F03509B /* [CP] Check Pods Manifest.lock */,
+				1B1C96424A1B1A8B823A5A9E /* [CP] Check Pods Manifest.lock */,
 				0C6101CB20DA4C1C00360816 /* Sources */,
 				0C6101CC20DA4C1C00360816 /* Frameworks */,
 				0C6101CD20DA4C1C00360816 /* Resources */,
@@ -349,7 +355,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C6101E920DA4C1C00360816 /* Build configuration list for PBXNativeTarget "LazyHUEUITests" */;
 			buildPhases = (
-				A4DA2A3AEFA76C17368D5469 /* [CP] Check Pods Manifest.lock */,
+				5C0F31B0806B4C3721BD6AE4 /* [CP] Check Pods Manifest.lock */,
 				0C6101D620DA4C1C00360816 /* Sources */,
 				0C6101D720DA4C1C00360816 /* Frameworks */,
 				0C6101D820DA4C1C00360816 /* Resources */,
@@ -417,6 +423,7 @@
 				0C6101C920DA4C1C00360816 /* LaunchScreen.storyboard in Resources */,
 				0C99CE98211813E0009A3403 /* GestureStoryboard.storyboard in Resources */,
 				0C6101C620DA4C1C00360816 /* Assets.xcassets in Resources */,
+				0C9B0AF5219ECF210051DCAF /* ConnectStoryboard.storyboard in Resources */,
 				0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */,
 				0C99CE9C2118141A009A3403 /* SettingStoryboard.storyboard in Resources */,
 				0C6E3BC821394F8F00E29324 /* credentials.plist in Resources */,
@@ -441,25 +448,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		059F921D4555A0754F03509B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LazyHUETests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		58127030C4F351FED004DF22 /* [CP] Copy Pods Resources */ = {
+		18419B76CB4C8DA5C00BEC38 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -477,7 +466,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A4DA2A3AEFA76C17368D5469 /* [CP] Check Pods Manifest.lock */ = {
+		1B1C96424A1B1A8B823A5A9E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -488,14 +477,14 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LazyHUEUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LazyHUETests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B4CFA17A6E28920DA4B4808E /* [CP] Embed Pods Frameworks */ = {
+		2F41FD4154D14F6F6C2C05E3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -508,7 +497,6 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyHue/SwiftyHue.framework",
 				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
 			);
@@ -520,7 +508,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyHue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
 			);
@@ -529,7 +516,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LazyHUE/Pods-LazyHUE-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D9326E4701D31DE6DDFC6C74 /* [CP] Check Pods Manifest.lock */ = {
+		4FC24DB44A3F3ABCCE70B885 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -541,6 +528,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-LazyHUE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C0F31B0806B4C3721BD6AE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LazyHUEUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -572,6 +577,7 @@
 				0C4666A621246F1700333E8E /* Defaults.swift in Sources */,
 				0CFECBB021245A4C0021D8C9 /* PressHueBridge.swift in Sources */,
 				0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */,
+				0CD9F3EB219EDC1000EC7A40 /* ConnectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,9 +748,10 @@
 		};
 		0C6101E420DA4C1C00360816 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 901DCF77BF5D43B75A445C52 /* Pods-LazyHUE.debug.xcconfig */;
+			baseConfigurationReference = D7D50B3C1A324918B3920C28 /* Pods-LazyHUE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G325PL7HW2;
 				INFOPLIST_FILE = LazyHUE/Info.plist;
@@ -754,6 +761,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -761,9 +769,10 @@
 		};
 		0C6101E520DA4C1C00360816 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45D3F0044EDA16C3DF068F17 /* Pods-LazyHUE.release.xcconfig */;
+			baseConfigurationReference = C107E0B852C903464B51BE4B /* Pods-LazyHUE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G325PL7HW2;
 				INFOPLIST_FILE = LazyHUE/Info.plist;
@@ -773,6 +782,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -780,7 +790,7 @@
 		};
 		0C6101E720DA4C1C00360816 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FD4BA4143EAA63FCC5099E3 /* Pods-LazyHUETests.debug.xcconfig */;
+			baseConfigurationReference = D3D4BA90CB7A9EF9F99897E1 /* Pods-LazyHUETests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -802,7 +812,7 @@
 		};
 		0C6101E820DA4C1C00360816 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DFF578642A6497A39D2524E /* Pods-LazyHUETests.release.xcconfig */;
+			baseConfigurationReference = C6A9F72C51DA16B3F26B11F0 /* Pods-LazyHUETests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -824,7 +834,7 @@
 		};
 		0C6101EA20DA4C1C00360816 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28DF5B79636001DF4BDE6191 /* Pods-LazyHUEUITests.debug.xcconfig */;
+			baseConfigurationReference = 845C7FD952811C2136821AE2 /* Pods-LazyHUEUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -845,7 +855,7 @@
 		};
 		0C6101EB20DA4C1C00360816 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C22630F62F2A2CAA48275BF /* Pods-LazyHUEUITests.release.xcconfig */;
+			baseConfigurationReference = 75F770558E2A4AAB8EF0A5F3 /* Pods-LazyHUEUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DE3C9D33752E1DA115E97CA5D2308150"
+               BlueprintIdentifier = "33A8C8EA19F131D5F5E285C223EB619B"
                BlueprintName = "Pods-LazyHUE"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-LazyHUE.framework">

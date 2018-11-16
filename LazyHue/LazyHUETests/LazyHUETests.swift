@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import LazyHUE
 
 class LazyHUETests: XCTestCase {
     

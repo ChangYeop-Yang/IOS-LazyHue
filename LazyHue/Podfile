@@ -19,9 +19,8 @@ target 'LazyHUE' do
     # Pods for testing
   end
   
-  pod 'SwiftyHue', '0.4.1'
+  pod 'SwiftyHue'
   pod 'Whisper'
-  pod 'SwiftSpinner'
   pod 'GoogleSignIn'
 
 end
