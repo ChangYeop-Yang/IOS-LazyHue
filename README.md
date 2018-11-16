@@ -6,7 +6,7 @@
 
 |CONNECT DISPLAY 1|CONNECT DISPLAY 2|
 |:---------------:|:---------------:|
-|![]()|![]()|
+|![](https://user-images.githubusercontent.com/20036523/48632665-d048c980-ea04-11e8-981f-cc4bd5bca38c.png)|![]()|
 
 * * *
 
