@@ -35,9 +35,8 @@
 		0C9B0AF5219ECF210051DCAF /* ConnectStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B0AF4219ECF210051DCAF /* ConnectStoryboard.storyboard */; };
 		0CAD5615213AD9E70084B64B /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD5614213AD9E70084B64B /* CircleImageView.swift */; };
 		0CD9F3EB219EDC1000EC7A40 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */; };
+		0CF8AD6D219F1E5D00B4F74E /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */; };
 		0CFECBA9212458930021D8C9 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFECBA8212458930021D8C9 /* Hue.swift */; };
-		0CFECBAF21245A4C0021D8C9 /* PressHueBridge.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFECBAD21245A4C0021D8C9 /* PressHueBridge.xib */; };
-		0CFECBB021245A4C0021D8C9 /* PressHueBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFECBAE21245A4C0021D8C9 /* PressHueBridge.swift */; };
 		1AC9F3C3A9E46BD3445DC09C /* Pods_LazyHUEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA02D5F76A7B5DBE17C6BC /* Pods_LazyHUEUITests.framework */; };
 		31E0134E28EB78E5D20DBCD8 /* Pods_LazyHUETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4C23151D42AC428A80A297 /* Pods_LazyHUETests.framework */; };
 		C55A32E5784766BFCB2157EF /* Pods_LazyHUE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777BD8CD1C52A53C845BADA9 /* Pods_LazyHUE.framework */; };
@@ -95,9 +94,8 @@
 		0C9B0AF4219ECF210051DCAF /* ConnectStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectStoryboard.storyboard; sourceTree = "<group>"; };
 		0CAD5614213AD9E70084B64B /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		0CFECBA8212458930021D8C9 /* Hue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = "../../../../iOS-LazyHUE/LazyHUE/LazyHUE/Philips Hue Files/Hue.swift"; sourceTree = "<group>"; };
-		0CFECBAD21245A4C0021D8C9 /* PressHueBridge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PressHueBridge.xib; sourceTree = "<group>"; };
-		0CFECBAE21245A4C0021D8C9 /* PressHueBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressHueBridge.swift; sourceTree = "<group>"; };
 		75F770558E2A4AAB8EF0A5F3 /* Pods-LazyHUEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.release.xcconfig"; sourceTree = "<group>"; };
 		777BD8CD1C52A53C845BADA9 /* Pods_LazyHUE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845C7FD952811C2136821AE2 /* Pods-LazyHUEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -272,9 +270,9 @@
 		0C99CE9F21182291009A3403 /* Custome Design Files */ = {
 			isa = PBXGroup;
 			children = (
-				0CFECBAC212459B30021D8C9 /* NIB Files */,
 				0C08E61B211F1EF600C0EE4A /* UIColor.swift */,
 				0C21240B21327CAB000CC0DF /* UIImage.swift */,
+				0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */,
 				0C99CEA0211822FE009A3403 /* CardView.swift */,
 				0CAD5614213AD9E70084B64B /* CircleImageView.swift */,
 				0C08E619211F1E2000C0EE4A /* WhisperToast.swift */,
@@ -288,15 +286,6 @@
 				0CFECBA8212458930021D8C9 /* Hue.swift */,
 			);
 			path = "Philips Hue Files";
-			sourceTree = "<group>";
-		};
-		0CFECBAC212459B30021D8C9 /* NIB Files */ = {
-			isa = PBXGroup;
-			children = (
-				0CFECBAE21245A4C0021D8C9 /* PressHueBridge.swift */,
-				0CFECBAD21245A4C0021D8C9 /* PressHueBridge.xib */,
-			);
-			path = "NIB Files";
 			sourceTree = "<group>";
 		};
 		5334253B957792681D08E59A /* Frameworks */ = {
@@ -427,7 +416,6 @@
 				0C6101C420DA4C1A00360816 /* Main.storyboard in Resources */,
 				0C99CE9C2118141A009A3403 /* SettingStoryboard.storyboard in Resources */,
 				0C6E3BC821394F8F00E29324 /* credentials.plist in Resources */,
-				0CFECBAF21245A4C0021D8C9 /* PressHueBridge.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +556,7 @@
 				0C21240C21327CAB000CC0DF /* UIImage.swift in Sources */,
 				0C99CEA1211822FE009A3403 /* CardView.swift in Sources */,
 				0C08941D21285BF900E0C636 /* SettingViewController.swift in Sources */,
+				0CF8AD6D219F1E5D00B4F74E /* RoundView.swift in Sources */,
 				0C3B65952119C6CD00E8886C /* Location.swift in Sources */,
 				0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */,
 				0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */,
@@ -575,7 +564,6 @@
 				0C08E617211F1B2C00C0EE4A /* Weather.swift in Sources */,
 				0C08E61A211F1E2000C0EE4A /* WhisperToast.swift in Sources */,
 				0C4666A621246F1700333E8E /* Defaults.swift in Sources */,
-				0CFECBB021245A4C0021D8C9 /* PressHueBridge.swift in Sources */,
 				0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */,
 				0CD9F3EB219EDC1000EC7A40 /* ConnectViewController.swift in Sources */,
 			);

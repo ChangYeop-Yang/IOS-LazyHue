@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ConnectViewController: UIViewController {
     
@@ -29,5 +30,19 @@ class ConnectViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0.8, options: [], animations: { [unowned self] in
             self.googleCV.center.x += self.view.bounds.width
         }, completion: nil)
+    }
+    
+    // MARK: - Action Method
+    @IBAction func connectBridge(_ sender: UIButton) {
+        
+        // MARK: Connecting Philips hue bridge.
+        if !Hue.hueInstance.connectHueBridge() {
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            showWhisperToast(title: "Please, Press bridge button.", background: .coral, textColor: .black, clock: 10)
+        }
+    }
+    @IBAction func loginGoogle(_ sender: UIButton) {
+        
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
 }

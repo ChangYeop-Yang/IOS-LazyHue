@@ -28,4 +28,5 @@ extension UIColor {
     static let darkseagreen: UIColor = UIColor(red: 143/255, green: 188/255, blue: 143/255, alpha: 80)
     static let moss: UIColor = UIColor(red: 0/255, green: 144/255, blue: 81/255, alpha: 100)
     static let maroon: UIColor = UIColor(red: 148/255, green: 23/255, blue: 81/255, alpha: 100)
+    static let coral: UIColor = UIColor(red: 255/255, green: 218/255, blue: 185/255, alpha: 100)
 }

@@ -64,12 +64,6 @@ class HomeViewController: UIViewController {
         // MARK: Spinner
         //if Weather.weatherInstance.weatherData.sky == "정보없음" { SwiftSpinner.show("Just a minute.", animated: true) }
         
-        // MARK: Check Connecting Philips hue bridge.
-        if !Hue.hueInstance.connectHueBridge(), let pressView = UINib(nibName: "PressHueBridge", bundle: nil).instantiate(withOwner: self, options: nil).first as? PressHueBridge {
-            pressView.center = self.view.center
-            self.view.addSubview(pressView)
-        }
-        
         // MARK: Load Philips hue Colors.
         Hue.hueInstance.hueColors = Hue.color(UserDefaults.standard.integer(forKey: HUE_COLOR_RED_KEY), UserDefaults.standard.integer(forKey: HUE_COLOR_GREEN_KEY), UserDefaults.standard.integer(forKey: HUE_COLOR_BLUE_KEY))
         
