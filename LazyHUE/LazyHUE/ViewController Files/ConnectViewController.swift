@@ -11,17 +11,23 @@ import UIKit
 class ConnectViewController: UIViewController {
     
     // MARK: - Outlet Variables
-    @IBOutlet weak var topView: UIView! {
-        didSet {
-            topView.clipsToBounds = true;
-            topView.layer.masksToBounds = true
-            topView.layer.cornerRadius = 10
-            topView.layer.borderWidth = 2
-            topView.layer.borderColor = UIColor.white.cgColor
-        }
-    }
+    @IBOutlet weak var googleCV: CardView!
+    @IBOutlet weak var connectCV: CardView!
+    @IBOutlet weak var topView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: UIView Animation
+        UIView.animate(withDuration: 0.5, delay: 0.2, options: [], animations: { [unowned self] in
+            self.topView.layer.borderWidth = 2
+            self.topView.layer.borderColor = UIColor.white.cgColor
+        }, completion: nil)
+        UIView.animate(withDuration: 0.5, delay: 0.4, options: [], animations: { [unowned self] in
+            self.connectCV.center.x += self.view.bounds.width
+        }, completion: nil)
+        UIView.animate(withDuration: 0.5, delay: 0.8, options: [], animations: { [unowned self] in
+            self.googleCV.center.x += self.view.bounds.width
+        }, completion: nil)
     }
 }

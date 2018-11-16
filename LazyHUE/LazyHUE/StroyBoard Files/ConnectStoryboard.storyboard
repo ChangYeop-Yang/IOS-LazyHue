@@ -40,6 +40,13 @@
                                     <constraint firstItem="whP-SC-w8x" firstAttribute="centerY" secondItem="MGg-Ns-QLS" secondAttribute="centerY" id="oYj-NR-jJv"/>
                                     <constraint firstAttribute="width" constant="128" id="z2n-B6-Snh"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRK-m6-W6z" customClass="CardView" customModule="LazyHUE" customModuleProvider="target">
                                 <rect key="frame" x="20" y="654" width="374" height="64"/>
@@ -102,6 +109,8 @@
                         <viewLayoutGuide key="safeArea" id="OLs-1v-Q9K"/>
                     </view>
                     <connections>
+                        <outlet property="connectCV" destination="fRK-m6-W6z" id="y2P-JS-LWl"/>
+                        <outlet property="googleCV" destination="VT0-E9-Pg1" id="w8v-Km-kzl"/>
                         <outlet property="topView" destination="MGg-Ns-QLS" id="Rhl-Jq-HQR"/>
                     </connections>
                 </viewController>
