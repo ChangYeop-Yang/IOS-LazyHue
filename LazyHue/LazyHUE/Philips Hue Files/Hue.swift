@@ -14,6 +14,7 @@ class Hue: NSObject {
     
     // MARK: - typealias
     typealias color = (red: Int, green: Int, blue: Int)
+    typealias BridgeConfig = (isChked: Bool, config: String)
     
     // MARK: - Variable
     private var bridgeAccessConfigKey = "HUE_BRIDGE_KEY"
@@ -28,13 +29,13 @@ class Hue: NSObject {
     private override init() {}
     
     // MARK: - Method
-    public func getHueBridgeConfig() -> String {
+    public func getHueBridgeConfig() -> BridgeConfig {
         
         if connectHueBridge(), let bridgeConfig: BridgeConfiguration = swiftyHue.resourceCache?.bridgeConfiguration {
-            return "- IP: \(bridgeConfig.ipaddress!)\n- MAC: \(bridgeConfig.mac)"
+            return BridgeConfig(true, "- IP: \(bridgeConfig.ipaddress!)\n- MAC: \(bridgeConfig.mac)")
         }
         
-        return "휴가 연결되어 있지 않아요."
+        return BridgeConfig(false, "휴가 연결되어 있지 않아요.")
     }
     public func connectHueBridge() -> Bool {
         
@@ -119,8 +120,7 @@ class Hue: NSObject {
         print("- Change all philips hue power.")
         showWhisperToast(title: "Change all philips hue lamps power.", background: .moss, textColor: .white)
     }
-    private func readHueBridgeAccessConfig() -> BridgeAccessConfig?
-    {
+    private func readHueBridgeAccessConfig() -> BridgeAccessConfig? {
         let userDefaults: UserDefaults = UserDefaults.standard
         if let bridgeAccessConfigJSON = userDefaults.object(forKey: bridgeAccessConfigKey) as? JSON {
             return BridgeAccessConfig(json: bridgeAccessConfigJSON)

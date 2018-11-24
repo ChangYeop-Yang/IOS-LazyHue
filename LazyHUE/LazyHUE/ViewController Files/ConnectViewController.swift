@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 import AudioToolbox
 
 class ConnectViewController: UIViewController {
@@ -19,17 +20,23 @@ class ConnectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(GIDSignIn.sharedInstance()?.hasAuthInKeychain())
+        
         // MARK: UIView Animation
         UIView.animate(withDuration: 0.5, delay: 0.2, options: [], animations: { [unowned self] in
             self.topView.layer.borderWidth = 2
             self.topView.layer.borderColor = UIColor.white.cgColor
         }, completion: nil)
-        UIView.animate(withDuration: 0.5, delay: 0.4, options: [], animations: { [unowned self] in
-            self.connectCV.center.x += self.view.bounds.width
-        }, completion: nil)
-        UIView.animate(withDuration: 0.5, delay: 0.8, options: [], animations: { [unowned self] in
-            self.googleCV.center.x += self.view.bounds.width
-        }, completion: nil)
+    
+        // MARK: Check Philips Hue Bridge
+        if !Hue.hueInstance.getHueBridgeConfig().isChked {
+            UIView.animate(withDuration: 0.5, delay: 0.4, options: [], animations: { [unowned self] in
+                self.connectCV.center.x += self.view.bounds.width
+                }, completion: nil)
+            UIView.animate(withDuration: 0.5, delay: 0.8, options: [], animations: { [unowned self] in
+                self.googleCV.center.x += self.view.bounds.width
+                }, completion: nil)
+        }
     }
     
     // MARK: - Action Method
