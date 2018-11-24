@@ -4,6 +4,12 @@
 
 ## ★ Application UI/UX
 
+|CONNECT DISPLAY 1|CONNECT DISPLAY 2|
+|:---------------:|:---------------:|
+|![]()|![]()|
+
+* * *
+
 |HOME DISPLAY 1|HOME DISPLAY 2|
 |:------------:|:------------:|
 |![](https://user-images.githubusercontent.com/20036523/44664163-6a742380-aa4d-11e8-9536-153cdb0c5e3e.jpg)|![](https://user-images.githubusercontent.com/20036523/44664298-c9399d00-aa4d-11e8-8183-c5a4281cfeec.jpg)|
