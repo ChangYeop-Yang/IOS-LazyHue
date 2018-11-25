@@ -61,9 +61,6 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // MARK: Spinner
-        //if Weather.weatherInstance.weatherData.sky == "정보없음" { SwiftSpinner.show("Just a minute.", animated: true) }
-        
         // MARK: Load Philips hue Colors.
         Hue.hueInstance.hueColors = Hue.color(UserDefaults.standard.integer(forKey: HUE_COLOR_RED_KEY), UserDefaults.standard.integer(forKey: HUE_COLOR_GREEN_KEY), UserDefaults.standard.integer(forKey: HUE_COLOR_BLUE_KEY))
         
@@ -93,13 +90,14 @@ class HomeViewController: UIViewController {
         
         dustGroup.notify(queue: .main, execute: {
             if let findDustValue: Int = Int(Dust.dustInstance.result) {
-                label.text = "오늘의 미세먼지 : \(findDustValue)㎍/㎥"
+                
+                label.text = "오늘의 미세먼지 - \(findDustValue)㎍/㎥"
                 
                 switch findDustValue {
-                    case 0..<50: label.textColor = UIColor.black
-                    case 50..<100: label.textColor = UIColor.yellow
-                    case 100..<150: label.textColor = UIColor.red
-                    default: label.textColor = UIColor.purple
+                    case 0..<50: label.text?.append(" 😀")
+                    case 50..<100: label.text?.append(" 😐")
+                    case 100..<150: label.text?.append(" 😫")
+                    default: label.text?.append(" 🤢")
                 }
             }
         })
@@ -123,9 +121,6 @@ class HomeViewController: UIViewController {
             humidityLB.text         = "\(Weather.weatherInstance.weatherData.temperature) ℃ | \(Weather.weatherInstance.weatherData.humidity * 100) %"
             precipitationLB.text    = "\(Weather.weatherInstance.weatherData.ozone) PPM | \(Weather.weatherInstance.weatherData.visibility) KM"
             stateIMG.image = UIImage(named: Weather.weatherInstance.weatherData.icon)
-            
-            // MARK: Spinner
-            //if SwiftSpinner.sharedInstance.animating { SwiftSpinner.hide() }
         })
     }
     @objc private func gestureChangePower(longGestureRecognizer: UILongPressGestureRecognizer) {
@@ -143,9 +138,7 @@ class HomeViewController: UIViewController {
         showWhisperToast(title: "Change all philips hue lamps colors.", background: UIColor(red: CGFloat(redSlider.value) / 255, green: CGFloat(greenSlider.value) / 255, blue: CGFloat(blueSlider.value) / 255, alpha: 100), textColor: .black)
         
         Hue.hueInstance.hueColors = Hue.color(Int(redSlider.value), Int(greenSlider.value), Int(blueSlider.value))
-        print(Hue.hueInstance.hueColors)
         Hue.hueInstance.changeHueColor(red: Int(redSlider.value), green: Int(greenSlider.value), blue: Int(blueSlider.value), alpha: 255)
-        
     }
     @IBAction func loadCurrentLocation(_ sender: UIButton) {
         AudioServicesPlaySystemSound(4095)

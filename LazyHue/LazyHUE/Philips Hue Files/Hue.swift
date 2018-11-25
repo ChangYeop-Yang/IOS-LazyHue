@@ -35,7 +35,7 @@ class Hue: NSObject {
     private override init() {}
     
     // MARK: - Method
-    public func connectHueBridge() -> Bool {
+    public func connectHueBridge() {
         
         if let bridgeAccessConfig: BridgeAccessConfig = readHueBridgeAccessConfig() {
             swiftyHue.setBridgeAccessConfig(bridgeAccessConfig)
@@ -47,13 +47,10 @@ class Hue: NSObject {
             swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .sensors)
             swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .config)
             swiftyHue.startHeartbeat()
-            
-            return true
         }
         
         hueBridgeFinder.delegate = self
         hueBridgeFinder.start()
-        return false
     }
     public func changeHueColor(red: Int, green: Int, blue: Int, alpha: Int) {
         
