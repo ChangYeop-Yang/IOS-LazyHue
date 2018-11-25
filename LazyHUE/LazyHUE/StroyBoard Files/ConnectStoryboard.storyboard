@@ -48,7 +48,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRK-m6-W6z" customClass="RoundView" customModule="LazyHUE" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRK-m6-W6z" customClass="RoundView" customModule="LazyHUE" customModuleProvider="target">
                                 <rect key="frame" x="20" y="654" width="374" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syb-xa-8Uf">
@@ -72,7 +72,7 @@
                                     <constraint firstItem="syb-xa-8Uf" firstAttribute="leading" secondItem="fRK-m6-W6z" secondAttribute="leading" id="tNT-oi-38C"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VT0-E9-Pg1" customClass="RoundView" customModule="LazyHUE" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VT0-E9-Pg1" customClass="RoundView" customModule="LazyHUE" customModuleProvider="target">
                                 <rect key="frame" x="20" y="748" width="374" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvf-HO-WWN">
@@ -115,8 +115,10 @@
                         <viewLayoutGuide key="safeArea" id="OLs-1v-Q9K"/>
                     </view>
                     <connections>
+                        <outlet property="bridgeConnBT" destination="syb-xa-8Uf" id="Cea-hO-w7P"/>
                         <outlet property="connectCV" destination="fRK-m6-W6z" id="y2P-JS-LWl"/>
                         <outlet property="googleCV" destination="VT0-E9-Pg1" id="w8v-Km-kzl"/>
+                        <outlet property="googleSignBT" destination="Wvf-HO-WWN" id="ADe-5h-WGi"/>
                         <outlet property="topView" destination="MGg-Ns-QLS" id="Rhl-Jq-HQR"/>
                     </connections>
                 </viewController>

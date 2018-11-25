@@ -10,33 +10,31 @@ import Gloss
 import SwiftyHue
 import AudioToolbox
 
+// MARK: - Protocol
+protocol HueAlterDelegate: class {
+    func isConnectedBridge()
+}
+
 class Hue: NSObject {
     
     // MARK: - typealias
     typealias color = (red: Int, green: Int, blue: Int)
-    typealias BridgeConfig = (isChked: Bool, config: String)
     
     // MARK: - Variable
-    private var bridgeAccessConfigKey = "HUE_BRIDGE_KEY"
+    public let CONNECT_BRIDGE_STATE_KEY: String = "CONNECT_BRIDGE_STATE_KEY"
+    private let bridgeAccessConfigKey = "HUE_BRIDGE_KEY"
     fileprivate var hueBridge: HueBridge?
     fileprivate var swiftyHue: SwiftyHue = SwiftyHue()
     fileprivate var hueBridgeFinder: BridgeFinder = BridgeFinder()
     fileprivate var hueAuthenticator: BridgeAuthenticator?
     public static var hueInstance: Hue = Hue()
     public var hueColors: color = (255, 255, 255)
+    public var delegate: HueAlterDelegate?
     
     // MARK: - Init
     private override init() {}
     
     // MARK: - Method
-    public func getHueBridgeConfig() -> BridgeConfig {
-        
-        if connectHueBridge(), let bridgeConfig: BridgeConfiguration = swiftyHue.resourceCache?.bridgeConfiguration {
-            return BridgeConfig(true, "- IP: \(bridgeConfig.ipaddress!)\n- MAC: \(bridgeConfig.mac)")
-        }
-        
-        return BridgeConfig(false, "휴가 연결되어 있지 않아요.")
-    }
     public func connectHueBridge() -> Bool {
         
         if let bridgeAccessConfig: BridgeAccessConfig = readHueBridgeAccessConfig() {
@@ -164,12 +162,16 @@ extension Hue: BridgeAuthenticatorDelegate {
             swiftyHue.setBridgeAccessConfig(bridgeConfig)
             
             writeHueBridgeAccessConfig(bridgeAccessConfig: bridgeConfig)
+            UserDefaults.standard.set(true, forKey: CONNECT_BRIDGE_STATE_KEY)
             print("- Connect philips hue bridge. \(bridgeConfig.ipAddress):\(bridgeConfig.username):\(bridgeConfig.bridgeId)")
+            
+            // HueAlterDelegate Method
+            delegate?.isConnectedBridge()
         }
     }
     
     func bridgeAuthenticator(_ authenticator: BridgeAuthenticator, didFailWithError error: NSError) {
-        print("- Philips Hue Bridge Authenticator Error: \(error)")
+        print("- Philips Hue Bridge Authenticator Error: \(error.localizedDescription)")
     }
     
     func bridgeAuthenticatorRequiresLinkButtonPress(_ authenticator: BridgeAuthenticator, secondsLeft: TimeInterval) {}

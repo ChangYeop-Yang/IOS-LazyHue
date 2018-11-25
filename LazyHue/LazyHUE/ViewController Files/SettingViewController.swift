@@ -38,7 +38,6 @@ class SettingViewController: UIViewController {
     private let settingTableIndexPath: [Index] = [
         (IndexPath(row: 0, section: 0), "Arduino"),
         (IndexPath(row: 1, section: 0), "Motion"),
-        (IndexPath(row: 0, section: 3), "Google")
     ]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,12 +51,16 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK: Google GIDSignInDelegate
-        GIDSignIn.sharedInstance().clientID = "950023856140-shsbi6srb83v66ks1cu26r9a0ovju2us.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
-        
-        if userDefault.bool(forKey: GOOGLE_ENABLE_KEY) { GIDSignIn.sharedInstance().signIn() }
+        // Get Google Current User and Set User Image and ID here
+        DispatchQueue.main.async { [unowned self] in
+            if let currentUser: GIDGoogleUser = GIDSignIn.sharedInstance()?.currentUser {
+                self.userNameLB.text = currentUser.profile.name
+                
+                if let imageData: Data = try? Data(contentsOf: currentUser.profile.imageURL(withDimension: 100)) {
+                    self.userIMG.image = UIImage(data: imageData)
+                }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -125,15 +128,6 @@ extension SettingViewController: UITableViewDelegate {
                     if let url: URL = URL(string: "http://yeop9657.blog.me/221067037683") {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
-                case .google:
-                    AudioServicesPlaySystemSound(4095)
-                    if userDefault.bool(forKey: GOOGLE_ENABLE_KEY) {
-                        GIDSignIn.sharedInstance().signOut()
-                        userDefault.set(false, forKey: GOOGLE_ENABLE_KEY)
-                        showWhisperToast(title: "Success, Disconnect google social login.", background: .moss, textColor: .white)
-                    } else {
-                        GIDSignIn.sharedInstance().signIn()
-                    }
                 default: break
             }
         }
@@ -156,37 +150,5 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
         }
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-    }
-}
-
-// MARK: - GIDSignInUIDelegate
-extension SettingViewController: GIDSignInUIDelegate {
-    
-    // Present a view that prompts the user to sign in with Google
-    private func signIn(signIn: GIDSignIn!,
-                presentViewController viewController: UIViewController!) {
-        self.present(viewController, animated: true, completion: nil)
-    }
-    
-    // Dismiss the "Sign in with Google" view
-    private func signIn(signIn: GIDSignIn!,
-                dismissViewController viewController: UIViewController!) {
-        self.dismiss(animated: true, completion: nil)
-    }
-}
-
-// MARK: - GIDSignInDelegate Extension
-extension SettingViewController: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        
-        userDefault.set(true, forKey: GOOGLE_ENABLE_KEY)
-        showWhisperToast(title: "Success, Connect google social login.", background: .moss, textColor: .white)
-        
-        DispatchQueue.main.async(execute: { [unowned self] in
-            if let imageData: Data = try? Data(contentsOf: user.profile.imageURL(withDimension: 400)) {
-                self.userNameLB.text = user.profile.email
-                self.userIMG.image = UIImage(data: imageData)
-            }
-        })
     }
 }

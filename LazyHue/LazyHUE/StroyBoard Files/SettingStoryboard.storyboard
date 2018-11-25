@@ -372,38 +372,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="SOCIAL LOGIN" id="wBW-Tc-Ah6">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" tag="700" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Vpe-ji-iTY" detailTextLabel="QbU-AH-mBN" imageView="BkM-ql-GFj" style="IBUITableViewCellStyleSubtitle" id="dOc-Qz-9Yc">
-                                        <rect key="frame" x="0.0" y="619.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dOc-Qz-9Yc" id="iCk-yv-Wia">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Login Google Social" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vpe-ji-iTY">
-                                                    <rect key="frame" x="55" y="5" width="151.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="search" id="BkM-ql-GFj">
-                                                    <rect key="frame" x="16" y="9" width="24" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Google login 사용자 정보를 얻습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="QbU-AH-mBN">
-                                                    <rect key="frame" x="55" y="25.5" width="189" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="rtL-z2-B4w" id="6lw-MZ-D1i"/>
@@ -432,7 +400,6 @@
         <image name="baseline_info_black_24pt_1x" width="48" height="48"/>
         <image name="baseline_settings_black_24dp" width="48" height="48"/>
         <image name="baseline_vibration_black_24pt_1x" width="48" height="48"/>
-        <image name="search" width="24" height="24"/>
         <image name="user" width="42.275230407714844" height="42.275230407714844"/>
     </resources>
 </document>
