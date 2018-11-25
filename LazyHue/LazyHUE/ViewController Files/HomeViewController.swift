@@ -36,7 +36,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         // MARK: Weather Information
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [unowned self] _ in
