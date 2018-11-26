@@ -2,6 +2,10 @@
 
 ## ★ Outline
 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/20036523/49021283-a1391180-f1d5-11e8-976d-a0d1bd010667.png" width="300" height="300" />
+</p>
+
 ## ★ Application UI/UX
 
 |CONNECT DISPLAY 1|CONNECT DISPLAY 2|
