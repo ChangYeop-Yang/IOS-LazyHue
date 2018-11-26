@@ -31,28 +31,27 @@ class ConnectViewController: UIViewController {
         Hue.hueInstance.delegate = self
         
         // MARK: UIView Animation
-        UIView.animate(withDuration: 0.5, delay: 1, options: [], animations: { [unowned self] in
+        UIView.animate(withDuration: 1, delay: 0.5, options: [], animations: { [unowned self] in
             self.topView.layer.borderWidth = 2
             self.topView.layer.borderColor = UIColor.white.cgColor
-            }, completion: { [unowned self] (isChecked: Bool) in
-                
-                // MARK: Check Philips Hue Bridge
-                if !UserDefaults.standard.bool(forKey: Hue.hueInstance.CONNECT_BRIDGE_STATE_KEY) {
-                    
-                    UIView.animate(withDuration: 0.5, delay: 0.4, options: [], animations: { [unowned self] in
-                        self.connectCV.isHidden = false
-                        self.connectCV.center.x += self.view.bounds.width
-                        }, completion: nil)
-                    UIView.animate(withDuration: 0.5, delay: 0.8, options: [], animations: { [unowned self] in
-                        self.googleCV.isHidden = false
-                        self.googleCV.center.x += self.view.bounds.width
-                        }, completion: nil)
-                }
-                else {
-                    Hue.hueInstance.connectHueBridge()
-                    GIDSignIn.sharedInstance()?.signIn()
-                }
-            })
+            }, completion: nil)
+        
+        // MARK: Check Philips Hue Bridge
+        if !UserDefaults.standard.bool(forKey: Hue.hueInstance.CONNECT_BRIDGE_STATE_KEY) {
+            
+            UIView.animate(withDuration: 0.5, delay: 0.4, options: [], animations: { [unowned self] in
+                self.connectCV.isHidden = false
+                self.connectCV.center.x += self.view.bounds.width
+                }, completion: nil)
+            UIView.animate(withDuration: 0.5, delay: 0.8, options: [], animations: { [unowned self] in
+                self.googleCV.isHidden = false
+                self.googleCV.center.x += self.view.bounds.width
+                }, completion: nil)
+        }
+        else {
+            Hue.hueInstance.connectHueBridge()
+            GIDSignIn.sharedInstance()?.signIn()
+        }
     }
     
     // MARK: - Action Method
