@@ -31,7 +31,7 @@ class ConnectViewController: UIViewController {
         Hue.hueInstance.delegate = self
         
         // MARK: UIView Animation
-        UIView.animate(withDuration: 1, delay: 0.2, options: [], animations: { [unowned self] in
+        UIView.animate(withDuration: 0.5, delay: 1, options: [], animations: { [unowned self] in
             self.topView.layer.borderWidth = 2
             self.topView.layer.borderColor = UIColor.white.cgColor
             }, completion: { [unowned self] (isChecked: Bool) in
