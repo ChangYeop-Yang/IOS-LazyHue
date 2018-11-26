@@ -1,12 +1,16 @@
 # LazyHUE - iOS Application
 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/20036523/49021283-a1391180-f1d5-11e8-976d-a0d1bd010667.png" width="400" height="400" />
+</p>
+
 ## ★ Outline
 
 ## ★ Application UI/UX
 
 |CONNECT DISPLAY 1|CONNECT DISPLAY 2|
 |:---------------:|:---------------:|
-|![]()|![]()|
+|![](https://user-images.githubusercontent.com/20036523/49021101-37b90300-f1d5-11e8-80a7-cda4562cc2a3.png)|![](https://user-images.githubusercontent.com/20036523/49021099-37b90300-f1d5-11e8-9f53-05c51d2a838e.png)|
 
 * * *
 
