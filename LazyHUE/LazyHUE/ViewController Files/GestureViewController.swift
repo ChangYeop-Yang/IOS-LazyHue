@@ -24,7 +24,7 @@ class GestureViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        guard let visionModel = try? VNCoreMLModel(for: MNIST().model) else {
+        guard let visionModel = try? VNCoreMLModel(for: CharacteristicsClassifier().model) else {
             fatalError("Can not load Vision ML model.")
         }
         
