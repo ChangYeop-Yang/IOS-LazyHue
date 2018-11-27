@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Vision
 
 class GestureViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class GestureViewController: UIViewController {
     private var lastPoint:  CGPoint!
     private var lineSize:   CGFloat = 10
     private var lineColor:  CGColor = UIColor.black.cgColor
+    private var requests = [VNRequest]()
 
     // MARK: - Outlet Variables
     @IBOutlet weak var gestureIMG: UIImageView!
@@ -22,25 +24,52 @@ class GestureViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        guard let visionModel = try? VNCoreMLModel(for: MNIST().model) else {
+            fatalError("Can not load Vision ML model.")
+        }
+        
+        let classificationRequest = VNCoreMLRequest(model: visionModel, completionHandler: self.handleClassification)
+        self.requests = [classificationRequest]
     }
     
     // MARK: - Method
+    func scaleImage (image:UIImage, toSize size:CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
+        image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    
     @objc func recongnitionDigit() {
         
-        if let image: UIImage = gestureIMG.image?.resize(to: CGSize(width: 28, height: 28)) {
-            if let pixel = image.pixelBuffer(), let result = try? MNIST().prediction(image: pixel) {
-                print("- Recongnition Digit: \(result.classLabel)")
-            }
-        }
+        
+        let scaledImage = scaleImage(image: gestureIMG.image!, toSize: CGSize(width: 28, height: 28))
+        let imagerRequestHandler = VNImageRequestHandler(cgImage: scaledImage.cgImage!, options: [:])
+        
+        do {
+            try imagerRequestHandler.perform(self.requests)
+        } catch { print(error) }
         
         gestureIMG.image = nil
+    }
+    
+    func handleClassification (request: VNRequest, error: Error?) {
+        guard let observations = request.results else {
+            print("No results")
+            return
+        }
+        
+        let classifications = observations as? [VNClassificationObservation]
+        
+        print("ASDASDASDASD - \(classifications?.first!.identifier)")
     }
     
     // MARK: - Touch Event Method
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         lastPoint = touches.first?.location(in: gestureIMG)
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(recongnitionDigit), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(recongnitionDigit), userInfo: nil, repeats: false)
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         

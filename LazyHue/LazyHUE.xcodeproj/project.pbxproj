@@ -35,6 +35,7 @@
 		0C9B0AF5219ECF210051DCAF /* ConnectStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B0AF4219ECF210051DCAF /* ConnectStoryboard.storyboard */; };
 		0CAD5615213AD9E70084B64B /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD5614213AD9E70084B64B /* CircleImageView.swift */; };
 		0CD9F3EB219EDC1000EC7A40 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */; };
+		0CEF10C421AD76D60031A2EB /* CharacteristicsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF10C321AD76D60031A2EB /* CharacteristicsClassifier.mlmodel */; };
 		0CF8AD6D219F1E5D00B4F74E /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */; };
 		0CFECBA9212458930021D8C9 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFECBA8212458930021D8C9 /* Hue.swift */; };
 		1AC9F3C3A9E46BD3445DC09C /* Pods_LazyHUEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA02D5F76A7B5DBE17C6BC /* Pods_LazyHUEUITests.framework */; };
@@ -94,6 +95,7 @@
 		0C9B0AF4219ECF210051DCAF /* ConnectStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectStoryboard.storyboard; sourceTree = "<group>"; };
 		0CAD5614213AD9E70084B64B /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		0CEF10C321AD76D60031A2EB /* CharacteristicsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CharacteristicsClassifier.mlmodel; sourceTree = "<group>"; };
 		0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		0CFECBA8212458930021D8C9 /* Hue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = "../../../../iOS-LazyHUE/LazyHUE/LazyHUE/Philips Hue Files/Hue.swift"; sourceTree = "<group>"; };
 		75F770558E2A4AAB8EF0A5F3 /* Pods-LazyHUEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				0C4666A521246F1700333E8E /* Defaults.swift */,
+				0CEF10C321AD76D60031A2EB /* CharacteristicsClassifier.mlmodel */,
 				0C40EADB2132745900A6AC88 /* MNIST.mlmodel */,
 			);
 			path = "Support Files";
@@ -561,6 +564,7 @@
 				0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */,
 				0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */,
 				0CAD5615213AD9E70084B64B /* CircleImageView.swift in Sources */,
+				0CEF10C421AD76D60031A2EB /* CharacteristicsClassifier.mlmodel in Sources */,
 				0C08E617211F1B2C00C0EE4A /* Weather.swift in Sources */,
 				0C08E61A211F1E2000C0EE4A /* WhisperToast.swift in Sources */,
 				0C4666A621246F1700333E8E /* Defaults.swift in Sources */,
