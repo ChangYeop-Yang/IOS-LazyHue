@@ -80,11 +80,11 @@ class GestureViewController: UIViewController {
         print("⌘ CoreML Classification Letter -  \(String(describing: classifications.first))")
         if let index: Int = Int(classifications.first!) {
             if UserDefaults.standard.bool(forKey: GESTURE_ENABLE_KEY) {
-                Hue.hueInstance.changeHuePower(number: index - 1)
+                Hue.hueInstance.changeHuePower(number: index)
             }
             else {
                 let color: (red: Int, green: Int, blue: Int) = (Int.random(in: 0..<255), Int.random(in: 0..<255), Int.random(in: 0..<255))
-                Hue.hueInstance.changeHueColor(red: color.red, green: color.green, blue: color.blue, alpha: 255)
+                Hue.hueInstance.changeHueColor(red: color.red, green: color.green, blue: color.blue, alpha: 255, index: index)
             }
         }
     }

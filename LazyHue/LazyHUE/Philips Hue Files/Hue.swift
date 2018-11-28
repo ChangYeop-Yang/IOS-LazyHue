@@ -92,6 +92,35 @@ class Hue: NSObject {
             })
         }
     }
+    public func changeHueColor(red: Int, green: Int, blue: Int, alpha: Int, index: Int) {
+        
+        guard let lights = swiftyHue.resourceCache?.lights else {
+            print("Error, Not Load the philips hue lights.")
+            return
+        }
+        
+        let keys: [String] = lights.keys.compactMap({$0})
+        if index != 0 && index <= lights.count {
+            
+            let colorXY = HueUtilities.calculateXY(UIColor.init(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha)), forModel: keys[index - 1])
+            
+            var lightState: LightState = LightState()
+            lightState.brightness = alpha
+            lightState.xy = [Float(colorXY.x), Float(colorXY.y)]
+            
+            swiftyHue.bridgeSendAPI.updateLightStateForId(keys[index - 1], withLightState: lightState, completionHandler: { error in
+                
+                guard error == nil else {
+                    print("Error, Not Change the philips hue light color. \(String(describing: error))")
+                    return
+                }
+                
+                print("- Change fraction philips hue color.")
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                showWhisperToast(title: "Change fraction philips hue lamps color.", background: .moss, textColor: .white)
+            })
+        }
+    }
     public func changeHuePower() {
         
         guard let lights = swiftyHue.resourceCache?.lights else {
@@ -128,10 +157,10 @@ class Hue: NSObject {
         
         let keys = lights.keys.compactMap({$0})
         var lightState: LightState = LightState()
-        if number < lights.count && number != 0, let isOn: Bool = lights[keys[number]]?.state.on {
+        if number <= lights.count && number != 0, let isOn: Bool = lights[keys[number - 1]]?.state.on {
             lightState.on = !isOn
             
-            swiftyHue.bridgeSendAPI.updateLightStateForId(keys[number], withLightState: lightState, completionHandler: { error in
+            swiftyHue.bridgeSendAPI.updateLightStateForId(keys[number - 1], withLightState: lightState, completionHandler: { error in
                 
                 guard error == nil else {
                     print("Error, Not Change the Philips hue light Power. \(String(describing: error))")
