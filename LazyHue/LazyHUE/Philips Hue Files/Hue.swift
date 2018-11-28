@@ -103,17 +103,46 @@ class Hue: NSObject {
             var lightState: LightState = LightState()
             if let state: Bool = light.value.state.on {
                 lightState.on = !state
-
             }
             
-            swiftyHue.bridgeSendAPI.updateLightStateForId(light.key, withLightState: lightState, completionHandler: { error in
-                print("Error, Not Change the Philips hue light Power. \(String(describing: error))")
+            swiftyHue.bridgeSendAPI.updateLightStateForId(light.key, withLightState: lightState,
+                completionHandler: { error in
+                    
+                    guard error == nil else {
+                        print("Error, Not Change the Philips hue light Power. \(String(describing: error))")
+                        return
+                    }
+                    
+                    print("- Change all philips hue power.")
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    showWhisperToast(title: "Change all philips hue lamps power.", background: .moss, textColor: .white)
             })
         }
+    }
+    public func changeHuePower(number: Int) {
         
-        AudioServicesPlaySystemSound(4095)
-        print("- Change all philips hue power.")
-        showWhisperToast(title: "Change all philips hue lamps power.", background: .moss, textColor: .white)
+        guard let lights = swiftyHue.resourceCache?.lights else {
+            print("Error, Not Load the Philips Hue Lights.")
+            return
+        }
+        
+        let keys = lights.keys.compactMap({$0})
+        var lightState: LightState = LightState()
+        if number < lights.count && number != 0, let isOn: Bool = lights[keys[number]]?.state.on {
+            lightState.on = !isOn
+            
+            swiftyHue.bridgeSendAPI.updateLightStateForId(keys[number], withLightState: lightState, completionHandler: { error in
+                
+                guard error == nil else {
+                    print("Error, Not Change the Philips hue light Power. \(String(describing: error))")
+                    return
+                }
+                
+                print("- Change fraction philips hue power.")
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                showWhisperToast(title: "Change fraction philips hue lamps power.", background: .moss, textColor: .white)
+            })
+        }
     }
     private func readHueBridgeAccessConfig() -> BridgeAccessConfig? {
         let userDefaults: UserDefaults = UserDefaults.standard

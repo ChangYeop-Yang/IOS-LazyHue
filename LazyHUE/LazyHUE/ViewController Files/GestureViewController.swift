@@ -14,7 +14,7 @@ class GestureViewController: UIViewController {
     // MARK: - Outlet Variables
     private var lastPoint:  CGPoint!
     private var lineSize:   CGFloat = 10
-    private var lineColor:  CGColor = UIColor.black.cgColor
+    private var lineColor:  CGColor = UIColor.white.cgColor
     private var requests = [VNRequest]()
 
     // MARK: - Outlet Variables
@@ -23,8 +23,8 @@ class GestureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        guard let visionModel = try? VNCoreMLModel(for: CharacteristicsClassifier().model) else {
+        // MARK: Setting to CoreML
+        guard let visionModel = try? VNCoreMLModel(for: MNIST().model) else {
             fatalError("Can not load Vision ML model.")
         }
         
@@ -32,37 +32,61 @@ class GestureViewController: UIViewController {
         self.requests = [classificationRequest]
     }
     
-    // MARK: - Method
-    func scaleImage (image:UIImage, toSize size:CGSize) -> UIImage {
+    // MARK: - User Method
+    private func scaleImage (image: UIImage, toSize size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
         image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
         return newImage!
     }
     
-    @objc func recongnitionDigit() {
+    @objc private func recongnitionDigit() {
         
+        let group: DispatchGroup = DispatchGroup()
         
-        let scaledImage = scaleImage(image: gestureIMG.image!, toSize: CGSize(width: 28, height: 28))
-        let imagerRequestHandler = VNImageRequestHandler(cgImage: scaledImage.cgImage!, options: [:])
+        group.enter()
+        DispatchQueue.main.async(group: group, execute: { [unowned self] in
+            
+            if let image: UIImage = self.gestureIMG.image {
+                let scaledImage: UIImage = self.scaleImage(image: image, toSize: CGSize(width: 28, height: 28))
+                let imageRequestHandler = VNImageRequestHandler(cgImage: scaledImage.cgImage!, options: [:])
+                
+                do { try imageRequestHandler.perform(self.requests); group.leave() }
+                catch { fatalError("Error, Can not implement core ml. \(error.localizedDescription)") }
+            }
+            
+        })
         
-        do {
-            try imagerRequestHandler.perform(self.requests)
-        } catch { print(error) }
-        
-        gestureIMG.image = nil
+        group.notify(queue: .main, execute: { [unowned self] in
+            self.gestureIMG.image = nil
+        })
     }
     
-    func handleClassification (request: VNRequest, error: Error?) {
+    private func handleClassification (request: VNRequest, error: Error?) {
+        
         guard let observations = request.results else {
-            print("No results")
+            print("Error, Can not classification letter.")
             return
         }
         
-        let classifications = observations as? [VNClassificationObservation]
-        
-        print("ASDASDASDASD - \(classifications?.first!.identifier)")
+        // process the ovservations
+        let classifications = observations
+            .compactMap( {$0 as? VNClassificationObservation} ) // cast all elements to VNClassificationObservation objects
+            .filter( {$0.confidence > 0.8} ) // only choose observations with a confidence of more than 80%
+            .map( {$0.identifier} ) // only choose the identifier string to be placed into the classifications array
+
+        print("⌘ CoreML Classification Letter -  \(String(describing: classifications.first))")
+        if let index: Int = Int(classifications.first!) {
+            if UserDefaults.standard.bool(forKey: GESTURE_ENABLE_KEY) {
+                Hue.hueInstance.changeHuePower(number: index - 1)
+            }
+            else {
+                let color: (red: Int, green: Int, blue: Int) = (Int.random(in: 0..<255), Int.random(in: 0..<255), Int.random(in: 0..<255))
+                Hue.hueInstance.changeHueColor(red: color.red, green: color.green, blue: color.blue, alpha: 255)
+            }
+        }
     }
     
     // MARK: - Touch Event Method

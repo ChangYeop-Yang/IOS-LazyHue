@@ -96,7 +96,7 @@ class CameraViewController: UIViewController {
             let color: UIColor = previewIMG.getPixelColorAt(point: touch.location(in: previewIMG))
             Hue.hueInstance.changeHueColor(color: color)
             
-            AudioServicesPlaySystemSound(4095)
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             showWhisperToast(title: "Success change hue lamp color.", background: color, textColor: .white)
             print("- Current HEX Color: \(color.hexString)")
         }
@@ -107,7 +107,7 @@ class CameraViewController: UIViewController {
         
         if motion == .motionShake {
             previewIMG.image = nil
-            AudioServicesPlaySystemSound(4095)
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
     }
 }
