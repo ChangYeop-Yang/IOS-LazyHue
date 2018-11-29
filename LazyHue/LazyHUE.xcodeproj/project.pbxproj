@@ -13,6 +13,8 @@
 		0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08E61B211F1EF600C0EE4A /* UIColor.swift */; };
 		0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C7322211FF90800335573 /* CameraViewController.swift */; };
 		0C21240C21327CAB000CC0DF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21240B21327CAB000CC0DF /* UIImage.swift */; };
+		0C2CA23E21B0220C000874F4 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2CA23D21B0220C000874F4 /* RoundButton.swift */; };
+		0C2CA24021B02950000874F4 /* FlickrStyle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C2CA23F21B02950000874F4 /* FlickrStyle.mlmodel */; };
 		0C2F7949211EE6C100E3A9B9 /* Dust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F7948211EE6C100E3A9B9 /* Dust.swift */; };
 		0C383E2521271F5000D2FA3E /* Sensory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C383E2421271F5000D2FA3E /* Sensory.swift */; };
 		0C3B65952119C6CD00E8886C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3B65942119C6CD00E8886C /* Location.swift */; };
@@ -66,6 +68,8 @@
 		0C08E61B211F1EF600C0EE4A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0C0C7322211FF90800335573 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		0C21240B21327CAB000CC0DF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		0C2CA23D21B0220C000874F4 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		0C2CA23F21B02950000874F4 /* FlickrStyle.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlickrStyle.mlmodel; sourceTree = "<group>"; };
 		0C2F7948211EE6C100E3A9B9 /* Dust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dust.swift; sourceTree = "<group>"; };
 		0C383E2421271F5000D2FA3E /* Sensory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensory.swift; sourceTree = "<group>"; };
 		0C3B65942119C6CD00E8886C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				0C4666A521246F1700333E8E /* Defaults.swift */,
+				0C2CA23F21B02950000874F4 /* FlickrStyle.mlmodel */,
 				0C40EADB2132745900A6AC88 /* MNIST.mlmodel */,
 			);
 			path = "Support Files";
@@ -273,6 +278,7 @@
 				0C08E61B211F1EF600C0EE4A /* UIColor.swift */,
 				0C21240B21327CAB000CC0DF /* UIImage.swift */,
 				0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */,
+				0C2CA23D21B0220C000874F4 /* RoundButton.swift */,
 				0C99CEA0211822FE009A3403 /* CardView.swift */,
 				0CAD5614213AD9E70084B64B /* CircleImageView.swift */,
 				0C08E619211F1E2000C0EE4A /* WhisperToast.swift */,
@@ -566,9 +572,11 @@
 				0CAD5615213AD9E70084B64B /* CircleImageView.swift in Sources */,
 				0C08E617211F1B2C00C0EE4A /* Weather.swift in Sources */,
 				0C08E61A211F1E2000C0EE4A /* WhisperToast.swift in Sources */,
+				0C2CA23E21B0220C000874F4 /* RoundButton.swift in Sources */,
 				0C4666A621246F1700333E8E /* Defaults.swift in Sources */,
 				0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */,
 				0CD9F3EB219EDC1000EC7A40 /* ConnectViewController.swift in Sources */,
+				0C2CA24021B02950000874F4 /* FlickrStyle.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

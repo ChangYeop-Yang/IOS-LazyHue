@@ -7,17 +7,45 @@
 //
 
 import UIKit
+import Vision
+import AVKit
 import AudioToolbox
 import AVFoundation
 
 class CameraViewController: UIViewController {
     
+    // MARK: Enum
+    private enum ImageMoodType: String {
+        case Detailed = "Detailed"
+        case Pastel = "Pastel"
+        case Melancholy = "Melancholy"
+        case Noir = "Noir"
+        case HDR = "HDR"
+        case Vintage = "Vintage"
+        case LongExposure = "Long Exposure"
+        case Horror = "Horror"
+        case Sunny = "Sunny"
+        case Bright = "Bright"
+        case Hazy = "Hazy"
+        case Bokeh = "Bokeh"
+        case Serene = "Serene"
+        case Texture = "Texture"
+        case Ethereal = "Ethereal"
+        case Macro = "Macro"
+        case DepthOfField = "Depth of Field"
+        case GeometricComposition = "Geometric Composition"
+        case Minimal = "Minimal"
+        case Romantic = "Romantic"
+    }
+    
     // MARK: - Variables
+    private var requests = [VNRequest]()
     private var imageOutputData: AVCapturePhotoOutput  = AVCapturePhotoOutput()
     
     // MARK: - IBOutlet Variables
     @IBOutlet weak var weatherIMG: UIImageView!
     @IBOutlet weak var weatherStateLB: UILabel!
+    @IBOutlet weak var outsideRoundV: RoundView!
     @IBOutlet weak var previewIMG: UIImageView!
     @IBOutlet weak var previewV: UIView!
     
@@ -30,9 +58,17 @@ class CameraViewController: UIViewController {
         
         // MARK: Camera Preview
         previewCamera()
+        
+        // MARK: Setting to CoreML
+        guard let visionModel = try? VNCoreMLModel(for: FlickrStyle().model) else {
+            fatalError("Can not load Vision ML model.")
+        }
+        
+        let classificationRequest = VNCoreMLRequest(model: visionModel, completionHandler: self.handleClassification)
+        self.requests = [classificationRequest]
     }
     
-    // MARK: - Method
+    // MARK: - Private User Method
     private func previewCamera() {
         
         let captureSession: AVCaptureSession = AVCaptureSession()
@@ -46,16 +82,21 @@ class CameraViewController: UIViewController {
             captureSession.addInput(input)
             captureSession.startRunning()
             
+            // AVCaptureVideoPreviewLayer
             let previewLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
             previewLayer.videoGravity = .resizeAspectFill
             previewLayer.connection?.videoOrientation = .portrait
             previewLayer.frame = previewV.bounds
             previewV.layer.addSublayer(previewLayer)
             
+            // AVCaptureVideoDataOutput
+            let dataOutput: AVCaptureVideoDataOutput = AVCaptureVideoDataOutput()
+            dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
+
+            captureSession.addOutput(dataOutput)
             captureSession.addOutput(imageOutputData)
         }
     }
-    
     private func getImageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage? {
         
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
@@ -81,13 +122,43 @@ class CameraViewController: UIViewController {
         CVPixelBufferUnlockBaseAddress(pixelBuffer, .readOnly)
         return image
     }
+    private func handleClassification (request: VNRequest, error: Error?) {
+        
+        guard let observations = request.results else {
+            print("Error, Can not classification letter.")
+            return
+        }
+        
+        // process the ovservations
+        let classifications = observations
+            .compactMap( {$0 as? VNClassificationObservation} ) // cast all elements to VNClassificationObservation objects
+            .filter( {$0.confidence > 0.6} ) // only choose observations with a confidence of more than 60%
+            .map( {$0.identifier} ) // only choose the identifier string to be placed into the classifications array
+        
+        if let moodType: String = classifications.first {
+            print("⌘ CoreML Classification Letter -  \(moodType)")
+        }
+    }
     
     // MARK: - Action Method
     @IBAction func takePicture(_ sender: UIButton) {
         let settings: AVCapturePhotoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
         imageOutputData.capturePhoto(with: settings, delegate: self)
     }
+    @IBAction func changeCameraFuncation(_ sender: UISegmentedControl) {
+        
+        let isSwiched: (photo: Int, camera: Int) = (0, 1)
+
+        if isSwiched.photo == sender.selectedSegmentIndex {
+            self.outsideRoundV.isHidden = false
+        }
+        else if isSwiched.camera == sender.selectedSegmentIndex {
+            self.outsideRoundV.isHidden = true
+        }
+    }
     
+    
+    // MARK: - Touch Event Method
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         guard previewIMG.image != nil else { return }
@@ -112,7 +183,7 @@ class CameraViewController: UIViewController {
     }
 }
 
-// MARK: - Delegate
+// MARK: - AVCapturePhotoCaptureDelegate Delegate
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         
@@ -122,5 +193,23 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         
         let image = UIImage(data: imageData)
         self.previewIMG.image = image
+    }
+}
+
+// MARK: - AVCaptureVideoDataOutputSampleBuffer Delegate
+extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
+        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        
+        // Enable Real-Time Camera Funcation
+        if self.outsideRoundV.isHidden {
+            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
+            DispatchQueue.main.async { [unowned self] in
+                do { try imageRequestHandler.perform(self.requests); }
+                catch { fatalError("Error, Can not implement core ml. \(error.localizedDescription)") }
+            }
+        }
     }
 }
