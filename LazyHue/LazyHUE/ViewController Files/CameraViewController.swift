@@ -41,6 +41,7 @@ class CameraViewController: UIViewController {
     // MARK: - Variables
     private var requests = [VNRequest]()
     private var cameraType: Bool = false
+    private var priviousType: String = ""
     private var imageOutputData: AVCapturePhotoOutput  = AVCapturePhotoOutput()
     
     // MARK: - IBOutlet Variables
@@ -136,8 +137,18 @@ class CameraViewController: UIViewController {
             .filter( {$0.confidence > 0.6} ) // only choose observations with a confidence of more than 60%
             .map( {$0.identifier} ) // only choose the identifier string to be placed into the classifications array
         
-        if let moodType: String = classifications.first {
+        if let moodType: String = classifications.first, let type: ImageMoodType = ImageMoodType(rawValue: moodType) {
+            
+            guard moodType != priviousType else { return }
+            
+            priviousType = moodType
             print("⌘ CoreML Classification Letter -  \(moodType)")
+            
+            switch type {
+                case .Sunny: Hue.hueInstance.changeHueColor(color: .red)
+                case .Romantic: Hue.hueInstance.changeHueColor(color: .lightcoral)
+                default: break
+            }
         }
     }
     

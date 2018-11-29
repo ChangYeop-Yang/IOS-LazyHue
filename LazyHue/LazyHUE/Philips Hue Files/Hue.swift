@@ -74,7 +74,6 @@ class Hue: NSObject {
                 
                 print("- Change fraction philips hue color.")
                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                showWhisperToast(title: "Change fraction philips hue lamps color.", background: .moss, textColor: .white)
             })
         }
     }
@@ -102,7 +101,6 @@ class Hue: NSObject {
                 
                 print("- Change all philips hue color.")
                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                showWhisperToast(title: "Change all philips hue lamps color.", background: .moss, textColor: .white)
             })
         }
     }
