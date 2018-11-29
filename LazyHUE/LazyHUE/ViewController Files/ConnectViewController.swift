@@ -37,7 +37,7 @@ class ConnectViewController: UIViewController {
             }, completion: nil)
         
         // MARK: Check Philips Hue Bridge
-        if !UserDefaults.standard.bool(forKey: Hue.hueInstance.CONNECT_BRIDGE_STATE_KEY) {
+        if !UserDefaults.standard.bool(forKey: CONNECT_BRIDGE_STATE_KEY) {
             
             UIView.animate(withDuration: 0.5, delay: 0.4, options: [], animations: { [unowned self] in
                 self.connectCV.isHidden = false

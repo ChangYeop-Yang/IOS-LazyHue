@@ -146,7 +146,7 @@ class HomeViewController: UIViewController {
     }
 
     // MARK: - Motion Event Method
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         
         switch motion {
             case .motionShake:

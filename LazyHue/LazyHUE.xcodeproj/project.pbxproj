@@ -257,12 +257,12 @@
 			isa = PBXGroup;
 			children = (
 				0C6101C720DA4C1C00360816 /* LaunchScreen.storyboard */,
+				0C9B0AF4219ECF210051DCAF /* ConnectStoryboard.storyboard */,
 				0C6101C220DA4C1A00360816 /* Main.storyboard */,
+				0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */,
 				0C99CE95211813CA009A3403 /* CameraStoryboard.storyboard */,
 				0C99CE97211813E0009A3403 /* GestureStoryboard.storyboard */,
-				0C99CE99211813FA009A3403 /* HomeStoryboard.storyboard */,
 				0C99CE9B2118141A009A3403 /* SettingStoryboard.storyboard */,
-				0C9B0AF4219ECF210051DCAF /* ConnectStoryboard.storyboard */,
 			);
 			path = "StroyBoard Files";
 			sourceTree = "<group>";
@@ -371,13 +371,16 @@
 				TargetAttributes = {
 					0C6101BA20DA4C1A00360816 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 					0C6101CE20DA4C1C00360816 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 0C6101BA20DA4C1A00360816;
 					};
 					0C6101D920DA4C1C00360816 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 0C6101BA20DA4C1A00360816;
 					};
 				};
@@ -750,7 +753,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -771,7 +774,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -792,7 +795,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUETests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyHUE.app/LazyHUE";
 			};
@@ -814,7 +817,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUETests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyHUE.app/LazyHUE";
 			};
@@ -835,7 +838,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUEUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = LazyHUE;
 			};
@@ -856,7 +859,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yeop9657.blog.me.LazyHUEUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = LazyHUE;
 			};

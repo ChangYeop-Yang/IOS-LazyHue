@@ -74,15 +74,15 @@ class SettingViewController: UIViewController {
             
             // MARK: UISwitch UserDefaults
             let arduinoSW: UISwitch = settingTV.cellForRow(at: settingTableIndexPath.first!.index)?.accessoryView as! UISwitch
-            arduinoSW.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
+            arduinoSW.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
             arduinoSW.setOn(userDefault.bool(forKey: ARUDINO_ENABLE_KEY), animated: false)
             
             let motionSW: UISwitch = settingTV.cellForRow(at: settingTableIndexPath[1].index)?.accessoryView as! UISwitch
-            motionSW.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
+            motionSW.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
             motionSW.setOn(userDefault.bool(forKey: MOTION_ENABLE_KEY), animated: false)
             
             let gestureSW: UISwitch = settingTV.cellForRow(at: settingTableIndexPath[2].index)?.accessoryView as! UISwitch
-            gestureSW.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
+            gestureSW.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
             gestureSW.setOn(userDefault.bool(forKey: GESTURE_ENABLE_KEY), animated: false)
         }
     }
@@ -122,7 +122,7 @@ extension SettingViewController: UITableViewDelegate {
                 case .developerINFO:
                     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                     if let url: URL = URL(string: "http://yeop9657.blog.me") {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                     }
                 case .sendEMAIL:
                     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -137,7 +137,7 @@ extension SettingViewController: UITableViewDelegate {
                 case .opensource:
                     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                     if let url: URL = URL(string: "http://yeop9657.blog.me/221067037683") {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                     }
                 default: break
             }
@@ -162,4 +162,9 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
