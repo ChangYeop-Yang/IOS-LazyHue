@@ -244,11 +244,11 @@
 		0C6101EC20DA4C2D00360816 /* ViewController Files */ = {
 			isa = PBXGroup;
 			children = (
+				0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */,
 				0C6101C020DA4C1A00360816 /* HomeViewController.swift */,
 				0C0C7322211FF90800335573 /* CameraViewController.swift */,
 				0C40EADD2132754A00A6AC88 /* GestureViewController.swift */,
 				0C08941C21285BF900E0C636 /* SettingViewController.swift */,
-				0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */,
 			);
 			path = "ViewController Files";
 			sourceTree = "<group>";

@@ -132,8 +132,8 @@ class HomeViewController: UIViewController {
     // MARK: - IBAction Method
     @IBAction func changeColorsValue(_ sender: UISlider) {
         
-        AudioServicesPlaySystemSound(4095)
         print("- Change all philips hue colors.")
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         showWhisperToast(title: "Change all philips hue lamps colors.", background: UIColor(red: CGFloat(redSlider.value) / 255, green: CGFloat(greenSlider.value) / 255, blue: CGFloat(blueSlider.value) / 255, alpha: 100), textColor: .black)
         
         Hue.hueInstance.hueColors = Hue.color(Int(redSlider.value), Int(greenSlider.value), Int(blueSlider.value))
