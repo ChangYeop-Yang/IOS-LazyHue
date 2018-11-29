@@ -68,7 +68,15 @@ class Hue: NSObject {
             lightState.xy = [Float(colorXY.x), Float(colorXY.y)]
             
             swiftyHue.bridgeSendAPI.updateLightStateForId(light.key, withLightState: lightState, completionHandler: { error in
-                print("Error, Not Change the philips hue light color. \(String(describing: error))")
+                
+                guard error == nil else {
+                    print("Error, Not Change the philips hue light color. \(String(describing: error))")
+                    return
+                }
+                
+                print("- Change fraction philips hue color.")
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                showWhisperToast(title: "Change fraction philips hue lamps color.", background: .moss, textColor: .white)
             })
         }
     }
@@ -88,7 +96,15 @@ class Hue: NSObject {
             lightState.xy = [Float(colorXY.x), Float(colorXY.y)]
             
             swiftyHue.bridgeSendAPI.updateLightStateForId(light.key, withLightState: lightState, completionHandler: { error in
-                print("Error, Not Change the philips hue light color. \(String(describing: error))")
+                
+                guard error == nil else {
+                    print("Error, Not Change the philips hue light color. \(String(describing: error))")
+                    return
+                }
+                
+                print("- Change all philips hue color.")
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                showWhisperToast(title: "Change all philips hue lamps color.", background: .moss, textColor: .white)
             })
         }
     }
