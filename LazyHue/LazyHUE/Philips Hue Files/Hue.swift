@@ -21,8 +21,6 @@ class Hue: NSObject {
     typealias color = (red: Int, green: Int, blue: Int)
     
     // MARK: - Variable
-    public let CONNECT_BRIDGE_STATE_KEY: String = "CONNECT_BRIDGE_STATE_KEY"
-    private let bridgeAccessConfigKey = "HUE_BRIDGE_KEY"
     fileprivate var hueBridge: HueBridge?
     fileprivate var swiftyHue: SwiftyHue = SwiftyHue()
     fileprivate var hueBridgeFinder: BridgeFinder = BridgeFinder()
@@ -34,7 +32,7 @@ class Hue: NSObject {
     // MARK: - Init
     private override init() {}
     
-    // MARK: - Method
+    // MARK: - Public User Method
     public func connectHueBridge() {
         
         if let bridgeAccessConfig: BridgeAccessConfig = readHueBridgeAccessConfig() {
@@ -189,9 +187,11 @@ class Hue: NSObject {
             })
         }
     }
+    
+    // MARK: - Private User Method
     private func readHueBridgeAccessConfig() -> BridgeAccessConfig? {
         let userDefaults: UserDefaults = UserDefaults.standard
-        if let bridgeAccessConfigJSON = userDefaults.object(forKey: bridgeAccessConfigKey) as? JSON {
+        if let bridgeAccessConfigJSON = userDefaults.object(forKey: ACCESS_BRIDGE_KEY) as? JSON {
             return BridgeAccessConfig(json: bridgeAccessConfigJSON)
         }
         
@@ -200,7 +200,7 @@ class Hue: NSObject {
     private func writeHueBridgeAccessConfig(bridgeAccessConfig: BridgeAccessConfig) {
         let userDefaults = UserDefaults.standard
         if let bridgeAccessConfigJSON: JSON = bridgeAccessConfig.toJSON() {
-            userDefaults.set(bridgeAccessConfigJSON, forKey: bridgeAccessConfigKey)
+            userDefaults.set(bridgeAccessConfigJSON, forKey: ACCESS_BRIDGE_KEY)
             print("- Export philips hue bridge config.")
         }
     }
