@@ -40,6 +40,7 @@ class CameraViewController: UIViewController {
     
     // MARK: - Variables
     private var requests = [VNRequest]()
+    private var cameraType: Bool = false
     private var imageOutputData: AVCapturePhotoOutput  = AVCapturePhotoOutput()
     
     // MARK: - IBOutlet Variables
@@ -150,9 +151,11 @@ class CameraViewController: UIViewController {
         let isSwiched: (photo: Int, camera: Int) = (0, 1)
 
         if isSwiched.photo == sender.selectedSegmentIndex {
+            self.cameraType = false
             self.outsideRoundV.isHidden = false
         }
         else if isSwiched.camera == sender.selectedSegmentIndex {
+            self.cameraType = true
             self.outsideRoundV.isHidden = true
         }
     }
@@ -204,7 +207,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         // Enable Real-Time Camera Funcation
-        if self.outsideRoundV.isHidden {
+        if self.cameraType {
             let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
             DispatchQueue.main.async { [unowned self] in
                 do { try imageRequestHandler.perform(self.requests); }
