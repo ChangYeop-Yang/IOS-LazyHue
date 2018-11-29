@@ -6,6 +6,12 @@
 
 ## ★ Outline
 
+###### Used Technology
+
+* Core ML
+* Philips Hue API
+* LBS (Location Based Service)
+
 ## ★ Application UI/UX
 
 |CONNECT DISPLAY 1|CONNECT DISPLAY 2|
