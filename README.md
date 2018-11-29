@@ -14,25 +14,25 @@
 
 ## ★ Application UI/UX
 
-|CONNECT DISPLAY 1|CONNECT DISPLAY 2|
+|CONNECT DISPLAY IMAGE 001|CONNECT DISPLAY IMAGE 002|
 |:---------------:|:---------------:|
 |![](https://user-images.githubusercontent.com/20036523/49021101-37b90300-f1d5-11e8-80a7-cda4562cc2a3.png)|![](https://user-images.githubusercontent.com/20036523/49021099-37b90300-f1d5-11e8-9f53-05c51d2a838e.png)|
 
 * * *
 
-|HOME DISPLAY 1|HOME DISPLAY 2|
+|HOME DISPLAY IMAGE 001|HOME DISPLAY IMAGE 002|
 |:------------:|:------------:|
 |![](https://user-images.githubusercontent.com/20036523/44664163-6a742380-aa4d-11e8-9536-153cdb0c5e3e.jpg)|![](https://user-images.githubusercontent.com/20036523/44664298-c9399d00-aa4d-11e8-8183-c5a4281cfeec.jpg)|
 
 * * *
 
-|SETTING DISPLAY 1|SETTING DISPLAY 2|
+|SETTING DISPLAY IMAGE 001|SETTING DISPLAY IMAGE 002|
 |:------------:|:------------:|
 |![](https://user-images.githubusercontent.com/20036523/44945564-286d2800-ae27-11e8-98f9-c2d9c77bae24.png)|![](https://user-images.githubusercontent.com/20036523/44945563-286d2800-ae27-11e8-898d-7dafaafa4563.png)|
 
 * * *
 
-|GESTURE DISPLAY 1|GESTURE DISPLAY 2|
+|GESTURE DISPLAY IMAGE 001|GESTURE DISPLAY IMAGE 002|
 |:---------------:|:---------------:|
 |![]()|![]()|
 
