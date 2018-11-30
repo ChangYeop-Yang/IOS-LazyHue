@@ -139,6 +139,7 @@ class CameraViewController: UIViewController {
         
         if let moodType: String = classifications.first, let type: ImageMoodType = ImageMoodType(rawValue: moodType) {
             
+            // Check duplicate value
             guard moodType != priviousType else { return }
             
             priviousType = moodType

@@ -107,9 +107,10 @@ extension ConnectViewController: GIDSignInUIDelegate {
 extension ConnectViewController: HueAlterDelegate {
     
     func isConnectedBridge() {
+        
         // Perform any operations on signed in user here.
         self.googleSignBT.isEnabled = true
         self.bridgeConnBT.isEnabled = false
-        showWhisperToast(title: "Success, Connect google social login.", background: .moss, textColor: .white)
+        showWhisperToast(title: "Success, Connect Philips Hue Bridge.", background: .moss, textColor: .white)
     }
 }

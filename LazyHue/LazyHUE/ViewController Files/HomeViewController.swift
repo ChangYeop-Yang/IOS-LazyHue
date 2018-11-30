@@ -116,9 +116,9 @@ class HomeViewController: UIViewController {
         Weather.weatherInstance.receiveWeatherData(group: weatherGroup, language: "ko")
         
         weatherGroup.notify(queue: .main, execute: {
-            temperatureLB.text      = "오늘의 날씨 - \(Weather.weatherInstance.weatherData.sky)"
-            humidityLB.text         = "\(Weather.weatherInstance.weatherData.temperature) ℃ | \(Weather.weatherInstance.weatherData.humidity * 100) %"
-            precipitationLB.text    = "\(Weather.weatherInstance.weatherData.ozone) PPM | \(Weather.weatherInstance.weatherData.visibility) KM"
+            temperatureLB.text      = "⛱️ 오늘의 날씨 - \(Weather.weatherInstance.weatherData.sky)"
+            humidityLB.text         = "🌡️ \(Weather.weatherInstance.weatherData.temperature) ℃ 💦 \(Weather.weatherInstance.weatherData.humidity.rounded() * 100) %"
+            precipitationLB.text    = "☀️ \(Weather.weatherInstance.weatherData.ozone.rounded()) PPM ✨ \(Weather.weatherInstance.weatherData.visibility.rounded()) KM"
             stateIMG.image = UIImage(named: Weather.weatherInstance.weatherData.icon)
         })
     }

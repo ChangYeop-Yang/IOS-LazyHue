@@ -23,6 +23,7 @@
                     <connections>
                         <segue destination="glO-W8-gAX" kind="relationship" relationship="viewControllers" id="MiD-kM-k1T"/>
                         <segue destination="6Jo-Vn-Xaq" kind="relationship" relationship="viewControllers" id="ZW9-Wm-vtH"/>
+                        <segue destination="WO8-dO-U5m" kind="relationship" relationship="viewControllers" id="ksi-x9-jIx"/>
                         <segue destination="kA4-xC-ZSz" kind="relationship" relationship="viewControllers" id="jif-40-eUi"/>
                         <segue destination="YHX-pL-FGe" kind="relationship" relationship="viewControllers" id="CJ8-a6-wtb"/>
                     </connections>
@@ -40,6 +41,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6p4-BD-tka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="487" y="-4"/>
+        </scene>
+        <!--DetailStoryboard-->
+        <scene sceneID="5Cy-c8-bpT">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DetailStoryBoard" storyboardName="DetailStoryboard" id="WO8-dO-U5m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="lXA-uo-mW7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XiM-Mm-7y4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="486" y="104"/>
         </scene>
         <!--GestureStoryBoard-->
         <scene sceneID="5DU-0u-yAH">
