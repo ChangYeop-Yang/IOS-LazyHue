@@ -6,9 +6,21 @@
 
 ## ★ Outline
 
-###### Used Technology
+###### ※ Implemented features
+
+* 공공데이터(Open Data)를 활용한 오늘의 날씨 기능 제공 [Temperature, Humidity, Ozone, Visible Distance, Fine Dust]
+* Arduino의 센서를 활용한 데이터 제공 
+* LBS(Location Based Service)를 활용 한 주소(Road Name Address) 정보 제공
+* RGB 조절을 통한 전체 Philips Hue 색깔 변경 기능 제공
+* Motion 기능을 통한 Philips Hue 전원 관리 기능 제공
+* 사진속의 색상을 통해 Philips Hue 색상 변경 기능 제공
+* 카메라을 사용하여 Real-Time으로 풍경을 통한 Philips Hue 색상 변경 기능 제공
+* Core ML의 MNIST 모델을 활용 한 손글씨 기반의 제스처 기능 제공 [숫자에 맞는 색상 변경 및 전원 관리]
+
+###### ※ Used Technology
 
 * Core ML
+* Metarial Design
 * Philips Hue API
 * LBS (Location Based Service)
 
