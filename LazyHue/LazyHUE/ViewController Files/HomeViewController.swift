@@ -76,9 +76,9 @@ class HomeViewController: UIViewController {
         Sensory.sensoryInstance.parsorSensorDataJSON(url: "http://106.10.52.101/Arduino/selectArduino.php", group: arduinoGroup)
         
         arduinoGroup.notify(queue: .main, execute: {
-            dateLabel.text      = "측정 날짜 - \(String(describing: Sensory.sensoryInstance.dateList.last!))"
-            tempLabel.text      = "실내 온도 - \(String(describing: Sensory.sensoryInstance.temputuerList.last!.rounded()))℃"
-            humidity.text       = "실내 습도 - \(String(describing: Sensory.sensoryInstance.humidityList.last!.rounded()))%"
+            dateLabel.text      = "📅 측정 날짜 - \(String(describing: Sensory.sensoryInstance.dateList.last!))"
+            tempLabel.text      = "🌡️ 실내 온도 - \(String(describing: Sensory.sensoryInstance.temputuerList.last!.rounded()))℃"
+            humidity.text       = "💦 실내 습도 - \(String(describing: Sensory.sensoryInstance.humidityList.last!.rounded()))%"
             co2AndNoise.text    = "\(Sensory.sensoryInstance.gasList.last!.rounded())% | \(Sensory.sensoryInstance.noiseList.last!.rounded())dB | \(Sensory.sensoryInstance.cdsList.last!.rounded())Lx"
         })
     }
@@ -118,7 +118,7 @@ class HomeViewController: UIViewController {
         weatherGroup.notify(queue: .main, execute: {
             temperatureLB.text      = "⛱️ 오늘의 날씨 - \(Weather.weatherInstance.weatherData.sky)"
             humidityLB.text         = "🌡️ \(Weather.weatherInstance.weatherData.temperature) ℃ 💦 \(Weather.weatherInstance.weatherData.humidity.rounded() * 100) %"
-            precipitationLB.text    = "☀️ \(Weather.weatherInstance.weatherData.ozone.rounded()) PPM ✨ \(Weather.weatherInstance.weatherData.visibility.rounded()) KM"
+            precipitationLB.text    = "☀️ \(Weather.weatherInstance.weatherData.ozone.rounded()) PPM 🌈 \(Weather.weatherInstance.weatherData.visibility.rounded()) KM"
             stateIMG.image = UIImage(named: Weather.weatherInstance.weatherData.icon)
         })
     }
