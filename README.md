@@ -34,19 +34,25 @@
 
 |HOME DISPLAY IMAGE 001|HOME DISPLAY IMAGE 002|
 |:------------:|:------------:|
-|![](https://user-images.githubusercontent.com/20036523/44664163-6a742380-aa4d-11e8-9536-153cdb0c5e3e.jpg)|![](https://user-images.githubusercontent.com/20036523/44664298-c9399d00-aa4d-11e8-8183-c5a4281cfeec.jpg)|
+|![](https://user-images.githubusercontent.com/20036523/49280112-a1365b80-f4cc-11e8-877b-c7e69b3adb0f.png)|![](https://user-images.githubusercontent.com/20036523/44664298-c9399d00-aa4d-11e8-8183-c5a4281cfeec.jpg)|
 
 * * *
 
-|SETTING DISPLAY IMAGE 001|SETTING DISPLAY IMAGE 002|
-|:------------:|:------------:|
-|![](https://user-images.githubusercontent.com/20036523/44945564-286d2800-ae27-11e8-98f9-c2d9c77bae24.png)|![](https://user-images.githubusercontent.com/20036523/44945563-286d2800-ae27-11e8-898d-7dafaafa4563.png)|
+|CAMERA DISPLAY IMAGE 001|CAMERA DISPLAY IMAGE 002|
+|:----------------------:|:----------------------:|
+|![](https://user-images.githubusercontent.com/20036523/49280097-967bc680-f4cc-11e8-9134-0f5ea3318e9e.png)|![](https://user-images.githubusercontent.com/20036523/49280098-967bc680-f4cc-11e8-91eb-e90db57adf23.png)|
 
 * * *
 
 |GESTURE DISPLAY IMAGE 001|GESTURE DISPLAY IMAGE 002|
 |:---------------:|:---------------:|
-|![]()|![]()|
+|![](https://user-images.githubusercontent.com/20036523/49280080-8a900480-f4cc-11e8-91d3-810100cf06ac.png)|![](https://user-images.githubusercontent.com/20036523/49280079-8a900480-f4cc-11e8-95fb-26f14ae2194d.png)|
+
+* * *
+
+|SETTING DISPLAY IMAGE 001|SETTING DISPLAY IMAGE 002|
+|:------------:|:------------:|
+|![](https://user-images.githubusercontent.com/20036523/49280071-82d06000-f4cc-11e8-8b07-367fc9910e46.png)|![](https://user-images.githubusercontent.com/20036523/49280072-82d06000-f4cc-11e8-804a-5ccec37062e3.png)|
 
 ## ★ Demo Play
 
