@@ -40,7 +40,7 @@
 
 |CAMERA DISPLAY IMAGE 001|CAMERA DISPLAY IMAGE 002|
 |:----------------------:|:----------------------:|
-|![](https://user-images.githubusercontent.com/20036523/49280097-967bc680-f4cc-11e8-9134-0f5ea3318e9e.png)|![](https://user-images.githubusercontent.com/20036523/49280098-967bc680-f4cc-11e8-91eb-e90db57adf23.png)|
+|![](https://user-images.githubusercontent.com/20036523/49280603-f32bb100-f4cd-11e8-8409-c9dec149104f.png)|![](https://user-images.githubusercontent.com/20036523/49280604-f3c44780-f4cd-11e8-8e36-19fa1179acb7.png)|
 
 * * *
 
