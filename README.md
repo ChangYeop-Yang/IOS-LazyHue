@@ -34,7 +34,7 @@
 
 |HOME DISPLAY IMAGE 001|HOME DISPLAY IMAGE 002|
 |:------------:|:------------:|
-|![](https://user-images.githubusercontent.com/20036523/49280586-ead37600-f4cd-11e8-81ce-ffb950648c8e.png)|![](https://user-images.githubusercontent.com/20036523/49280587-ead37600-f4cd-11e8-83a8-594db3fa0c45.png)|
+|![](https://user-images.githubusercontent.com/20036523/49284504-24a97a00-f4d8-11e8-8052-aee64db3858b.png)|![](https://user-images.githubusercontent.com/20036523/49284505-24a97a00-f4d8-11e8-93e4-a98d3605909c.png)|
 
 * * *
 
