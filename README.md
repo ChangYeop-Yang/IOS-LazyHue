@@ -34,7 +34,7 @@
 
 |HOME DISPLAY IMAGE 001|HOME DISPLAY IMAGE 002|
 |:------------:|:------------:|
-|![](https://user-images.githubusercontent.com/20036523/49280112-a1365b80-f4cc-11e8-877b-c7e69b3adb0f.png)|![](https://user-images.githubusercontent.com/20036523/44664298-c9399d00-aa4d-11e8-8183-c5a4281cfeec.jpg)|
+|![](https://user-images.githubusercontent.com/20036523/49280603-f32bb100-f4cd-11e8-8409-c9dec149104f.png)|![](https://user-images.githubusercontent.com/20036523/49280604-f3c44780-f4cd-11e8-8e36-19fa1179acb7.png)|
 
 * * *
 
@@ -46,13 +46,13 @@
 
 |GESTURE DISPLAY IMAGE 001|GESTURE DISPLAY IMAGE 002|
 |:---------------:|:---------------:|
-|![](https://user-images.githubusercontent.com/20036523/49280080-8a900480-f4cc-11e8-91d3-810100cf06ac.png)|![](https://user-images.githubusercontent.com/20036523/49280079-8a900480-f4cc-11e8-95fb-26f14ae2194d.png)|
+|![](https://user-images.githubusercontent.com/20036523/49280615-fde64600-f4cd-11e8-99a9-642ee3292cd9.png)|![](https://user-images.githubusercontent.com/20036523/49280617-fde64600-f4cd-11e8-94df-f7779713679e.png)|
 
 * * *
 
 |SETTING DISPLAY IMAGE 001|SETTING DISPLAY IMAGE 002|
 |:------------:|:------------:|
-|![](https://user-images.githubusercontent.com/20036523/49280071-82d06000-f4cc-11e8-8b07-367fc9910e46.png)|![](https://user-images.githubusercontent.com/20036523/49280072-82d06000-f4cc-11e8-804a-5ccec37062e3.png)|
+|![](https://user-images.githubusercontent.com/20036523/49280626-0474bd80-f4ce-11e8-83f4-e2e3a46a8cfd.png)|![](https://user-images.githubusercontent.com/20036523/49280627-0474bd80-f4ce-11e8-9681-2103df5213dd.png)|
 
 ## ★ Demo Play
 
