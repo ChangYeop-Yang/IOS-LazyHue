@@ -28,7 +28,7 @@
 
 |CONNECT DISPLAY IMAGE 001|CONNECT DISPLAY IMAGE 002|
 |:---------------:|:---------------:|
-|![](https://user-images.githubusercontent.com/20036523/49021101-37b90300-f1d5-11e8-80a7-cda4562cc2a3.png)|![](https://user-images.githubusercontent.com/20036523/49021099-37b90300-f1d5-11e8-9f53-05c51d2a838e.png)|
+|![](https://user-images.githubusercontent.com/20036523/49296163-d9ed2980-f4fa-11e8-960f-fc431621cc16.png)|![](https://user-images.githubusercontent.com/20036523/49296162-d9ed2980-f4fa-11e8-95cc-ea5a7f80a5cf.png)|
 
 * * *
 
