@@ -23,7 +23,7 @@
 * Metarial Design
 * Philips Hue API
 * LBS (Location Based Service)
-* Google Sign-In into Your iOS App API
+* [Google Sign-In into Your iOS App API](https://developers.google.com/identity/sign-in/ios/)
 
 ## ★ Application UI/UX
 
