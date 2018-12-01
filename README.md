@@ -19,10 +19,11 @@
 
 ###### ※ Used Technology
 
-* Core ML
-* Metarial Design
-* Philips Hue API
-* LBS (Location Based Service)
+* [Metarial Design](https://material.io/design/)
+* [Philips Hue API](https://developers.meethue.com/)
+* [Core ML - Apple Framework](https://developer.apple.com/documentation/coreml)
+* [LBS (Location Based Service)](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%B9%98_%EA%B8%B0%EB%B0%98_%EC%84%9C%EB%B9%84%EC%8A%A4)
+* [Google Sign-In into Your iOS App API](https://developers.google.com/identity/sign-in/ios/)
 
 ## ★ Application UI/UX
 
@@ -55,6 +56,10 @@
 |![](https://user-images.githubusercontent.com/20036523/49280626-0474bd80-f4ce-11e8-83f4-e2e3a46a8cfd.png)|![](https://user-images.githubusercontent.com/20036523/49280627-0474bd80-f4ce-11e8-9681-2103df5213dd.png)|
 
 ## ★ Demo Play
+
+##### ※ Youtube Demo Play
+
+##### ※ GIF Demo Play
 
 ## ★ Reference URL
 * [LazyHUE - OpenSource List](http://yeop9657.blog.me/221067037683)
