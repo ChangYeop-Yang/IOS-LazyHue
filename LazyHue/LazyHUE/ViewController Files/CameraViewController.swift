@@ -50,6 +50,7 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var outsideRoundV: RoundView!
     @IBOutlet weak var previewIMG: UIImageView!
     @IBOutlet weak var previewV: UIView!
+    @IBOutlet weak var photoInformationV: CardView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -192,7 +193,8 @@ class CameraViewController: UIViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         
         if motion == .motionShake {
-            previewIMG.image = nil
+            self.previewIMG.image = nil
+            self.photoInformationV.isHidden = true
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
     }
@@ -208,6 +210,11 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         
         let image = UIImage(data: imageData)
         self.previewIMG.image = image
+        
+        UIView.animate(withDuration: 0.5, animations: { [unowned self] in
+            self.photoInformationV.isHidden = false
+            self.photoInformationV.center.y -= self.view.bounds.height
+        }, completion: nil)
     }
 }
 

@@ -87,12 +87,33 @@
                                     <constraint firstItem="89K-5u-MSy" firstAttribute="leading" secondItem="Dcq-08-vhy" secondAttribute="leading" id="vXk-jm-fW6"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbf-nN-QrU" customClass="CardView" customModule="LazyHUE" customModuleProvider="target">
+                                <rect key="frame" x="20" y="534" width="335" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋 아이폰을 좌우로 흔들면 다시 촬영모드로 돌아갈 수 있어요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hol-43-0wn">
+                                        <rect key="frame" x="5" y="5" width="325" height="54"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hol-43-0wn" firstAttribute="top" secondItem="Vbf-nN-QrU" secondAttribute="top" constant="5" id="GDb-Lw-o1G"/>
+                                    <constraint firstAttribute="height" constant="64" id="UQE-Pq-euU"/>
+                                    <constraint firstAttribute="bottom" secondItem="hol-43-0wn" secondAttribute="bottom" constant="5" id="kJh-R8-kC1"/>
+                                    <constraint firstItem="hol-43-0wn" firstAttribute="leading" secondItem="Vbf-nN-QrU" secondAttribute="leading" constant="5" id="tfS-bg-O4S"/>
+                                    <constraint firstAttribute="trailing" secondItem="hol-43-0wn" secondAttribute="trailing" constant="5" id="tpR-mZ-j9q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="e6J-Nb-8B8" firstAttribute="trailing" secondItem="Vbf-nN-QrU" secondAttribute="trailing" constant="20" id="00N-l1-lfS"/>
                             <constraint firstItem="e6J-Nb-8B8" firstAttribute="trailing" secondItem="va6-NW-KSO" secondAttribute="trailing" constant="20" id="Lfc-pB-a4W"/>
                             <constraint firstItem="Dcq-08-vhy" firstAttribute="top" secondItem="va6-NW-KSO" secondAttribute="bottom" constant="20" id="MHR-up-jQQ"/>
                             <constraint firstItem="F3K-3Q-PAW" firstAttribute="leading" secondItem="e6J-Nb-8B8" secondAttribute="leading" id="Ocv-OV-qRy"/>
+                            <constraint firstItem="e6J-Nb-8B8" firstAttribute="bottom" secondItem="Vbf-nN-QrU" secondAttribute="bottom" constant="20" id="RNs-kf-G0Q"/>
                             <constraint firstItem="Mri-u9-2yf" firstAttribute="leading" secondItem="e6J-Nb-8B8" secondAttribute="leading" id="UzU-Be-c7f"/>
                             <constraint firstItem="F3K-3Q-PAW" firstAttribute="bottom" secondItem="e6J-Nb-8B8" secondAttribute="bottom" id="WTN-Jc-ANz"/>
                             <constraint firstItem="F3K-3Q-PAW" firstAttribute="trailing" secondItem="e6J-Nb-8B8" secondAttribute="trailing" id="ctS-xD-t1d"/>
@@ -102,6 +123,7 @@
                             <constraint firstItem="e6J-Nb-8B8" firstAttribute="bottom" secondItem="qLp-dL-2UR" secondAttribute="bottom" constant="35" id="gDR-7M-f3P"/>
                             <constraint firstItem="Mri-u9-2yf" firstAttribute="top" secondItem="e6J-Nb-8B8" secondAttribute="top" id="gUJ-y2-YSX"/>
                             <constraint firstItem="qLp-dL-2UR" firstAttribute="centerX" secondItem="lwH-P0-rI4" secondAttribute="centerX" id="k1l-3e-yiv"/>
+                            <constraint firstItem="Vbf-nN-QrU" firstAttribute="leading" secondItem="e6J-Nb-8B8" secondAttribute="leading" constant="20" id="oZq-06-9YA"/>
                             <constraint firstItem="va6-NW-KSO" firstAttribute="leading" secondItem="e6J-Nb-8B8" secondAttribute="leading" constant="20" id="vni-3m-qH8"/>
                             <constraint firstItem="e6J-Nb-8B8" firstAttribute="trailing" secondItem="Dcq-08-vhy" secondAttribute="trailing" constant="20" id="xO5-gW-UIq"/>
                             <constraint firstItem="va6-NW-KSO" firstAttribute="top" secondItem="e6J-Nb-8B8" secondAttribute="top" constant="20" id="zDH-OH-oje"/>
@@ -113,6 +135,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="outsideRoundV" destination="qLp-dL-2UR" id="irq-lN-NAS"/>
+                        <outlet property="photoInformationV" destination="Vbf-nN-QrU" id="EXj-VZ-sr0"/>
                         <outlet property="previewIMG" destination="F3K-3Q-PAW" id="O0a-HX-63Q"/>
                         <outlet property="previewV" destination="Mri-u9-2yf" id="Yw9-6d-py7"/>
                         <outlet property="weatherIMG" destination="89K-5u-MSy" id="sFG-fe-zKl"/>
