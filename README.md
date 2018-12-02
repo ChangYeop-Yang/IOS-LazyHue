@@ -57,9 +57,7 @@
 
 ## ★ Demo Play
 
-##### ※ Youtube Demo Play
-
-##### ※ GIF Demo Play
+* * *
 
 ## ★ Reference URL
 * [LazyHUE - OpenSource List](http://yeop9657.blog.me/221067037683)
