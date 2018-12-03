@@ -24,6 +24,7 @@
 * [Core ML - Apple Framework](https://developer.apple.com/documentation/coreml)
 * [LBS (Location Based Service)](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%B9%98_%EA%B8%B0%EB%B0%98_%EC%84%9C%EB%B9%84%EC%8A%A4)
 * [Google Sign-In into Your iOS App API](https://developers.google.com/identity/sign-in/ios/)
+* [Naver Cloud Platform - Micro Server & DNS](https://www.ncloud.com/)
 
 ## ★ Application UI/UX
 
