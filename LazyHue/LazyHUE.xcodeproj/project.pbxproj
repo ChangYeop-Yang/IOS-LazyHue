@@ -40,6 +40,8 @@
 		0CED6F3321B1304F005DC3FB /* DetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CED6F3221B1304F005DC3FB /* DetailStoryboard.storyboard */; };
 		0CF8AD6D219F1E5D00B4F74E /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */; };
 		0CFECBA9212458930021D8C9 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFECBA8212458930021D8C9 /* Hue.swift */; };
+		0CFF7BC421B4DFE2008D5AAC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF7BC321B4DFE2008D5AAC /* TableViewCell.swift */; };
+		0CFF7BC621B4E5DE008D5AAC /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF7BC521B4E5DE008D5AAC /* DetailTableViewController.swift */; };
 		1AC9F3C3A9E46BD3445DC09C /* Pods_LazyHUEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA02D5F76A7B5DBE17C6BC /* Pods_LazyHUEUITests.framework */; };
 		31E0134E28EB78E5D20DBCD8 /* Pods_LazyHUETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4C23151D42AC428A80A297 /* Pods_LazyHUETests.framework */; };
 		C55A32E5784766BFCB2157EF /* Pods_LazyHUE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777BD8CD1C52A53C845BADA9 /* Pods_LazyHUE.framework */; };
@@ -102,6 +104,8 @@
 		0CED6F3221B1304F005DC3FB /* DetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailStoryboard.storyboard; sourceTree = "<group>"; };
 		0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		0CFECBA8212458930021D8C9 /* Hue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = "../../../../iOS-LazyHUE/LazyHUE/LazyHUE/Philips Hue Files/Hue.swift"; sourceTree = "<group>"; };
+		0CFF7BC321B4DFE2008D5AAC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		0CFF7BC521B4E5DE008D5AAC /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		75F770558E2A4AAB8EF0A5F3 /* Pods-LazyHUEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.release.xcconfig"; sourceTree = "<group>"; };
 		777BD8CD1C52A53C845BADA9 /* Pods_LazyHUE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyHUE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845C7FD952811C2136821AE2 /* Pods-LazyHUEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyHUEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyHUEUITests/Pods-LazyHUEUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -251,9 +255,11 @@
 		0C6101EC20DA4C2D00360816 /* ViewController Files */ = {
 			isa = PBXGroup;
 			children = (
+				0CFF7BC221B4DFB9008D5AAC /* Table Custom Files */,
 				0CD9F3EA219EDC1000EC7A40 /* ConnectViewController.swift */,
 				0C6101C020DA4C1A00360816 /* HomeViewController.swift */,
 				0C0C7322211FF90800335573 /* CameraViewController.swift */,
+				0CFF7BC521B4E5DE008D5AAC /* DetailTableViewController.swift */,
 				0C40EADD2132754A00A6AC88 /* GestureViewController.swift */,
 				0C08941C21285BF900E0C636 /* SettingViewController.swift */,
 			);
@@ -295,6 +301,14 @@
 				0CFECBA8212458930021D8C9 /* Hue.swift */,
 			);
 			path = "Philips Hue Files";
+			sourceTree = "<group>";
+		};
+		0CFF7BC221B4DFB9008D5AAC /* Table Custom Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CFF7BC321B4DFE2008D5AAC /* TableViewCell.swift */,
+			);
+			path = "Table Custom Files";
 			sourceTree = "<group>";
 		};
 		5334253B957792681D08E59A /* Frameworks */ = {
@@ -577,9 +591,11 @@
 				0C08E617211F1B2C00C0EE4A /* Weather.swift in Sources */,
 				0C08E61A211F1E2000C0EE4A /* WhisperToast.swift in Sources */,
 				0C2CA23E21B0220C000874F4 /* RoundButton.swift in Sources */,
+				0CFF7BC421B4DFE2008D5AAC /* TableViewCell.swift in Sources */,
 				0C4666A621246F1700333E8E /* Defaults.swift in Sources */,
 				0C0C7323211FF90800335573 /* CameraViewController.swift in Sources */,
 				0CD9F3EB219EDC1000EC7A40 /* ConnectViewController.swift in Sources */,
+				0CFF7BC621B4E5DE008D5AAC /* DetailTableViewController.swift in Sources */,
 				0CED6F3121B12D35005DC3FB /* FlickrStyle.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

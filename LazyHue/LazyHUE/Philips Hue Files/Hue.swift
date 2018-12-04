@@ -25,15 +25,15 @@ class Hue: NSObject {
     fileprivate var swiftyHue: SwiftyHue = SwiftyHue()
     fileprivate var hueBridgeFinder: BridgeFinder = BridgeFinder()
     fileprivate var hueAuthenticator: BridgeAuthenticator?
-    public static var hueInstance: Hue = Hue()
-    public var hueColors: color = (255, 255, 255)
-    public var delegate: HueAlterDelegate?
+    internal static var hueInstance: Hue = Hue()
+    internal var hueColors: color = (255, 255, 255)
+    internal var delegate: HueAlterDelegate?
     
     // MARK: - Init
     private override init() {}
     
     // MARK: - Public User Method
-    public func connectHueBridge() {
+    internal func connectHueBridge() {
         
         if let bridgeAccessConfig: BridgeAccessConfig = readHueBridgeAccessConfig() {
             swiftyHue.setBridgeAccessConfig(bridgeAccessConfig)
@@ -50,7 +50,7 @@ class Hue: NSObject {
         hueBridgeFinder.delegate = self
         hueBridgeFinder.start()
     }
-    public func changeHueColor(red: Int, green: Int, blue: Int, alpha: Int) {
+    internal func changeHueColor(red: Int, green: Int, blue: Int, alpha: Int) {
         
         guard let lights = swiftyHue.resourceCache?.lights else {
             print("Error, Not Load the philips hue lights.")
@@ -77,7 +77,7 @@ class Hue: NSObject {
             })
         }
     }
-    public func changeHueColor(color: UIColor) {
+    internal func changeHueColor(color: UIColor) {
         
         guard let lights = swiftyHue.resourceCache?.lights else {
             print("Error, Not Load the philips hue lights.")
@@ -104,7 +104,7 @@ class Hue: NSObject {
             })
         }
     }
-    public func changeHueColor(red: Int, green: Int, blue: Int, alpha: Int, index: Int) {
+    internal func changeHueColor(red: Int, green: Int, blue: Int, alpha: Int, index: Int) {
         
         guard let lights = swiftyHue.resourceCache?.lights else {
             print("Error, Not Load the philips hue lights.")
@@ -113,7 +113,6 @@ class Hue: NSObject {
         
         let keys: [String] = lights.keys.compactMap({$0})
         if index != 0 && index <= lights.count {
-            
             let colorXY = HueUtilities.calculateXY(UIColor.init(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha)), forModel: keys[index - 1])
             
             var lightState: LightState = LightState()
@@ -133,7 +132,7 @@ class Hue: NSObject {
             })
         }
     }
-    public func changeHuePower() {
+    internal func changeHuePower() {
         
         guard let lights = swiftyHue.resourceCache?.lights else {
             print("Error, Not Load the Philips Hue Lights.")
@@ -160,7 +159,7 @@ class Hue: NSObject {
             })
         }
     }
-    public func changeHuePower(number: Int) {
+    internal func changeHuePower(number: Int) {
         
         guard let lights = swiftyHue.resourceCache?.lights else {
             print("Error, Not Load the Philips Hue Lights.")
@@ -184,6 +183,24 @@ class Hue: NSObject {
                 showWhisperToast(title: "Change fraction philips hue lamps power.", background: .moss, textColor: .white)
             })
         }
+    }
+    
+    internal func getHueBulbCount() -> Int {
+        
+        guard let lights: [Light] = swiftyHue.resourceCache?.lights.compactMap({$0.value}) else {
+            fatalError("Error, Get Philips Hue Lamp Information.")
+        }
+        return lights.count
+    }
+    internal func getHueBulgINF(index: Int) -> (hueColor: UIColor, hueName: String, huePower: Bool) {
+        
+        guard let lights: [Light] = swiftyHue.resourceCache?.lights.compactMap({$0.value}) else {
+            fatalError("Error, Get Philips Hue Lamp Information.")
+        }
+        
+        let xy: [Float] = lights[index].state.xy!
+        let cgColor = HueUtilities.colorFromXY(CGPoint(x: Double(xy[0]), y: Double(xy[1])), forModel: lights[index].modelId)
+        return (UIColor(cgColor: cgColor.cgColor), lights[index].name, lights[index].state.on!)
     }
     
     // MARK: - Private User Method
