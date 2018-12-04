@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="HueColor" representedClassName="HueColor" syncable="YES" codeGenerationType="class">
+        <attribute name="alphaColor" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="blueColor" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="greenColor" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="redColor" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="objectHue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HueObject" syncable="YES"/>
+    </entity>
+    <entity name="HueObject" representedClassName="HueObject" syncable="YES" codeGenerationType="class">
+        <attribute name="keyHue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lightHue" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="colorHue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HueColor" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="HueColor" positionX="-115.3359375" positionY="-321.82421875" width="128" height="118"/>
+        <element name="HueObject" positionX="-271.72265625" positionY="-138.72265625" width="128" height="88"/>
+    </elements>
+</model>
