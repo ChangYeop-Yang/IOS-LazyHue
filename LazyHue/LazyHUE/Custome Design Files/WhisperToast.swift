@@ -8,6 +8,7 @@
 
 import UIKit
 import Whisper
+import AudioToolbox
 
 // MARK: - Method
 public func showWhisperToast(title: String, background: UIColor, textColor: UIColor) {
@@ -18,8 +19,8 @@ public func showWhisperToast(title: String, background: UIColor, textColor: UICo
     message.font = .boldSystemFont(ofSize: 11)
     
     Whisper.show(whistle: message, action: .show(1))
+    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
 }
-
 public func showWhisperToast(title: String, background: UIColor, textColor: UIColor, clock: Int) {
     
     var message: Murmur = Murmur(title: title)
@@ -28,4 +29,5 @@ public func showWhisperToast(title: String, background: UIColor, textColor: UICo
     message.font = .boldSystemFont(ofSize: 11)
     
     Whisper.show(whistle: message, action: .show(TimeInterval(clock)))
+    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
 }

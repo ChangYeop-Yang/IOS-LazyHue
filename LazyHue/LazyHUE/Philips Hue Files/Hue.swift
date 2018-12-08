@@ -8,7 +8,6 @@
 
 import Gloss
 import SwiftyHue
-import AudioToolbox
 
 // MARK: - Protocol
 internal protocol HueAlterDelegate: class {
@@ -17,8 +16,7 @@ internal protocol HueAlterDelegate: class {
 
 class Hue: NSObject {
     
-    // MARK: - typealias
-    typealias color = (red: Int, green: Int, blue: Int)
+    // MARK: - TypeAlias
     internal typealias HueLight = [String: Light]
     
     // MARK: - Variable
@@ -32,7 +30,7 @@ class Hue: NSObject {
     // MARK: - Init
     private override init() {}
     
-    // MARK: - Public User Method
+    // MARK: - Internal User Method
     internal func connectHueBridge() {
         
         if let bridgeAccessConfig: BridgeAccessConfig = readHueBridgeAccessConfig() {
@@ -49,6 +47,12 @@ class Hue: NSObject {
         
         hueBridgeFinder.delegate = self
         hueBridgeFinder.start()
+    }
+    internal func getHueLights() -> HueLight {
+        guard let ligths: HueLight = swiftyHue.resourceCache?.lights else {
+            fatalError("🚫 Error, Could not get Philips Hue Bulbs.")
+        }
+        return ligths
     }
     internal func changeHueColor(red: Int, green: Int, blue: Int, alpha: Int) {
         
@@ -73,7 +77,6 @@ class Hue: NSObject {
                 }
                 
                 print("- Change fraction philips hue color.")
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             })
         }
     }
@@ -100,7 +103,6 @@ class Hue: NSObject {
                 }
                 
                 print("- Change all philips hue color.")
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             })
         }
     }
@@ -127,7 +129,6 @@ class Hue: NSObject {
                 }
                 
                 print("- Change fraction philips hue color.")
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 showWhisperToast(title: "Change fraction philips hue lamps color.", background: .moss, textColor: .white)
             })
         }
@@ -154,7 +155,6 @@ class Hue: NSObject {
                     }
                     
                     print("- Change all philips hue power.")
-                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                     showWhisperToast(title: "Change all philips hue lamps power.", background: .moss, textColor: .white)
             })
         }
@@ -179,18 +179,9 @@ class Hue: NSObject {
                 }
                 
                 print("- Change fraction philips hue power.")
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 showWhisperToast(title: "Change fraction philips hue lamps power.", background: .moss, textColor: .white)
             })
         }
-    }
-    
-    internal func getHueBulbCount() -> Int {
-        
-        guard let lights: [Light] = swiftyHue.resourceCache?.lights.compactMap({$0.value}) else {
-            fatalError("Error, Get Philips Hue Lamp Information.")
-        }
-        return lights.count
     }
     internal func getHueBulgINF(index: Int) -> (hueColor: UIColor, hueName: String, huePower: Bool) {
         
