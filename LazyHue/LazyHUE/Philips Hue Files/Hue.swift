@@ -11,7 +11,7 @@ import SwiftyHue
 import AudioToolbox
 
 // MARK: - Protocol
-protocol HueAlterDelegate: class {
+internal protocol HueAlterDelegate: class {
     func isConnectedBridge()
 }
 
@@ -19,6 +19,7 @@ class Hue: NSObject {
     
     // MARK: - typealias
     typealias color = (red: Int, green: Int, blue: Int)
+    internal typealias HueLight = [String: Light]
     
     // MARK: - Variable
     fileprivate var hueBridge: HueBridge?
@@ -26,7 +27,6 @@ class Hue: NSObject {
     fileprivate var hueBridgeFinder: BridgeFinder = BridgeFinder()
     fileprivate var hueAuthenticator: BridgeAuthenticator?
     internal static var hueInstance: Hue = Hue()
-    internal var hueColors: color = (255, 255, 255)
     internal var delegate: HueAlterDelegate?
     
     // MARK: - Init
@@ -202,9 +202,16 @@ class Hue: NSObject {
         let cgColor = HueUtilities.colorFromXY(CGPoint(x: Double(xy[0]), y: Double(xy[1])), forModel: lights[index].modelId)
         return (UIColor(cgColor: cgColor.cgColor), lights[index].name, lights[index].state.on!)
     }
+    internal func deleteHueBridge() {
+        let userDefaults: UserDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: ACCESS_BRIDGE_KEY)
+        userDefaults.removeObject(forKey: CONNECT_BRIDGE_STATE_KEY)
+        print("‼️ Remove Philips Hue Bridge.")
+    }
     
     // MARK: - Private User Method
     private func readHueBridgeAccessConfig() -> BridgeAccessConfig? {
+        
         let userDefaults: UserDefaults = UserDefaults.standard
         if let bridgeAccessConfigJSON = userDefaults.object(forKey: ACCESS_BRIDGE_KEY) as? JSON {
             return BridgeAccessConfig(json: bridgeAccessConfigJSON)
@@ -213,7 +220,8 @@ class Hue: NSObject {
         return nil
     }
     private func writeHueBridgeAccessConfig(bridgeAccessConfig: BridgeAccessConfig) {
-        let userDefaults = UserDefaults.standard
+        
+        let userDefaults: UserDefaults = UserDefaults.standard
         if let bridgeAccessConfigJSON: JSON = bridgeAccessConfig.toJSON() {
             userDefaults.set(bridgeAccessConfigJSON, forKey: ACCESS_BRIDGE_KEY)
             print("- Export philips hue bridge config.")
@@ -223,7 +231,6 @@ class Hue: NSObject {
 
 // MARK: - BridgeFinderDelegate Extension
 extension Hue: BridgeFinderDelegate {
-    
     func bridgeFinder(_ finder: BridgeFinder, didFinishWithResult bridges: [HueBridge]) {
         if let bridge: HueBridge = bridges.first {
             
@@ -248,8 +255,7 @@ extension Hue: BridgeAuthenticatorDelegate {
             swiftyHue.setBridgeAccessConfig(bridgeConfig)
             
             writeHueBridgeAccessConfig(bridgeAccessConfig: bridgeConfig)
-            UserDefaults.standard.set(true, forKey: CONNECT_BRIDGE_STATE_KEY)
-            print("- Connect philips hue bridge. \(bridgeConfig.ipAddress):\(bridgeConfig.username):\(bridgeConfig.bridgeId)")
+            print("🛠 Connect philips hue bridge. \(bridgeConfig.ipAddress):\(bridgeConfig.username):\(bridgeConfig.bridgeId)")
             
             // HueAlterDelegate Method
             delegate?.isConnectedBridge()

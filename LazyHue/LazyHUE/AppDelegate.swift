@@ -42,9 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: Detect pressing Home Button.
         print("- Resign application activity mode.")
-        UserDefaults.standard.set(Hue.hueInstance.hueColors.red, forKey: HUE_COLOR_RED_KEY)
-        UserDefaults.standard.set(Hue.hueInstance.hueColors.blue, forKey: HUE_COLOR_BLUE_KEY)
-        UserDefaults.standard.set(Hue.hueInstance.hueColors.green, forKey: HUE_COLOR_GREEN_KEY)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

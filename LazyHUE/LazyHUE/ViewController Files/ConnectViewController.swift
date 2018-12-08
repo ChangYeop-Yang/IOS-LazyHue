@@ -111,6 +111,8 @@ extension ConnectViewController: HueAlterDelegate {
         // Perform any operations on signed in user here.
         self.googleSignBT.isEnabled = true
         self.bridgeConnBT.isEnabled = false
+        
+        UserDefaults.standard.set(true, forKey: CONNECT_BRIDGE_STATE_KEY)
         showWhisperToast(title: "Success, Connect Philips Hue Bridge.", background: .moss, textColor: .white)
     }
 }

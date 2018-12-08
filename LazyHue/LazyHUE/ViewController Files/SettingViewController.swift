@@ -15,7 +15,7 @@ import GoogleSignIn
 class SettingViewController: UIViewController {
     
     // MARK: - Enum
-    private enum tag: Int {
+    private enum Tag: Int {
         case developerINFO = 100
         case sendEMAIL     = 200
         case opensource    = 300
@@ -23,14 +23,15 @@ class SettingViewController: UIViewController {
         case motion        = 600
         case google        = 700
         case gesture       = 800
+        case delete        = 900
     }
     
     // MARK: - Typealias
     private typealias Index = (index: IndexPath, name: String)
 
     // MARK: - Outlet Variables
-    @IBOutlet weak var userIMG: UIImageView!
-    @IBOutlet weak var userNameLB: UILabel!
+    @IBOutlet private weak var userIMG: UIImageView!
+    @IBOutlet private weak var userNameLB: UILabel!
     
     // MARK: - Variables
     private var isShowDisplay: Bool = true
@@ -40,7 +41,6 @@ class SettingViewController: UIViewController {
         (IndexPath(row: 0, section: 0), "Arduino"),
         (IndexPath(row: 1, section: 0), "Motion"),
         (IndexPath(row: 2, section: 0), "Gesture"),
-        (IndexPath(row: 3, section: 0), "Delete")
     ]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,12 +56,14 @@ class SettingViewController: UIViewController {
         
         // Get Google Current User and Set User Image and ID here
         DispatchQueue.main.async { [unowned self] in
-            if let currentUser: GIDGoogleUser = GIDSignIn.sharedInstance()?.currentUser {
-                self.userNameLB.text = currentUser.profile.name
-                
-                if let imageData: Data = try? Data(contentsOf: currentUser.profile.imageURL(withDimension: 100)) {
-                    self.userIMG.image = UIImage(data: imageData)
-                }
+            
+            guard let currentUser: GIDGoogleUser = GIDSignIn.sharedInstance()?.currentUser else {
+                return
+            }
+            
+            self.userNameLB.text = currentUser.profile.name
+            if let imageData: Data = try? Data(contentsOf: currentUser.profile.imageURL(withDimension: 100)) {
+                self.userIMG.image = UIImage(data: imageData)
             }
         }
     }
@@ -89,26 +91,36 @@ class SettingViewController: UIViewController {
     
     // MARK: - Action Method
     @objc private func switchChanged(mySwitch: UISwitch) {
+    
+        guard let tag: Tag = Tag(rawValue: mySwitch.tag) else {
+            return
+        }
+        switch tag {
+            case .arduino :
+                userDefault.set(mySwitch.isOn, forKey: ARUDINO_ENABLE_KEY)
+                showWhisperToast(title: "Success change arduino function state.", background: .moss, textColor: .white)
+            
+            case .motion :
+                userDefault.set(mySwitch.isOn, forKey: MOTION_ENABLE_KEY)
+                showWhisperToast(title: "Success change motion function state.", background: .moss, textColor: .white)
+            
+            case .gesture :
+                userDefault.set(mySwitch.isOn, forKey: GESTURE_ENABLE_KEY)
+                showWhisperToast(title: "Success change gesture function state.", background: .moss, textColor: .white)
+            
+            default: break
+        }
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        if let tagValue: tag = SettingViewController.tag(rawValue: mySwitch.tag) {
-            
-            switch tagValue {
-                case .arduino :
-                    userDefault.set(mySwitch.isOn, forKey: ARUDINO_ENABLE_KEY)
-                    showWhisperToast(title: "Success change arduino function state.", background: .moss, textColor: .white)
-                
-                case .motion :
-                    userDefault.set(mySwitch.isOn, forKey: MOTION_ENABLE_KEY)
-                    showWhisperToast(title: "Success change motion function state.", background: .moss, textColor: .white)
-                
-                case .gesture :
-                    userDefault.set(mySwitch.isOn, forKey: GESTURE_ENABLE_KEY)
-                    showWhisperToast(title: "Success change gesture function state.", background: .moss, textColor: .white)
-                
-                default: break
-            }
+    }
+    
+    // MARK: - FilePrivate User Method
+    fileprivate func moveToWebSite(address: String) {
+        
+        guard let url: URL = URL(string: address) else {
+            return
         }
+        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 }
 
@@ -116,31 +128,35 @@ class SettingViewController: UIViewController {
 extension SettingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        guard let tag: Int = tableView.cellForRow(at: indexPath)?.tag, let index: Tag = Tag(rawValue: tag) else {
+            return
+        }
         
-        if let tagVal: Int = tableView.cellForRow(at: indexPath)?.tag, let tagNum = tag(rawValue: tagVal) {
-            switch tagNum {
-                case .developerINFO:
-                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                    if let url: URL = URL(string: "http://yeop9657.blog.me") {
-                        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                    }
-                case .sendEMAIL:
-                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                    if MFMailComposeViewController.canSendMail() {
-                        let mail: MFMailComposeViewController = MFMailComposeViewController()
-                        mail.mailComposeDelegate = self
-                        mail.setSubject("Inquiry LAZYHUE inconvenient comment")
-                        mail.setToRecipients(["yeop9657@outlook.com"])
-                        mail.setMessageBody("Please, Input inconvenient comment.", isHTML: false)
-                        present(mail, animated: true, completion: nil)
-                    }
-                case .opensource:
-                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                    if let url: URL = URL(string: "http://yeop9657.blog.me/221067037683") {
-                        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                    }
-                default: break
-            }
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        switch index {
+            case .developerINFO: moveToWebSite(address: "http://bit.ly/2OmQIiT")
+            
+            case .sendEMAIL:
+                if !MFMailComposeViewController.canSendMail() { break }
+                
+                let mail: MFMailComposeViewController = MFMailComposeViewController()
+                mail.mailComposeDelegate = self
+                mail.setSubject("Inquiry LAZYHUE inconvenient comment")
+                mail.setToRecipients(["yeop9657@outlook.com"])
+                mail.setMessageBody("Please, Input inconvenient comment.", isHTML: false)
+                self.present(mail, animated: true, completion: nil)
+            
+            case .opensource: moveToWebSite(address: "http://yeop9657.blog.me/221067037683")
+            
+            case .delete:
+                Hue.hueInstance.deleteHueBridge()
+                GIDSignIn.sharedInstance()?.disconnect()
+                HueData.hueDataInstance.deleteHueColor(entityName: HUE_OBJECT_COLOR_ENTITY_NAME)
+                print("‼️ Delete Google Account and Philips Hue Bridge.")
+                exit(0)
+            
+            default: break
         }
     }
 }
@@ -150,14 +166,14 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         switch result {
-        case .sent:
-            print("Success E-mail send to developer.")
-        case .cancelled:
-            print("Cancel E-mail send to developer.")
-        case .saved:
-            print("Save E-mail content into disk.");
-        case .failed:
-            print("Fail E-mail send to developer.")
+            case .sent:
+                print("Success E-mail send to developer.")
+            case .cancelled:
+                print("Cancel E-mail send to developer.")
+            case .saved:
+                print("Save E-mail content into disk.");
+            case .failed:
+                print("Fail E-mail send to developer.")
         }
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))

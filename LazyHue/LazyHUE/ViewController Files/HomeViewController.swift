@@ -57,16 +57,15 @@ class HomeViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        // MARK: Load Philips hue Colors.
-        Hue.hueInstance.hueColors = Hue.color(UserDefaults.standard.integer(forKey: HUE_COLOR_RED_KEY), UserDefaults.standard.integer(forKey: HUE_COLOR_GREEN_KEY), UserDefaults.standard.integer(forKey: HUE_COLOR_BLUE_KEY))
-        
-        // MARK: UISlider
-        redSlider.value = Float(Hue.hueInstance.hueColors.red)
-        greenSlider.value = Float(Hue.hueInstance.hueColors.green)
-        blueSlider.value = Float(Hue.hueInstance.hueColors.blue)
+        // MARK: Core Data
+        if let color: HueColor = HueData.hueDataInstance.fetchHueColor(entityName: HUE_OBJECT_COLOR_ENTITY_NAME) {
+            self.redSlider.value    = color.redColor
+            self.greenSlider.value  = color.greenColor
+            self.blueSlider.value   = color.blueColor
+        } else { HueData.hueDataInstance.createHueColorData(red: 125, green: 125, blue: 125, alpha: 255) }
     }
 
     // MARK: - Method
@@ -132,12 +131,13 @@ class HomeViewController: UIViewController {
     // MARK: - IBAction Method
     @IBAction func changeColorsValue(_ sender: UISlider) {
         
-        print("- Change all philips hue colors.")
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         showWhisperToast(title: "Change all philips hue lamps colors.", background: UIColor(red: CGFloat(redSlider.value) / 255, green: CGFloat(greenSlider.value) / 255, blue: CGFloat(blueSlider.value) / 255, alpha: 100), textColor: .black)
         
-        Hue.hueInstance.hueColors = Hue.color(Int(redSlider.value), Int(greenSlider.value), Int(blueSlider.value))
         Hue.hueInstance.changeHueColor(red: Int(redSlider.value), green: Int(greenSlider.value), blue: Int(blueSlider.value), alpha: 255)
+        
+        // Update Philips Hue Color Core Data here.
+        HueData.hueDataInstance.updateHueColor(entityName: HUE_OBJECT_COLOR_ENTITY_NAME, red: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: 255)
     }
     @IBAction func loadCurrentLocation(_ sender: UIButton) {
         AudioServicesPlaySystemSound(4095)

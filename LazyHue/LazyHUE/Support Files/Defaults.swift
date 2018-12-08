@@ -17,6 +17,3 @@ public let GESTURE_ENABLE_KEY: String = "GESTURE_KEY"
 // MARK: - Philips Hue User Default Key
 public let CONNECT_BRIDGE_STATE_KEY: String = "CONNECT_BRIDGE_STATE_KEY"
 public let ACCESS_BRIDGE_KEY = "HUE_BRIDGE_KEY"
-public let HUE_COLOR_RED_KEY: String = "COLORS_HUE_RED"
-public let HUE_COLOR_GREEN_KEY: String = "COLORS_HUE_GREEN"
-public let HUE_COLOR_BLUE_KEY: String = "COLORS_HUE_BLUE"
