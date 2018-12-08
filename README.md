@@ -71,5 +71,4 @@
 * [Dark Sky - OpenSource](https://darksky.net/dev)
 * [SwiftyHue - OpenSource](https://github.com/Spriter/SwiftyHue)
 * [Alamofire - OpenSource](https://github.com/Alamofire/Alamofire)
-* [SwiftSpinner - OpenSource](https://github.com/icanzilb/SwiftSpinner)
 * [Google Sign-In for iOS - Google API](https://developers.google.com/identity/sign-in/ios/)
