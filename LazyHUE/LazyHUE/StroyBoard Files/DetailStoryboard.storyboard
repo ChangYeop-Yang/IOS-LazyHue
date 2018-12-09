@@ -21,12 +21,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRX-bc-SJ0">
                                 <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-2w-xub">
+                                    <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-2w-xub">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="685"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HueTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HueTableViewCell" rowHeight="290" id="itH-en-37q" customClass="HueTableViewCell" customModule="LazyHUE" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="290"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="290"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="itH-en-37q" id="DZh-gG-VFG">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="289.66666666666669"/>
@@ -54,7 +54,7 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
-                                                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                            <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="bottom" secondItem="IRT-ki-ehd" secondAttribute="bottom" id="3Wf-4T-LWl"/>
                                                                                 <constraint firstItem="IRT-ki-ehd" firstAttribute="top" secondItem="2f6-LP-Tbw" secondAttribute="top" id="9uz-tK-4rJ"/>

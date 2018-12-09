@@ -32,6 +32,13 @@ class HueTableViewCell: UITableViewCell {
     private var index: Int = 0
     private var color: Hue.HueColor = (0, 0, 0, 0)
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressCell(longPressGestureRecognizer:)))
+        self.addGestureRecognizer(longPressRecognizer)
+    }
+    
     // MARK: - Internal User Method
     internal func setIndexPath(index: Int) {
         self.index = index
@@ -39,11 +46,7 @@ class HueTableViewCell: UITableViewCell {
     internal func initHueCell() {
         
         let lightState: Hue.HueLightState = getHueLightState()
-        
-        //self.color = Hue.hueInstance.convertXYToColor(key: getHueKey(), state: lightState.state)
-        //print(lightState.type)
-        let mm = UIColor(hue: CGFloat(lightState.state.hue!), saturation: CGFloat(lightState.state.saturation!), brightness: CGFloat(lightState.state.brightness!), alpha: CGFloat(254))
-        print("ASD - \(mm.rgba)")
+
         DispatchQueue.main.async { [unowned self] in
             self.nameHueLB.text     = lightState.name
             self.numberHueLB.text   = "#\(self.index + 1)"
@@ -51,6 +54,12 @@ class HueTableViewCell: UITableViewCell {
     }
     
     // MARK: - Private User Method
+    @objc private func longPressCell(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        
+        if longPressGestureRecognizer.state == .ended {
+            Hue.hueInstance.changeHuePower(key: getHueKey())
+        }
+    }
     private func getHueKey() -> String {
         let keys: [String] = Hue.hueInstance.getHueLights().keys.compactMap( {$0} )
         return keys[self.index]
