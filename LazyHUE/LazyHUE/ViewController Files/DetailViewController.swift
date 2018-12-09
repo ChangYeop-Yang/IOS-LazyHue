@@ -37,7 +37,13 @@ extension DetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TableViewCell = TableViewCell()
+        
+        guard let cell: HueTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HueTableViewCell", for: indexPath) as? HueTableViewCell else {
+            fatalError("‼️ Error, Could not create Table View Cell.")
+        }
+        cell.setIndexPath(index: indexPath.row)
+        cell.initHueCell()
+        
         return cell
     }
 }

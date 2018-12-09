@@ -17,7 +17,9 @@ internal protocol HueAlterDelegate: class {
 class Hue: NSObject {
     
     // MARK: - TypeAlias
-    internal typealias HueLight = [String: Light]
+    internal typealias HueLightState    = Light
+    internal typealias HueLight         = [String: Light]
+    internal typealias HueColor         = (red: Int, green: Int, blue: Int, alpha: Int)
     
     // MARK: - Variable
     fileprivate var hueBridge: HueBridge?
@@ -33,17 +35,20 @@ class Hue: NSObject {
     // MARK: - Internal User Method
     internal func connectHueBridge() {
         
-        if let bridgeAccessConfig: BridgeAccessConfig = readHueBridgeAccessConfig() {
-            swiftyHue.setBridgeAccessConfig(bridgeAccessConfig)
-            swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .lights)
-            swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .groups)
-            swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .rules)
-            swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .scenes)
-            swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .schedules)
-            swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .sensors)
-            swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .config)
-            swiftyHue.startHeartbeat()
+        guard let bridgeAccessConfig: BridgeAccessConfig = readHueBridgeAccessConfig() else {
+            print("‼️ Error, Could not retirve Philips hue bridge.")
+            return
         }
+        
+        swiftyHue.setBridgeAccessConfig(bridgeAccessConfig)
+        swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .lights)
+        swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .groups)
+        swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .rules)
+        swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .scenes)
+        swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .schedules)
+        swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .sensors)
+        swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .config)
+        swiftyHue.startHeartbeat()
         
         hueBridgeFinder.delegate = self
         hueBridgeFinder.start()
@@ -106,32 +111,24 @@ class Hue: NSObject {
             })
         }
     }
-    internal func changeHueColor(red: Int, green: Int, blue: Int, alpha: Int, index: Int) {
+    internal func changeHueColor(color: HueColor, brightness: Int, key: String) {
         
-        guard let lights = swiftyHue.resourceCache?.lights else {
-            print("Error, Not Load the philips hue lights.")
-            return
-        }
+        let colorXY = HueUtilities.calculateXY(UIColor.init(red: CGFloat(color.red), green: CGFloat(color.green), blue: CGFloat(color.blue), alpha: CGFloat(color.alpha)), forModel: key)
         
-        let keys: [String] = lights.keys.compactMap({$0})
-        if index != 0 && index <= lights.count {
-            let colorXY = HueUtilities.calculateXY(UIColor.init(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha)), forModel: keys[index - 1])
+        var lightState: LightState = LightState()
+        lightState.brightness = brightness
+        lightState.xy = [Float(colorXY.x), Float(colorXY.y)]
+        
+        swiftyHue.bridgeSendAPI.updateLightStateForId(key, withLightState: lightState, completionHandler: { error in
             
-            var lightState: LightState = LightState()
-            lightState.brightness = alpha
-            lightState.xy = [Float(colorXY.x), Float(colorXY.y)]
+            guard error == nil else {
+                print("‼️ Error, Not Change the philips hue light color. \(String(describing: error))")
+                return
+            }
             
-            swiftyHue.bridgeSendAPI.updateLightStateForId(keys[index - 1], withLightState: lightState, completionHandler: { error in
-                
-                guard error == nil else {
-                    print("Error, Not Change the philips hue light color. \(String(describing: error))")
-                    return
-                }
-                
-                print("- Change fraction philips hue color.")
-                showWhisperToast(title: "Change fraction philips hue lamps color.", background: .moss, textColor: .white)
-            })
-        }
+            print("✳️ Change fraction philips hue color.")
+            showWhisperToast(title: "✳️ Change fraction philips hue lamps color.", background: .moss, textColor: .white)
+        })
     }
     internal func changeHuePower() {
         
@@ -159,39 +156,30 @@ class Hue: NSObject {
             })
         }
     }
-    internal func changeHuePower(number: Int) {
+    internal func changeHuePower(key: String) {
         
-        guard let lights = swiftyHue.resourceCache?.lights else {
-            print("Error, Not Load the Philips Hue Lights.")
+        guard let isOn: Bool = getHueLights()[key]?.state.on else {
+            print("‼️ Error, Could not get Philips hue power state.")
             return
         }
         
-        let keys = lights.keys.compactMap({$0})
+        // Philips Hue LightState here.
         var lightState: LightState = LightState()
-        if number <= lights.count && number != 0, let isOn: Bool = lights[keys[number - 1]]?.state.on {
-            lightState.on = !isOn
+        lightState.on = !isOn
+        
+        swiftyHue.bridgeSendAPI.updateLightStateForId(key, withLightState: lightState, completionHandler: { error in
             
-            swiftyHue.bridgeSendAPI.updateLightStateForId(keys[number - 1], withLightState: lightState, completionHandler: { error in
-                
-                guard error == nil else {
-                    print("Error, Not Change the Philips hue light Power. \(String(describing: error))")
-                    return
-                }
-                
-                print("- Change fraction philips hue power.")
-                showWhisperToast(title: "Change fraction philips hue lamps power.", background: .moss, textColor: .white)
-            })
-        }
+            guard error == nil else {
+                print("Error, Not Change the Philips hue light Power. \(String(describing: error))")
+                return
+            }
+            
+            print("❇️ Change fraction philips hue power.")
+            showWhisperToast(title: "❇️ Change fraction philips hue lamps power.", background: .moss, textColor: .white)
+        })
     }
-    internal func getHueBulgINF(index: Int) -> (hueColor: UIColor, hueName: String, huePower: Bool) {
-        
-        guard let lights: [Light] = swiftyHue.resourceCache?.lights.compactMap({$0.value}) else {
-            fatalError("Error, Get Philips Hue Lamp Information.")
-        }
-        
-        let xy: [Float] = lights[index].state.xy!
-        let cgColor = HueUtilities.colorFromXY(CGPoint(x: Double(xy[0]), y: Double(xy[1])), forModel: lights[index].modelId)
-        return (UIColor(cgColor: cgColor.cgColor), lights[index].name, lights[index].state.on!)
+    internal func createRandomHueColor() -> HueColor {
+        return HueColor(Int.random(in: 0..<255), Int.random(in: 0..<255), Int.random(in: 0..<255), Int.random(in: 0..<255))
     }
     internal func deleteHueBridge() {
         let userDefaults: UserDefaults = UserDefaults.standard

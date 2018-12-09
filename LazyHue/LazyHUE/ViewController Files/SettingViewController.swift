@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import SwiftSpinner
 import AudioToolbox
 import GoogleSignIn
 
@@ -55,17 +56,8 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         
         // Get Google Current User and Set User Image and ID here
-        DispatchQueue.main.async { [unowned self] in
-            
-            guard let currentUser: GIDGoogleUser = GIDSignIn.sharedInstance()?.currentUser else {
-                return
-            }
-            
-            self.userNameLB.text = currentUser.profile.name
-            if let imageData: Data = try? Data(contentsOf: currentUser.profile.imageURL(withDimension: 100)) {
-                self.userIMG.image = UIImage(data: imageData)
-            }
-        }
+        SwiftSpinner.show("Just a minute.", animated: true)
+        getGoogleUserINF()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -112,6 +104,29 @@ class SettingViewController: UIViewController {
         }
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+    }
+    
+    // MARK: - Private User Method
+    private func getGoogleUserINF() {
+        
+        let group: DispatchGroup = DispatchGroup()
+        
+        group.enter()
+        DispatchQueue.main.async(group: group, execute: { [unowned self] in
+            guard let currentUser: GIDGoogleUser = GIDSignIn.sharedInstance()?.currentUser else {
+                return
+            }
+            
+            self.userNameLB.text = currentUser.profile.name
+            if let imageData: Data = try? Data(contentsOf: currentUser.profile.imageURL(withDimension: 100)) {
+                self.userIMG.image = UIImage(data: imageData)
+                group.leave()
+            }
+        })
+        
+        group.notify(queue: .main, execute: {
+            SwiftSpinner.hide()
+        })
     }
     
     // MARK: - FilePrivate User Method

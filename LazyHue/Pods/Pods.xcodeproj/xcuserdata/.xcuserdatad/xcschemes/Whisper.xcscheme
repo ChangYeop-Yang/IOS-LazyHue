@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9887E991852440A637E2EE9D4A5FE27"
+               BlueprintIdentifier = "10B9E7D63E88C468B3A656FB5E47D05C"
                BlueprintName = "Whisper"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Whisper.framework">

@@ -25,7 +25,7 @@ class GestureViewController: UIViewController {
 
         // MARK: Setting to CoreML
         guard let visionModel = try? VNCoreMLModel(for: MNIST().model) else {
-            fatalError("Can not load Vision ML model.")
+            fatalError("‼️ Can not load Vision ML model.")
         }
         
         let classificationRequest = VNCoreMLRequest(model: visionModel, completionHandler: self.handleClassification)
@@ -41,7 +41,31 @@ class GestureViewController: UIViewController {
         
         return newImage!
     }
-    
+    private func handleClassification (request: VNRequest, error: Error?) {
+        
+        guard let observations = request.results else {
+            print("‼️ Error, Can not classification letter.")
+            return
+        }
+        
+        // process the ovservations
+        let classifications = observations
+            .compactMap( {$0 as? VNClassificationObservation} ) // cast all elements to VNClassificationObservation objects
+            .filter( {$0.confidence > 0.8} ) // only choose observations with a confidence of more than 80%
+            .map( {$0.identifier} ) // only choose the identifier string to be placed into the classifications array
+        
+        print("🆔 CoreML Classification Letter -  \(String(describing: classifications.first))")
+        
+        guard let indexStr: String = classifications.first, let index: Int = Int(indexStr) else {
+            print("‼️ Error, Could not convert String to Int.")
+            return
+        }
+        
+        let keys: [String] = Hue.hueInstance.getHueLights().keys.compactMap( {$0} )
+        if index <= keys.count && index > 0 {
+            UserDefaults.standard.bool(forKey: GESTURE_ENABLE_KEY) ? Hue.hueInstance.changeHuePower(key: keys[index - 1]) : Hue.hueInstance.changeHueColor(color: Hue.hueInstance.createRandomHueColor(), brightness: 255, key: keys[index - 1])
+        }
+    }
     @objc private func recongnitionDigit() {
         
         let group: DispatchGroup = DispatchGroup()
@@ -62,31 +86,6 @@ class GestureViewController: UIViewController {
         group.notify(queue: .main, execute: { [unowned self] in
             self.gestureIMG.image = nil
         })
-    }
-    
-    private func handleClassification (request: VNRequest, error: Error?) {
-        
-        guard let observations = request.results else {
-            print("Error, Can not classification letter.")
-            return
-        }
-        
-        // process the ovservations
-        let classifications = observations
-            .compactMap( {$0 as? VNClassificationObservation} ) // cast all elements to VNClassificationObservation objects
-            .filter( {$0.confidence > 0.8} ) // only choose observations with a confidence of more than 80%
-            .map( {$0.identifier} ) // only choose the identifier string to be placed into the classifications array
-
-        print("⌘ CoreML Classification Letter -  \(String(describing: classifications.first))")
-        if let index: Int = Int(classifications.first!) {
-            if UserDefaults.standard.bool(forKey: GESTURE_ENABLE_KEY) {
-                Hue.hueInstance.changeHuePower(number: index)
-            }
-            else {
-                let color: (red: Int, green: Int, blue: Int) = (Int.random(in: 0..<255), Int.random(in: 0..<255), Int.random(in: 0..<255))
-                Hue.hueInstance.changeHueColor(red: color.red, green: color.green, blue: color.blue, alpha: 255, index: index)
-            }
-        }
     }
     
     // MARK: - Touch Event Method

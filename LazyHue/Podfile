@@ -21,6 +21,7 @@ target 'LazyHUE' do
   
   pod 'SwiftyHue'
   pod 'Whisper'
+  pod "SwiftSpinner"
   pod 'GoogleSignIn'
 
 end

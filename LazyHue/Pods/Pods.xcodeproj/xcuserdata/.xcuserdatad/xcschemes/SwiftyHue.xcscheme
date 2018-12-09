@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0B943FD538840E4972FB1CBCDE33D280"
+               BlueprintIdentifier = "6CBF6D2D8C52472D7B3C7BD10935EADB"
                BlueprintName = "SwiftyHue"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SwiftyHue.framework">

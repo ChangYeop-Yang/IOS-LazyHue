@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 import AudioToolbox
 
 class HomeViewController: UIViewController {
@@ -38,6 +39,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // MARK: Weather Information
+        SwiftSpinner.show("Just a minute.", animated: true)
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [unowned self] _ in
             self.getCurrentWeather(temperatureLB: self.temperatureLB, humidityLB: self.humidityLB, precipitationLB: self.precipitationLB, stateIMG: self.weatherStateIMG)
         })
@@ -115,6 +117,9 @@ class HomeViewController: UIViewController {
         Weather.weatherInstance.receiveWeatherData(group: weatherGroup, language: "ko")
         
         weatherGroup.notify(queue: .main, execute: {
+            SwiftSpinner.hide()
+            
+            // Set Text label here.
             temperatureLB.text      = "⛱️ 오늘의 날씨 - \(Weather.weatherInstance.weatherData.sky)"
             humidityLB.text         = "🌡️ \(Weather.weatherInstance.weatherData.temperature) ℃ 💦 \(Weather.weatherInstance.weatherData.humidity.rounded() * 100) %"
             precipitationLB.text    = "☀️ \(Weather.weatherInstance.weatherData.ozone.rounded()) PPM 🌈 \(Weather.weatherInstance.weatherData.visibility.rounded()) KM"
