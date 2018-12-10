@@ -43,9 +43,14 @@ class DetailViewController: UIViewController {
         }
         
         // MARK: Setting TableView here.
-        self.hueListTV.delegate     = self
         self.hueListTV.dataSource   = self
         self.hueListTV.register(UINib(nibName: "HueTableViewCell", bundle: nil), forCellReuseIdentifier: "HueTableViewCell")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.hueListTV.reloadData()
     }
     
     // MARK: - FilePrivate Method
@@ -119,9 +124,4 @@ extension DetailViewController: UITableViewDataSource {
     
         return cell
     }
-}
-
-// MARK: - Extension UITableViewDelegate
-extension DetailViewController: UITableViewDelegate {
-    
 }
