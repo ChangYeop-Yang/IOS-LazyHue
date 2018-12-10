@@ -27,16 +27,19 @@ class HueTableViewCell: UITableViewCell {
     @IBOutlet private weak var greenSlider: UISlider!
     @IBOutlet private weak var blueSlider: UISlider!
     @IBOutlet private weak var alphaSlider: UISlider!
-
-    // MARK: - Variables
+    @IBOutlet private weak var outsideHueV: UIView!
+    
+    // MARK: - Private Variables
     private var index: Int = 0
-    private var color: Hue.HueColor = (0, 0, 0, 0)
+    private var color: Hue.HueColor = (125, 125, 125, 255)
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressCell(longPressGestureRecognizer:)))
-        self.addGestureRecognizer(longPressRecognizer)
+        // MARK: UITapGestureRecognizer
+        let doubleTabPressRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.doubleTabPressCell(pressGestureRecognizer:)))
+        doubleTabPressRecognizer.numberOfTapsRequired = 2
+        self.addGestureRecognizer(doubleTabPressRecognizer)
     }
     
     // MARK: - Internal User Method
@@ -46,7 +49,14 @@ class HueTableViewCell: UITableViewCell {
     internal func initHueCell() {
         
         let lightState: Hue.HueLightState = getHueLightState()
-
+        
+        // MARK: Setting UIAnimation
+        if let isOn: Bool = lightState.state.on, isOn {
+            self.outsideHueV.alpha = 0.0
+        } else {
+            self.outsideHueV.isHidden = false
+        }
+       
         DispatchQueue.main.async { [unowned self] in
             self.nameHueLB.text     = lightState.name
             self.numberHueLB.text   = "#\(self.index + 1)"
@@ -54,11 +64,21 @@ class HueTableViewCell: UITableViewCell {
     }
     
     // MARK: - Private User Method
-    @objc private func longPressCell(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+    @objc private func doubleTabPressCell(pressGestureRecognizer: UITapGestureRecognizer) {
         
-        if longPressGestureRecognizer.state == .ended {
-            Hue.hueInstance.changeHuePower(key: getHueKey())
+        // Fade In-Out Animation here.
+        self.outsideHueV.isHidden = self.outsideHueV.isHidden ? false : true
+        if self.outsideHueV.alpha == 0.0 {
+            UIView.animate(withDuration: 1.5, delay: 0.2, options: .curveEaseOut, animations: { [unowned self] in
+                self.outsideHueV.alpha = 1.0
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 1.5, delay: 0.2, options: .curveEaseIn, animations: { [unowned self] in
+                self.outsideHueV.alpha = 0.0
+                }, completion: nil)
         }
+        
+        Hue.hueInstance.changeHuePower(key: getHueKey())
     }
     private func getHueKey() -> String {
         let keys: [String] = Hue.hueInstance.getHueLights().keys.compactMap( {$0} )
