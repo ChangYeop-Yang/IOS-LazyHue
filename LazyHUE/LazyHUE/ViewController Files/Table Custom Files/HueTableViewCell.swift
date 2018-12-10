@@ -30,7 +30,7 @@ class HueTableViewCell: UITableViewCell {
     @IBOutlet private weak var outsideHueV: UIView!
     
     // MARK: - Private Variables
-    private var index: Int = 0
+    private var key: String = ""
     private var color: Hue.HueColor = (125, 125, 125, 255)
     
     override func awakeFromNib() {
@@ -43,24 +43,21 @@ class HueTableViewCell: UITableViewCell {
     }
     
     // MARK: - Internal User Method
-    internal func setIndexPath(index: Int) {
-        self.index = index
+    internal func setKey(key: String) {
+        self.key = key
     }
-    internal func initHueCell() {
+    internal func setHueINF(name: String, index: Int) {
         
-        let lightState: Hue.HueLightState = getHueLightState()
+        DispatchQueue.main.async { [unowned self] in
+            self.nameHueLB.text     = name
+            self.numberHueLB.text   = "#\(index + 1)"
+        }
+    }
+    internal func setAnimation(isOn: Bool) {
         
         // MARK: Setting UIAnimation
-        if let isOn: Bool = lightState.state.on, isOn {
-            self.outsideHueV.alpha = 0.0
-        } else {
-            self.outsideHueV.isHidden = false
-        }
-       
-        DispatchQueue.main.async { [unowned self] in
-            self.nameHueLB.text     = lightState.name
-            self.numberHueLB.text   = "#\(self.index + 1)"
-        }
+        if isOn { self.outsideHueV.alpha = 0.0 }
+        else { self.outsideHueV.isHidden = false }
     }
     
     // MARK: - Private User Method
@@ -78,15 +75,7 @@ class HueTableViewCell: UITableViewCell {
                 }, completion: nil)
         }
         
-        Hue.hueInstance.changeHuePower(key: getHueKey())
-    }
-    private func getHueKey() -> String {
-        let keys: [String] = Hue.hueInstance.getHueLights().keys.compactMap( {$0} )
-        return keys[self.index]
-    }
-    private func getHueLightState() -> Hue.HueLightState {
-        let lightState: [Hue.HueLightState] = Hue.hueInstance.getHueLights().values.compactMap( {$0} )
-        return lightState[self.index]
+        Hue.hueInstance.changeHuePower(key: self.key)
     }
 
     // MARK: - Action Method
@@ -103,6 +92,6 @@ class HueTableViewCell: UITableViewCell {
             case .Alpha:    color.alpha = Int(sender.value)
         }
         
-        Hue.hueInstance.changeHueColor(color: color, brightness: color.alpha, key: getHueKey())
+        Hue.hueInstance.changeHueColor(color: color, brightness: color.alpha, key: self.key)
     }
 }

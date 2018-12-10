@@ -21,16 +21,42 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRX-bc-SJ0">
                                 <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" placeholder="Please enter the name of the bulb." translatesAutoresizingMaskIntoConstraints="NO" id="wdB-1q-gha">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <scopeButtonTitles>
-                                            <string>Title</string>
-                                            <string>Title</string>
-                                        </scopeButtonTitles>
-                                    </searchBar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gw-bi-rhz" customClass="CardView" customModule="LazyHUE" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="365" height="64"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❁ Season Colors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjb-Vq-HeC">
+                                                <rect key="frame" x="10" y="5" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wAD-zD-EST">
+                                                <rect key="frame" x="10" y="28" width="345" height="32"/>
+                                                <segments>
+                                                    <segment title="Spring"/>
+                                                    <segment title="Summer"/>
+                                                    <segment title="Fall"/>
+                                                    <segment title="Winter"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="changeSeasonColor:" destination="Jir-xG-nWo" eventType="valueChanged" id="f5v-HL-M8U"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="wAD-zD-EST" firstAttribute="top" secondItem="bjb-Vq-HeC" secondAttribute="bottom" constant="5" id="556-HT-cRF"/>
+                                            <constraint firstAttribute="trailing" secondItem="bjb-Vq-HeC" secondAttribute="trailing" constant="10" id="6dB-V8-55K"/>
+                                            <constraint firstItem="bjb-Vq-HeC" firstAttribute="top" secondItem="0gw-bi-rhz" secondAttribute="top" constant="5" id="8VB-Um-4f0"/>
+                                            <constraint firstItem="wAD-zD-EST" firstAttribute="leading" secondItem="0gw-bi-rhz" secondAttribute="leading" constant="10" id="LcL-KL-6IP"/>
+                                            <constraint firstItem="bjb-Vq-HeC" firstAttribute="leading" secondItem="0gw-bi-rhz" secondAttribute="leading" constant="10" id="MRn-cd-dHY"/>
+                                            <constraint firstAttribute="height" constant="64" id="Ph0-Ig-Qut"/>
+                                            <constraint firstAttribute="bottom" secondItem="wAD-zD-EST" secondAttribute="bottom" constant="5" id="WRE-Xq-0Ug"/>
+                                            <constraint firstAttribute="trailing" secondItem="wAD-zD-EST" secondAttribute="trailing" constant="10" id="r0L-3O-gHZ"/>
+                                        </constraints>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-2w-xub">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="629"/>
+                                        <rect key="frame" x="0.0" y="74" width="375" height="611"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMi-yR-Hgg">
@@ -60,17 +86,17 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="nMi-yR-Hgg" secondAttribute="bottom" id="9sr-Z6-xMA"/>
-                                    <constraint firstAttribute="trailing" secondItem="wdB-1q-gha" secondAttribute="trailing" id="A7o-Fx-bge"/>
                                     <constraint firstItem="dNo-2w-xub" firstAttribute="leading" secondItem="KRX-bc-SJ0" secondAttribute="leading" id="DpO-Rh-bwu"/>
+                                    <constraint firstItem="0gw-bi-rhz" firstAttribute="leading" secondItem="KRX-bc-SJ0" secondAttribute="leading" constant="5" id="EkT-zb-82j"/>
+                                    <constraint firstItem="0gw-bi-rhz" firstAttribute="top" secondItem="KRX-bc-SJ0" secondAttribute="top" constant="5" id="GEi-Lx-Jyc"/>
                                     <constraint firstItem="nMi-yR-Hgg" firstAttribute="top" secondItem="KRX-bc-SJ0" secondAttribute="top" id="MxO-y8-LmR"/>
-                                    <constraint firstItem="wdB-1q-gha" firstAttribute="leading" secondItem="KRX-bc-SJ0" secondAttribute="leading" id="OUd-hG-09W"/>
                                     <constraint firstAttribute="trailing" secondItem="nMi-yR-Hgg" secondAttribute="trailing" id="Qp1-Fx-vnD"/>
-                                    <constraint firstItem="wdB-1q-gha" firstAttribute="top" secondItem="KRX-bc-SJ0" secondAttribute="top" id="Sr0-bW-nO8"/>
+                                    <constraint firstAttribute="trailing" secondItem="0gw-bi-rhz" secondAttribute="trailing" constant="5" id="R3I-9c-fwR"/>
                                     <constraint firstAttribute="bottom" secondItem="dNo-2w-xub" secondAttribute="bottom" id="Yu6-Un-YaK"/>
-                                    <constraint firstItem="dNo-2w-xub" firstAttribute="top" secondItem="wdB-1q-gha" secondAttribute="bottom" id="k7k-rC-hAU"/>
+                                    <constraint firstItem="dNo-2w-xub" firstAttribute="top" secondItem="0gw-bi-rhz" secondAttribute="bottom" constant="5" id="bon-TC-8eT"/>
                                     <constraint firstItem="nMi-yR-Hgg" firstAttribute="leading" secondItem="KRX-bc-SJ0" secondAttribute="leading" id="qRp-uV-Z67"/>
                                     <constraint firstAttribute="trailing" secondItem="dNo-2w-xub" secondAttribute="trailing" id="tZ5-AX-klr"/>
                                 </constraints>
