@@ -62,7 +62,7 @@
 * * *
 
 ## ★ Reference URL
-* [LazyHUE - OpenSource List](http://yeop9657.blog.me/221067037683)
+* [Styles Vision - Github](https://github.com/cocoa-ai/StylesVisionDemo)
 * [Google Sign-In Quickstart - Github](https://github.com/googlesamples/google-services/tree/master/ios/signin)
 * [CoreMLHandwritingRecognition - Github](https://github.com/brianadvent/CoreMLHandwritingRecognition)
  
@@ -71,4 +71,5 @@
 * [Dark Sky - OpenSource](https://darksky.net/dev)
 * [SwiftyHue - OpenSource](https://github.com/Spriter/SwiftyHue)
 * [Alamofire - OpenSource](https://github.com/Alamofire/Alamofire)
+* [SwiftSpinner - OpenSource](https://github.com/icanzilb/SwiftSpinner)
 * [Google Sign-In for iOS - Google API](https://developers.google.com/identity/sign-in/ios/)
