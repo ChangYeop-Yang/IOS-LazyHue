@@ -47,6 +47,12 @@
 
 * * *
 
+|DETAIL DISPLAY IMAGE 001|DETAIL DISPLAY IMAGE 002|
+|:----------------------:|:----------------------:|
+|![](https://user-images.githubusercontent.com/20036523/49687986-bf482f80-fb4e-11e8-891d-8448be08203f.png)|![](https://user-images.githubusercontent.com/20036523/49748304-a96e7200-fce8-11e8-9a04-56c388fbdf58.png)|
+
+* * *
+
 |GESTURE DISPLAY IMAGE 001|GESTURE DISPLAY IMAGE 002|
 |:---------------:|:---------------:|
 |![](https://user-images.githubusercontent.com/20036523/49280615-fde64600-f4cd-11e8-99a9-642ee3292cd9.png)|![](https://user-images.githubusercontent.com/20036523/49280617-fde64600-f4cd-11e8-94df-f7779713679e.png)|
