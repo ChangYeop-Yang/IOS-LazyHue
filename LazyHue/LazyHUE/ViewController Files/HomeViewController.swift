@@ -13,27 +13,30 @@ import AudioToolbox
 class HomeViewController: UIViewController {
 
     // MARK: - IBOutlet
-    @IBOutlet weak var weatherStateIMG: UIImageView! {
+    @IBOutlet private weak var weatherStateIMG: UIImageView! {
         didSet {
             weatherStateIMG.clipsToBounds = true;
             weatherStateIMG.layer.masksToBounds = true
             weatherStateIMG.layer.cornerRadius = 10
         }
     }
-    @IBOutlet weak var locationLB: UILabel!
-    @IBOutlet weak var humidityLB: UILabel!
-    @IBOutlet weak var precipitationLB: UILabel!
-    @IBOutlet weak var temperatureLB: UILabel!
-    @IBOutlet weak var dustLB: UILabel!
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
-    @IBOutlet weak var remoteIMG: UIImageView!
-    @IBOutlet weak var updateDateLB: UILabel!
-    @IBOutlet weak var innerHumidityLB: UILabel!
-    @IBOutlet weak var innerTemputerLB: UILabel!
-    @IBOutlet weak var innertNoiseCo2LB: UILabel!
-    @IBOutlet weak var outsideArduinoCV: CardView!
+    @IBOutlet private weak var locationLB: UILabel!
+    @IBOutlet private weak var humidityLB: UILabel!
+    @IBOutlet private weak var precipitationLB: UILabel!
+    @IBOutlet private weak var temperatureLB: UILabel!
+    @IBOutlet private weak var dustLB: UILabel!
+    @IBOutlet private weak var redSlider: UISlider!
+    @IBOutlet private weak var greenSlider: UISlider!
+    @IBOutlet private weak var blueSlider: UISlider!
+    @IBOutlet private weak var remoteIMG: UIImageView!
+    @IBOutlet private weak var updateDateLB: UILabel!
+    @IBOutlet private weak var innerHumidityLB: UILabel!
+    @IBOutlet private weak var innerTemputerLB: UILabel!
+    @IBOutlet private weak var innertNoiseCo2LB: UILabel!
+    @IBOutlet private weak var outsideArduinoCV: CardView!
+    
+    // MARK: - Variables
+    private var currentColor: Hue.HueColor = (125, 125, 125, 255)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +51,10 @@ class HomeViewController: UIViewController {
         getTodayFineDust(label: dustLB)
         
         // MARK: UIImageView Gesture
-        let gesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(gestureChangePower(longGestureRecognizer:)))
-        remoteIMG.isUserInteractionEnabled = true
-        remoteIMG.addGestureRecognizer(gesture)
+        let gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.setDoubleTapGesture(gestureRecognizer:)))
+        gesture.numberOfTapsRequired = 2
+        self.remoteIMG.isUserInteractionEnabled = true
+        self.remoteIMG.addGestureRecognizer(gesture)
         
         // MARK: Arduino Information
         if UserDefaults.standard.bool(forKey: ARUDINO_ENABLE_KEY) {
@@ -70,7 +74,7 @@ class HomeViewController: UIViewController {
         } else { HueData.hueDataInstance.createHueColorData(red: 125, green: 125, blue: 125, alpha: 255) }
     }
 
-    // MARK: - Method
+    // MARK: - Private User Method
     private func getArduinoSensory(dateLabel: UILabel, tempLabel: UILabel, humidity: UILabel, co2AndNoise: UILabel) {
         
         let arduinoGroup: DispatchGroup = DispatchGroup()
@@ -126,25 +130,25 @@ class HomeViewController: UIViewController {
             stateIMG.image = UIImage(named: Weather.weatherInstance.weatherData.icon)
         })
     }
-    @objc private func gestureChangePower(longGestureRecognizer: UILongPressGestureRecognizer) {
-        
-        if longGestureRecognizer.state == .ended {
-            Hue.hueInstance.changeHuePower()
-        }
+    @objc private func setDoubleTapGesture(gestureRecognizer: UITapGestureRecognizer) {
+
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        Hue.hueInstance.changeHueColor(red: self.currentColor.red, green: self.currentColor.green, blue: self.currentColor.blue, alpha: self.currentColor.alpha)
     }
     
     // MARK: - IBAction Method
-    @IBAction func changeColorsValue(_ sender: UISlider) {
+    @IBAction private func changeColorsValue(_ sender: UISlider) {
         
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        showWhisperToast(title: "Change all philips hue lamps colors.", background: UIColor(red: CGFloat(redSlider.value) / 255, green: CGFloat(greenSlider.value) / 255, blue: CGFloat(blueSlider.value) / 255, alpha: 100), textColor: .black)
+        currentColor = (Int(self.redSlider.value), Int(self.greenSlider.value), Int(self.blueSlider.value), 255)
         
-        Hue.hueInstance.changeHueColor(red: Int(redSlider.value), green: Int(greenSlider.value), blue: Int(blueSlider.value), alpha: 255)
+        showWhisperToast(title: "Change all philips hue lamps colors.", background: UIColor(red: self.currentColor.red, green: self.currentColor.green, blue: self.currentColor.blue), textColor: .black)
+        
+        Hue.hueInstance.changeHueColor(red: self.currentColor.red, green: self.currentColor.green, blue: self.currentColor.blue, alpha: self.currentColor.alpha)
         
         // Update Philips Hue Color Core Data here.
-        HueData.hueDataInstance.updateHueColor(entityName: HUE_OBJECT_COLOR_ENTITY_NAME, red: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: 255)
+        HueData.hueDataInstance.updateHueColor(entityName: HUE_OBJECT_COLOR_ENTITY_NAME, red: self.redSlider.value, green: self.greenSlider.value, blue: self.blueSlider.value, alpha: 255)
     }
-    @IBAction func loadCurrentLocation(_ sender: UIButton) {
+    @IBAction private func loadCurrentLocation(_ sender: UIButton) {
         AudioServicesPlaySystemSound(4095)
         getCurrentAddress(label: locationLB)
         getCurrentWeather(temperatureLB: temperatureLB, humidityLB: humidityLB, precipitationLB: precipitationLB, stateIMG: weatherStateIMG)

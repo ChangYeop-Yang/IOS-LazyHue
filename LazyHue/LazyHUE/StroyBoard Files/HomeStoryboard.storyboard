@@ -368,7 +368,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZY-K8-5NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="arp-Jo-H2J"/>
             </objects>
             <point key="canvasLocation" x="156" y="149.77511244377811"/>
         </scene>
