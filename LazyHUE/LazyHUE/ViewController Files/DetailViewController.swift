@@ -29,6 +29,25 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         // MARK: Collect Model ID
+        initDetailHueLightState()
+        
+        // MARK: Setting TableView here.
+        self.hueListTV.dataSource   = self
+        self.hueListTV.register(UINib(nibName: "HueTableViewCell", bundle: nil), forCellReuseIdentifier: "HueTableViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        initDetailHueLightState()
+        self.hueListTV.reloadData()
+    }
+
+    // MARK: - Private Method
+    private func initDetailHueLightState() {
+        
+        self.hueLights.removeAll()
+        
         let lights = Hue.hueInstance.getHueLights().values
         for light in lights {
             
@@ -38,19 +57,8 @@ class DetailViewController: UIViewController {
                 self.hueLights[light.modelId]?.append(light)
                 continue
             }
-            
             self.hueLights[light.modelId]?.append(light)
         }
-        
-        // MARK: Setting TableView here.
-        self.hueListTV.dataSource   = self
-        self.hueListTV.register(UINib(nibName: "HueTableViewCell", bundle: nil), forCellReuseIdentifier: "HueTableViewCell")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.hueListTV.reloadData()
     }
     
     // MARK: - FilePrivate Method

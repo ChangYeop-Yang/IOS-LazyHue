@@ -16,25 +16,15 @@ class CameraViewController: UIViewController {
     
     // MARK: Enum
     private enum ImageMoodType: String {
-        case Detailed = "Detailed"
         case Pastel = "Pastel"
         case Melancholy = "Melancholy"
         case Noir = "Noir"
-        case HDR = "HDR"
         case Vintage = "Vintage"
-        case LongExposure = "Long Exposure"
         case Horror = "Horror"
         case Sunny = "Sunny"
         case Bright = "Bright"
         case Hazy = "Hazy"
-        case Bokeh = "Bokeh"
         case Serene = "Serene"
-        case Texture = "Texture"
-        case Ethereal = "Ethereal"
-        case Macro = "Macro"
-        case DepthOfField = "Depth of Field"
-        case GeometricComposition = "Geometric Composition"
-        case Minimal = "Minimal"
         case Romantic = "Romantic"
     }
     
@@ -147,9 +137,16 @@ class CameraViewController: UIViewController {
             print("⌘ CoreML Classification Letter -  \(moodType)")
             
             switch type {
-                case .Sunny: Hue.hueInstance.changeHueColor(color: .red)
-                case .Romantic: Hue.hueInstance.changeHueColor(color: .lightcoral)
-                default: break
+                case .Pastel:       Hue.hueInstance.changeHueColor(color: .pastelBlue)
+                case .Melancholy:   Hue.hueInstance.changeHueColor(color: .mustard)
+                case .Noir:         Hue.hueInstance.changeHueColor(color: .pansyPurple)
+                case .Vintage:      Hue.hueInstance.changeHueColor(color: .brown)
+                case .Horror:       Hue.hueInstance.changeHueColor(color: .winter)
+                case .Sunny:        Hue.hueInstance.changeHueColor(color: .summer)
+                case .Bright:       Hue.hueInstance.changeHueColor(color: .white)
+                case .Hazy:         Hue.hueInstance.changeHueColor(color: .winter)
+                case .Serene:       Hue.hueInstance.changeHueColor(color: .fall)
+                case .Romantic:     Hue.hueInstance.changeHueColor(color: .palePink)
             }
         }
     }
@@ -172,7 +169,6 @@ class CameraViewController: UIViewController {
             self.outsideRoundV.isHidden = true
         }
     }
-    
     
     // MARK: - Touch Event Method
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -228,7 +224,8 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         // Enable Real-Time Camera Funcation
         if self.cameraType {
             let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
-            DispatchQueue.main.async { [unowned self] in
+            
+            DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
                 do { try imageRequestHandler.perform(self.requests); }
                 catch { fatalError("Error, Can not implement core ml. \(error.localizedDescription)") }
             }

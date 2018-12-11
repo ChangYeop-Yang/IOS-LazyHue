@@ -35,6 +35,7 @@ extension UIColor {
         let blue = Float((components?[2])!)
         return String(format: "#%02lX%02lX%02lX", lroundf(red * 255), lroundf(green * 255), lroundf(blue * 255))
     }
+    
     internal var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
         var red: CGFloat = 0
         var green: CGFloat = 0
@@ -58,4 +59,9 @@ extension UIColor {
     internal static let summer:         UIColor = UIColor(red: 0/255, green: 120/255, blue: 172/255, alpha: 100)
     internal static let fall:           UIColor = UIColor(red: 255/255, green: 229/255, blue: 178/255, alpha: 100)
     internal static let winter:         UIColor = UIColor(red: 42/255, green: 54/255, blue: 92/255, alpha: 100)
+    internal static let palePink:       UIColor = UIColor(red: 254/255, green: 193/255, blue: 192/255, alpha: 80)
+    internal static let pastelBlue:     UIColor = UIColor(red: 160/255, green: 221/255, blue: 249/255, alpha: 75)
+    internal static let mustard:        UIColor = UIColor(red: 201/255, green: 170/255, blue: 43/255, alpha: 80)
+    internal static let pansyPurple:    UIColor = UIColor(red: 88/255, green: 62/255, blue: 107/255, alpha: 80)
+    internal static let brown:          UIColor = UIColor(red: 150/255, green: 75/255, blue: 0/255, alpha: 80)
 }
