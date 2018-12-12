@@ -293,6 +293,7 @@
 		0C99CE9F21182291009A3403 /* Custome Design Files */ = {
 			isa = PBXGroup;
 			children = (
+				0CF7E6DB21C16986008C64EA /* Animation Files */,
 				0C08E61B211F1EF600C0EE4A /* UIColor.swift */,
 				0C21240B21327CAB000CC0DF /* UIImage.swift */,
 				0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */,
@@ -300,7 +301,6 @@
 				0C99CEA0211822FE009A3403 /* CardView.swift */,
 				0CAD5614213AD9E70084B64B /* CircleImageView.swift */,
 				0C08E619211F1E2000C0EE4A /* WhisperToast.swift */,
-				0CF7E6D921C16037008C64EA /* AnimUtils.swift */,
 			);
 			path = "Custome Design Files";
 			sourceTree = "<group>";
@@ -312,6 +312,14 @@
 				0CEB455021B6B0EE000F2353 /* HueModel.xcdatamodeld */,
 			);
 			path = "CoreData Files";
+			sourceTree = "<group>";
+		};
+		0CF7E6DB21C16986008C64EA /* Animation Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CF7E6D921C16037008C64EA /* AnimUtils.swift */,
+			);
+			path = "Animation Files";
 			sourceTree = "<group>";
 		};
 		0CFECBA72124586A0021D8C9 /* Philips Hue Files */ = {
