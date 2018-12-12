@@ -21,6 +21,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="delegate" destination="t61-jE-qcL" id="jBH-wh-klH"/>
                         <segue destination="glO-W8-gAX" kind="relationship" relationship="viewControllers" id="MiD-kM-k1T"/>
                         <segue destination="6Jo-Vn-Xaq" kind="relationship" relationship="viewControllers" id="ZW9-Wm-vtH"/>
                         <segue destination="WO8-dO-U5m" kind="relationship" relationship="viewControllers" id="ksi-x9-jIx"/>
@@ -29,6 +30,7 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3S-Tu-yiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="t61-jE-qcL" customClass="AnimUtils" customModule="LazyHUE" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-151" y="105"/>
         </scene>

@@ -42,6 +42,7 @@
 		0CED6F3321B1304F005DC3FB /* DetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CED6F3221B1304F005DC3FB /* DetailStoryboard.storyboard */; };
 		0CF22E6721BE9E2500E8CC6B /* HueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF22E6621BE9E2500E8CC6B /* HueTableViewCell.xib */; };
 		0CF4AEFF21BD404000213B79 /* HueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4AEFE21BD404000213B79 /* HueTableViewCell.swift */; };
+		0CF7E6DA21C16037008C64EA /* AnimUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7E6D921C16037008C64EA /* AnimUtils.swift */; };
 		0CF8AD6D219F1E5D00B4F74E /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */; };
 		0CFECBA9212458930021D8C9 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFECBA8212458930021D8C9 /* Hue.swift */; };
 		0CFF7BC621B4E5DE008D5AAC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF7BC521B4E5DE008D5AAC /* DetailViewController.swift */; };
@@ -109,6 +110,7 @@
 		0CED6F3221B1304F005DC3FB /* DetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailStoryboard.storyboard; sourceTree = "<group>"; };
 		0CF22E6621BE9E2500E8CC6B /* HueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HueTableViewCell.xib; sourceTree = "<group>"; };
 		0CF4AEFE21BD404000213B79 /* HueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueTableViewCell.swift; sourceTree = "<group>"; };
+		0CF7E6D921C16037008C64EA /* AnimUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimUtils.swift; sourceTree = "<group>"; };
 		0CF8AD6C219F1E5D00B4F74E /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		0CFECBA8212458930021D8C9 /* Hue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = "../../../../iOS-LazyHUE/LazyHUE/LazyHUE/Philips Hue Files/Hue.swift"; sourceTree = "<group>"; };
 		0CFF7BC521B4E5DE008D5AAC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				0C99CEA0211822FE009A3403 /* CardView.swift */,
 				0CAD5614213AD9E70084B64B /* CircleImageView.swift */,
 				0C08E619211F1E2000C0EE4A /* WhisperToast.swift */,
+				0CF7E6D921C16037008C64EA /* AnimUtils.swift */,
 			);
 			path = "Custome Design Files";
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				0CEB455521B6B415000F2353 /* HueData.swift in Sources */,
 				0C3B65952119C6CD00E8886C /* Location.swift in Sources */,
 				0C6101BF20DA4C1A00360816 /* AppDelegate.swift in Sources */,
+				0CF7E6DA21C16037008C64EA /* AnimUtils.swift in Sources */,
 				0C08E61C211F1EF600C0EE4A /* UIColor.swift in Sources */,
 				0CAD5615213AD9E70084B64B /* CircleImageView.swift in Sources */,
 				0C08E617211F1B2C00C0EE4A /* Weather.swift in Sources */,
