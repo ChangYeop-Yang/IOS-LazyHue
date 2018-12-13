@@ -92,6 +92,7 @@ class HueTableViewCell: UITableViewCell {
             case .Alpha:    color.alpha = Int(sender.value)
         }
         
+        self.colorHueLB.backgroundColor = UIColor(red: self.color.red, green: self.color.green, blue: self.color.blue)
         Hue.hueInstance.changeHueColor(color: color, brightness: color.alpha, key: self.key)
     }
 }

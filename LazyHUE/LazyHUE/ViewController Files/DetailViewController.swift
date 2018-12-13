@@ -129,7 +129,7 @@ extension DetailViewController: UITableViewDataSource {
         cell.setKey(key: lights[indexPath.row].identifier)
         cell.setHueINF(name: lights[indexPath.row].name, index: indexPath.row)
         if let isOn: Bool = lights[indexPath.row].state.on { cell.setAnimation(isOn: isOn) }
-    
+        
         return cell
     }
 }
