@@ -73,7 +73,7 @@
 |:------------:|:------------:|
 |![](https://user-images.githubusercontent.com/20036523/49280626-0474bd80-f4ce-11e8-83f4-e2e3a46a8cfd.png)|![](https://user-images.githubusercontent.com/20036523/49328835-2fd4d680-f5ba-11e8-85b6-8f340469d2a9.png)|
 
-## ★ Application Method Of Use
+## ★ Application Method of use
 
 ## ★ Demo Play
 
