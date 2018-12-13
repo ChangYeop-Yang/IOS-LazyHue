@@ -31,11 +31,11 @@
 
 |Number|Model Name|Module Comment|
 |:----:|:--------:|:------------:|
-|001|Serial WIFI 모듈 (ESP-8266)|Serial을 통하여 WIFI 통신을 지원하는 모듈|
-|002|가스 센서 (MQ-8)|일산화탄소 및 LPG가스의 농도를 측정하는 센서|
-|003|CDS 센서 (GL-5516)|주변의 조도(Lux)를 측정하는 센서|
-|004|3색 LED 센서 (3-Color RGB SMD LED Module)|3색 LED를 발광하는 센서|
-|005|충격 센서 (WAT-S023)|충격을 감지하는 센서|
+|001|Serial WIFI 모듈 (ESP-8266)|Serial을 통하여 WIFI 통신을 지원하는 모듈입니다.|
+|002|가스 센서 (MQ-8)|주변 환경으로부터 일산화탄소 및 LPG가스의 농도를 측정하는 센서입니다.|
+|003|CDS 센서 (GL-5516)|주변 환경으로부터 조도(Lux)를 측정하는 센서입니다.|
+|004|3색 LED 센서 (3-Color RGB SMD LED Module)|3색 LED를 발광하는 센서입니다.|
+|005|충격 센서 (WAT-S023)|주변 환경으로부터 충격을 감지하는 센서입니다.|
 
 ## ★ Application UI/UX
 
