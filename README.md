@@ -81,6 +81,7 @@
 * [Styles Vision - Github](https://github.com/cocoa-ai/StylesVisionDemo)
 * [Google Sign-In Quickstart - Github](https://github.com/googlesamples/google-services/tree/master/ios/signin)
 * [CoreMLHandwritingRecognition - Github](https://github.com/brianadvent/CoreMLHandwritingRecognition)
+* [NativeScript Image Builder - iOS image assets](http://nsimage.brosteins.com/)
  
 ## ★ Open Source List 
 * [Gloss - OpenSource](https://github.com/hkellaway/Gloss)
