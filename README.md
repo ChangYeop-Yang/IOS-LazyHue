@@ -75,6 +75,40 @@
 
 ## ★ Application Method of use
 
+|CONNECT application Method of use|
+|:----------------------------:|
+|![](https://user-images.githubusercontent.com/20036523/50043779-af37cf00-00bd-11e9-8f37-dc3d29a076c0.JPG)|
+
+* * *
+
+|HOME application Method of use|
+|:----------------------------:|
+|![](https://user-images.githubusercontent.com/20036523/50043778-af37cf00-00bd-11e9-9a53-4180b80f8c09.JPG)|
+
+* * *
+
+|CAMERA application Method of use|
+|:----------------------------:|
+|![](https://user-images.githubusercontent.com/20036523/50043780-afd06580-00bd-11e9-9d47-bb277f3deae4.JPG)|
+
+* * *
+
+|DETAIL application Method of use|
+|:----------------------------:|
+|![](https://user-images.githubusercontent.com/20036523/50043781-afd06580-00bd-11e9-998d-fafdbde0a9c2.JPG)|
+
+* * *
+
+|GESTURE application Method of use|
+|:----------------------------:|
+|![](https://user-images.githubusercontent.com/20036523/50043782-afd06580-00bd-11e9-9562-fae842124002.JPG)|
+
+* * *
+
+|SETTING application Method of use|
+|:----------------------------:|
+|![](https://user-images.githubusercontent.com/20036523/50043783-afd06580-00bd-11e9-94c0-7d643d4a6ade.JPG)|
+
 ## ★ Demo Play
 
 ## ★ Reference URL
