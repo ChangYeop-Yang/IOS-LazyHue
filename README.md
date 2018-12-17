@@ -1,4 +1,4 @@
-# ■ LazyHUE - iOS Application
+# ■ LazyHUE - iOS Application <kbd>**MOBILE - iOS**</kbd>
 
 <p align="center">
  <img src="https://user-images.githubusercontent.com/20036523/49021283-a1391180-f1d5-11e8-976d-a0d1bd010667.png" width="400" height="400" />
