@@ -43,91 +43,83 @@
 
 ## ★ Application UI/UX
 
-|CONNECT DISPLAY IMAGE 001|CONNECT DISPLAY IMAGE 002|
-|:---------------:|:---------------:|
+|:camera: CONNECT DISPLAY IMAGE 001|:camera: CONNECT DISPLAY IMAGE 002|
+|:--------------------------------:|:--------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/49296163-d9ed2980-f4fa-11e8-960f-fc431621cc16.png)|![](https://user-images.githubusercontent.com/20036523/49296162-d9ed2980-f4fa-11e8-95cc-ea5a7f80a5cf.png)|
 
-* * *
-
-|HOME DISPLAY IMAGE 001|HOME DISPLAY IMAGE 002|
-|:------------:|:------------:|
+|:camera: HOME DISPLAY IMAGE 001|:camera: HOME DISPLAY IMAGE 002|
+|:-----------------------------:|:-----------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/49284504-24a97a00-f4d8-11e8-8052-aee64db3858b.png)|![](https://user-images.githubusercontent.com/20036523/49328764-239c4980-f5b9-11e8-88c6-03df8404061c.png)|
 
-* * *
-
-|CAMERA DISPLAY IMAGE 001|CAMERA DISPLAY IMAGE 002|
-|:----------------------:|:----------------------:|
+|:camera: CAMERA DISPLAY IMAGE 001|:camera: CAMERA DISPLAY IMAGE 002|
+|:-------------------------------:|:-------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/49280603-f32bb100-f4cd-11e8-8409-c9dec149104f.png)|![](https://user-images.githubusercontent.com/20036523/49280604-f3c44780-f4cd-11e8-8e36-19fa1179acb7.png)|
 
-* * *
-
-|DETAIL DISPLAY IMAGE 001|DETAIL DISPLAY IMAGE 002|
-|:----------------------:|:----------------------:|
+|:camera: DETAIL DISPLAY IMAGE 001|:camera: DETAIL DISPLAY IMAGE 002|
+|:-------------------------------:|:-------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/49687986-bf482f80-fb4e-11e8-891d-8448be08203f.png)|![](https://user-images.githubusercontent.com/20036523/49748304-a96e7200-fce8-11e8-9a04-56c388fbdf58.png)|
 
-* * *
-
-|GESTURE DISPLAY IMAGE 001|GESTURE DISPLAY IMAGE 002|
-|:---------------:|:---------------:|
+|:camera: GESTURE DISPLAY IMAGE 001|:camera: GESTURE DISPLAY IMAGE 002|
+|:--------------------------------:|:--------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/49280615-fde64600-f4cd-11e8-99a9-642ee3292cd9.png)|![](https://user-images.githubusercontent.com/20036523/49280617-fde64600-f4cd-11e8-94df-f7779713679e.png)|
 
-* * *
-
-|SETTING DISPLAY IMAGE 001|SETTING DISPLAY IMAGE 002|
-|:------------:|:------------:|
+|:camera: SETTING DISPLAY IMAGE 001|:camera: SETTING DISPLAY IMAGE 002|
+|:--------------------------------:|:--------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/49280626-0474bd80-f4ce-11e8-83f4-e2e3a46a8cfd.png)|![](https://user-images.githubusercontent.com/20036523/49328835-2fd4d680-f5ba-11e8-85b6-8f340469d2a9.png)|
 
 ## ★ Application Method of use
 
-|CONNECT application Method of use|
-|:----------------------------:|
+|:camera: CONNECT application Method of use|
+|:----------------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/50043779-af37cf00-00bd-11e9-8f37-dc3d29a076c0.JPG)|
 
-* * *
-
-|HOME application Method of use|
-|:----------------------------:|
+|:camera: HOME application Method of use|
+|:-------------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/50043778-af37cf00-00bd-11e9-9a53-4180b80f8c09.JPG)|
 
-* * *
-
-|CAMERA application Method of use|
-|:----------------------------:|
+|:camera: CAMERA application Method of use|
+|:---------------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/50043780-afd06580-00bd-11e9-9d47-bb277f3deae4.JPG)|
 
-* * *
-
-|DETAIL application Method of use|
-|:----------------------------:|
+|:camera: DETAIL application Method of use|
+|:---------------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/50043781-afd06580-00bd-11e9-998d-fafdbde0a9c2.JPG)|
 
-* * *
-
-|GESTURE application Method of use|
-|:----------------------------:|
+|:camera: GESTURE application Method of use|
+|:----------------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/50043782-afd06580-00bd-11e9-9562-fae842124002.JPG)|
 
-* * *
-
-|SETTING application Method of use|
-|:----------------------------:|
+|:camera: SETTING application Method of use|
+|:----------------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/50043783-afd06580-00bd-11e9-94c0-7d643d4a6ade.JPG)|
 
 ## ★ Demo Play
 
-## ★ Reference URL
-* [Styles Vision - Github](https://github.com/cocoa-ai/StylesVisionDemo)
-* [Google Sign-In Quickstart - Github](https://github.com/googlesamples/google-services/tree/master/ios/signin)
-* [CoreMLHandwritingRecognition - Github](https://github.com/brianadvent/CoreMLHandwritingRecognition)
- 
-## ★ Open Source List 
-* [Gloss - OpenSource](https://github.com/hkellaway/Gloss)
-* [Dark Sky - OpenSource](https://darksky.net/dev)
-* [SwiftyHue - OpenSource](https://github.com/Spriter/SwiftyHue)
-* [Alamofire - OpenSource](https://github.com/Alamofire/Alamofire)
-* [SwiftSpinner - OpenSource](https://github.com/icanzilb/SwiftSpinner)
-* [Google Sign-In for iOS - Google API](https://developers.google.com/identity/sign-in/ios/)
+|:movie_camera: Demo Play for Application|
+|:--------------------------------------:|
+||
 
+## ★ Reference URL
+
+:airplane: [Styles Vision - Github](https://github.com/cocoa-ai/StylesVisionDemo)
+
+:airplane: [Google Sign-In Quickstart - Github](https://github.com/googlesamples/google-services/tree/master/ios/signin)
+
+:airplane: [CoreMLHandwritingRecognition - Github](https://github.com/brianadvent/CoreMLHandwritingRecognition)
+ 
+## ★ Open Source List
+
+:airplane: [Gloss - OpenSource](https://github.com/hkellaway/Gloss)
+
+:airplane: [Dark Sky - OpenSource](https://darksky.net/dev)
+
+:airplane: [SwiftyHue - OpenSource](https://github.com/Spriter/SwiftyHue)
+
+:airplane: [Alamofire - OpenSource](https://github.com/Alamofire/Alamofire)
+
+:airplane: [SwiftSpinner - OpenSource](https://github.com/icanzilb/SwiftSpinner)
+
+:airplane: [Google Sign-In for iOS - Google API](https://developers.google.com/identity/sign-in/ios/)
 
 ## ★ Developer Information
 
