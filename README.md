@@ -47,6 +47,16 @@
 
 ![](https://user-images.githubusercontent.com/20036523/50043777-af37cf00-00bd-11e9-8cbf-7eaf62ed2048.JPG)
 
+## ★ Development Environment for Application
+
+* macOS Mojave Version 10.14.1
+
+* XCODE Version 10.1
+
+* Github Desktop Version 1.4.3
+
+* QuickTime Player Version 10.5
+
 ## ★ Application UI/UX
 
 |:camera: CONNECT DISPLAY IMAGE 001|:camera: CONNECT DISPLAY IMAGE 002|
