@@ -37,6 +37,8 @@ class Hue: NSObject {
         
         guard let bridgeAccessConfig: BridgeAccessConfig = readHueBridgeAccessConfig() else {
             print("‼️ Error, Could not retirve Philips hue bridge.")
+            hueBridgeFinder.delegate = self
+            hueBridgeFinder.start()
             return
         }
         
@@ -49,9 +51,6 @@ class Hue: NSObject {
         swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .sensors)
         swiftyHue.setLocalHeartbeatInterval(10, forResourceType: .config)
         swiftyHue.startHeartbeat()
-        
-        hueBridgeFinder.delegate = self
-        hueBridgeFinder.start()
     }
     internal func getHueLights() -> HueLight {
         guard let ligths: HueLight = swiftyHue.resourceCache?.lights else {
