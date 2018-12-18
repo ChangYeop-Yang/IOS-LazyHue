@@ -49,13 +49,15 @@
 
 ## ★ Development Environment for Application
 
-* macOS Mojave Version 10.14.1
+:hammer: macOS Mojave Version 10.14.1
 
-* XCODE Version 10.1
+:hammer: XCODE Version 10.1
 
-* Github Desktop Version 1.4.3
+:hammer: Swift Version 4.2
 
-* QuickTime Player Version 10.5
+:hammer: Github Desktop Version 1.4.3
+
+:hammer: QuickTime Player Version 10.5
 
 ## ★ Application UI/UX
 
