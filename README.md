@@ -115,7 +115,7 @@
 
 |:movie_camera: Demo Play for Application|
 |:--------------------------------------:|
-||
+|<div align="center"><a href="https://www.youtube.com/watch?v=JPzTv8qNuvM"><img src="https://img.youtube.com/vi/JPzTv8qNuvM/0.jpg" width="1024" height="486"></a></div>|
 
 |:video_camera: Detail Demo Play 001|:video_camera: Detail Demo Play 002|
 |:---------------------------------:|:---------------------------------:|
