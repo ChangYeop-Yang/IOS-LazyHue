@@ -119,15 +119,15 @@
 
 |:video_camera: Detail Demo Play 001|:video_camera: Detail Demo Play 002|
 |:---------------------------------:|:---------------------------------:|
-|![](https://user-images.githubusercontent.com/20036523/50155267-05e81780-030f-11e9-9666-42346e308bf2.gif)|![](https://user-images.githubusercontent.com/20036523/50155268-0680ae00-030f-11e9-8487-d16ddb2a5810.gif)|
+|<img src="https://user-images.githubusercontent.com/20036523/50155267-05e81780-030f-11e9-9666-42346e308bf2.gif" width="720" />|<img src="https://user-images.githubusercontent.com/20036523/50155268-0680ae00-030f-11e9-8487-d16ddb2a5810.gif" width="720" />|
 
 |:video_camera: Detail Demo Play 003|:video_camera: Detail Demo Play 004|
 |:---------------------------------:|:---------------------------------:|
-|![](https://user-images.githubusercontent.com/20036523/50155269-0680ae00-030f-11e9-81b4-310918fad564.gif)|![](https://user-images.githubusercontent.com/20036523/50155271-07194480-030f-11e9-9dc1-975923ac3acd.gif)|
+|<img src="https://user-images.githubusercontent.com/20036523/50155269-0680ae00-030f-11e9-81b4-310918fad564.gif" width="720" />|<img src="https://user-images.githubusercontent.com/20036523/50155271-07194480-030f-11e9-9dc1-975923ac3acd.gif" width="720" />|
 
 |:video_camera: Detail Demo Play 005|:video_camera: Detail Demo Play 006|
 |:---------------------------------:|:---------------------------------:|
-|![](https://user-images.githubusercontent.com/20036523/50155272-07194480-030f-11e9-9d5a-d2062e970e9f.gif)|![](https://user-images.githubusercontent.com/20036523/50155264-054f8100-030f-11e9-83b3-78d51073e0ab.gif)|
+|<img src="https://user-images.githubusercontent.com/20036523/50155272-07194480-030f-11e9-9d5a-d2062e970e9f.gif" width="720" />|<img src="https://user-images.githubusercontent.com/20036523/50155264-054f8100-030f-11e9-83b3-78d51073e0ab.gif" width="720" />|
 
 ## ★ Reference URL
 
