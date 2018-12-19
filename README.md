@@ -6,15 +6,24 @@
 
 ## ★ Outline
 
+* Lazy Hue Application은 Philips Hue를 활용하여 다양한 조작을 할 수 있습니다. Shake 동작을 통하여 Philips Hue의 전원을 조작할 수 있으며 Slider를 통하여 더욱 간편하게 색상을 변경할 수 있습니다. 또한, 카메라와 Core ML을 통하여 사진으로부터 색상을 추출함으로써 Philips Hue를 통하여 색상을 변경할 수 있습니다. 마지막으로 사용자 중심의 Material Design을 통하여 사용자가 더욱 편리하게 Application을 조작할 수 있도록 설계되었습니다. Lazy Hue를 통하여 간편하게 Philips Hue를 조작하여 보세요!
+
 ###### ※ Implemented features
 
 * 공공데이터(Open Data)를 활용한 오늘의 날씨 기능 제공 [Temperature, Humidity, Ozone, Visible Distance, Fine Dust]
+
 * Arduino의 센서를 활용한 데이터 제공 
+
 * LBS(Location Based Service)를 활용 한 주소(Road Name Address) 정보 제공
+
 * RGB 조절을 통한 전체 Philips Hue 색깔 변경 기능 제공
+
 * Motion 기능을 통한 Philips Hue 전원 관리 기능 제공
+
 * 사진속의 색상을 통해 Philips Hue 색상 변경 기능 제공
+
 * 카메라을 사용하여 Real-Time으로 풍경을 통한 Philips Hue 색상 변경 기능 제공
+
 * Core ML의 MNIST 모델을 활용 한 손글씨 기반의 제스처 기능 제공 [숫자에 맞는 색상 변경 및 전원 관리]
 
 ###### ※ Used Technology
