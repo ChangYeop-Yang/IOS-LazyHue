@@ -6,7 +6,7 @@
 
 ## ★ Outline
 
-* Lazy Hue Application은 Philips Hue를 활용하여 다양한 조작을 할 수 있습니다. Shake 동작을 통하여 Philips Hue의 전원을 조작할 수 있으며 Slider를 통하여 더욱 간편하게 색상을 변경할 수 있습니다. 또한, 카메라와 Core ML을 통하여 사진으로부터 색상을 추출함으로써 Philips Hue를 통하여 색상을 변경할 수 있습니다. 마지막으로 사용자 중심의 Material Design을 통하여 사용자가 더욱 편리하게 Application을 조작할 수 있도록 설계되었습니다. Lazy Hue를 통하여 간편하게 Philips Hue를 조작하여 보세요!
+* Lazy Hue Application은 Philips Hue를 활용하여 다양한 조작을 할 수 있습니다. Shake 동작을 통하여 Philips Hue의 전원을 조작할 수 있으며 Slider를 통하여 더욱 간편하게 색상을 변경할 수 있습니다. 또한, 카메라와 Core ML을 통하여 사진으로부터 색상을 추출함으로써 Philips Hue를 통하여 색상을 변경할 수 있습니다. 마지막으로 사용자 중심의 Material Design을 통하여 사용자가 더욱 편리하게 Application을 조작할 수 있도록 설계되었습니다. **Lazy Hue를 통하여 간편하게 Philips Hue를 조작하여 보세요!**
 
 ###### ※ Implemented features
 
