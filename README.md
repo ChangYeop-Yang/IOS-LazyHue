@@ -4,7 +4,7 @@
  <img src="https://user-images.githubusercontent.com/20036523/49021283-a1391180-f1d5-11e8-976d-a0d1bd010667.png" width="400" height="400" />
 </p>
 
-## ★ Outline
+## ★ Application Outline
 
 * Lazy Hue Application은 Philips Hue를 활용하여 다양한 조작을 할 수 있습니다. Shake 동작을 통하여 Philips Hue의 전원을 조작할 수 있으며 Slider를 통하여 더욱 간편하게 색상을 변경할 수 있습니다. 또한, 카메라와 Core ML을 통하여 사진으로부터 색상을 추출함으로써 Philips Hue를 통하여 색상을 변경할 수 있습니다. 마지막으로 사용자 중심의 Material Design을 통하여 사용자가 더욱 편리하게 Application을 조작할 수 있도록 설계되었습니다. **Lazy Hue를 통하여 간편하게 Philips Hue를 조작하여 보세요!**
 
@@ -122,7 +122,7 @@
 |:----------------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/50043783-afd06580-00bd-11e9-94c0-7d643d4a6ade.JPG)|
 
-## ★ Demo Play
+## ★ Demo Play for Application
 
 |:movie_camera: Demo Play for Application|
 |:--------------------------------------:|
@@ -140,7 +140,7 @@
 |:---------------------------------:|:---------------------------------:|
 |<img src="https://user-images.githubusercontent.com/20036523/50155272-07194480-030f-11e9-9d5a-d2062e970e9f.gif" width="720" />|<img src="https://user-images.githubusercontent.com/20036523/50155264-054f8100-030f-11e9-83b3-78d51073e0ab.gif" width="720" />|
 
-## ★ Reference URL
+## ★ REFERENCE
 
 :airplane: [Styles Vision - Github](https://github.com/cocoa-ai/StylesVisionDemo)
 
@@ -148,7 +148,7 @@
 
 :airplane: [CoreMLHandwritingRecognition - Github](https://github.com/brianadvent/CoreMLHandwritingRecognition)
  
-## ★ Open Source List
+## ★ Open Source URLs
 
 :airplane: [Gloss - OpenSource](https://github.com/hkellaway/Gloss)
 
