@@ -148,7 +148,7 @@
 
 :airplane: [CoreMLHandwritingRecognition - Github](https://github.com/brianadvent/CoreMLHandwritingRecognition)
  
-## ★ Open Source URLs
+## ★ Open Source URL
 
 :airplane: [Gloss - OpenSource](https://github.com/hkellaway/Gloss)
 
