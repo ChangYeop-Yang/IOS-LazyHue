@@ -70,6 +70,10 @@
 
 :hammer: QuickTime Player Version 10.5
 
+## ★ Structure for Application
+
+![](https://user-images.githubusercontent.com/20036523/50383180-e75c9480-06f1-11e9-9c06-abc621db6982.png)
+
 ## ★ Application UI/UX
 
 |:camera: CONNECT DISPLAY IMAGE 001|:camera: CONNECT DISPLAY IMAGE 002|
