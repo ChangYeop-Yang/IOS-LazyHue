@@ -144,6 +144,12 @@
 |:---------------------------------:|:---------------------------------:|
 |<img src="https://user-images.githubusercontent.com/20036523/50155272-07194480-030f-11e9-9d5a-d2062e970e9f.gif" width="720" />|<img src="https://user-images.githubusercontent.com/20036523/50155264-054f8100-030f-11e9-83b3-78d51073e0ab.gif" width="720" />|
 
+## ★ Copyright Registration
+
+|:bookmark_tabs: Copyright Registration|
+|:------------------------------------:|
+|<img src="https://user-images.githubusercontent.com/20036523/50946872-dd52d800-14de-11e9-9701-475129543d52.jpg" />|
+
 ## ★ REFERENCE
 
 :airplane: [Styles Vision - Github](https://github.com/cocoa-ai/StylesVisionDemo)
