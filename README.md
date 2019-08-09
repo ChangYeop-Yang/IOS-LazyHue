@@ -4,7 +4,7 @@
  <img src="https://user-images.githubusercontent.com/20036523/49021283-a1391180-f1d5-11e8-976d-a0d1bd010667.png" width="400" height="400" />
 </p>
 
-## ★ Application Outline
+## ✏️ 프로젝트 설명 (Project Description)
 
 * Lazy Hue Application은 Philips Hue를 활용하여 다양한 조작을 할 수 있습니다. Shake 동작을 통하여 Philips Hue의 전원을 조작할 수 있으며 Slider를 통하여 더욱 간편하게 색상을 변경할 수 있습니다. 또한, 카메라와 Core ML을 통하여 사진으로부터 색상을 추출함으로써 Philips Hue를 통하여 색상을 변경할 수 있습니다. 마지막으로 사용자 중심의 Material Design을 통하여 사용자가 더욱 편리하게 Application을 조작할 수 있도록 설계되었습니다. **Lazy Hue를 통하여 간편하게 Philips Hue를 조작하여 보세요!**
 
@@ -58,23 +58,31 @@
 
 ![](https://user-images.githubusercontent.com/20036523/50043777-af37cf00-00bd-11e9-8cbf-7eaf62ed2048.JPG)
 
-## ★ Development Environment for Application
-
-:hammer: macOS Mojave Version 10.14.1
-
-:hammer: XCODE Version 10.1
-
-:hammer: Swift Version 4.2
-
-:hammer: Github Desktop Version 1.4.3
-
-:hammer: QuickTime Player Version 10.5
-
-## ★ Structure for Application
+## 🔨 프로젝트 개발환경 (Project Environment)
 
 ![](https://user-images.githubusercontent.com/20036523/50383180-e75c9480-06f1-11e9-9c06-abc621db6982.png)
 
-## ★ Application UI/UX
+* macOS Mojave Version 10.14.1
+
+* XCODE Version 10.1
+
+* Swift Version 4.2
+
+* Github Desktop Version 1.4.3
+
+* QuickTime Player Version 10.5
+
+## 🍩 프로젝트 오픈소스 (Project OpenSource)
+
+* ❤️ [Gloss - MIT License](https://github.com/hkellaway/Gloss)
+
+* ❤️ [SwiftyHue - MIT License](https://github.com/Spriter/SwiftyHue)
+
+* ❤️ [Alamofire - MIT License](https://github.com/Alamofire/Alamofire)
+
+* ❤️ [SwiftSpinner - MIT License](https://github.com/icanzilb/SwiftSpinner)
+
+## 📷 프로젝트 UI/UX (Project UI/UX)
 
 |:camera: CONNECT DISPLAY IMAGE 001|:camera: CONNECT DISPLAY IMAGE 002|
 |:--------------------------------:|:--------------------------------:|
@@ -100,7 +108,7 @@
 |:--------------------------------:|:--------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/49280626-0474bd80-f4ce-11e8-83f4-e2e3a46a8cfd.png)|![](https://user-images.githubusercontent.com/20036523/49328835-2fd4d680-f5ba-11e8-85b6-8f340469d2a9.png)|
 
-## ★ Application Method of use
+## 📖 프로젝트 사용 설명서 (Project User's Guide)
 
 |:camera: CONNECT application Method of use|
 |:----------------------------------------:|
@@ -126,7 +134,7 @@
 |:----------------------------------------:|
 |![](https://user-images.githubusercontent.com/20036523/50043783-afd06580-00bd-11e9-94c0-7d643d4a6ade.JPG)|
 
-## ★ Demo Play for Application
+## 📹 프로젝트 데모 영상 (Project Demo Play)
 
 |:movie_camera: Demo Play for Application|
 |:--------------------------------------:|
@@ -150,29 +158,15 @@
 |:------------------------------------:|
 |<img src="https://user-images.githubusercontent.com/20036523/50946872-dd52d800-14de-11e9-9701-475129543d52.jpg" />|
 
-## ★ REFERENCE
+## 🚀 참조 (REFERENCE)
 
 :airplane: [Styles Vision - Github](https://github.com/cocoa-ai/StylesVisionDemo)
 
 :airplane: [Google Sign-In Quickstart - Github](https://github.com/googlesamples/google-services/tree/master/ios/signin)
 
 :airplane: [CoreMLHandwritingRecognition - Github](https://github.com/brianadvent/CoreMLHandwritingRecognition)
- 
-## ★ Open Source URL
 
-:airplane: [Gloss - OpenSource](https://github.com/hkellaway/Gloss)
-
-:airplane: [Dark Sky - OpenSource](https://darksky.net/dev)
-
-:airplane: [SwiftyHue - OpenSource](https://github.com/Spriter/SwiftyHue)
-
-:airplane: [Alamofire - OpenSource](https://github.com/Alamofire/Alamofire)
-
-:airplane: [SwiftSpinner - OpenSource](https://github.com/icanzilb/SwiftSpinner)
-
-:airplane: [Google Sign-In for iOS - Google API](https://developers.google.com/identity/sign-in/ios/)
-
-## ★ Developer Information
+## 👓 개발자 정보 (Devloper Information)
 
 |:rocket: Github QR Code|:pencil: Naver-Blog QR Code|:eyeglasses: Linked-In QR Code|
 |:---------------------:|:-------------------------:|:----------------------------:|
