@@ -10,7 +10,7 @@
 
 * With Lazy Hue Application, users can control more variously using Philips Hue. With Shake motion you can control the power of Philips Hue and with Slider you can change colors more easily. You are also able to change color through Philips Hue by extracting colors of photos from Camera and Core ML. Lastly, Lazy Hue is designed to control the application more easily with user-oriented Material Design. **Control Philips Hue easily with Lazy Hue!**
 
-###### ※ Implemented features
+###### 📂 Implemented features
 
 * 공공데이터(Open Data)를 활용한 오늘의 날씨 기능 제공 [Temperature, Humidity, Ozone, Visible Distance, Fine Dust]
 
@@ -28,7 +28,7 @@
 
 * Core ML의 MNIST 모델을 활용 한 손글씨 기반의 제스처 기능 제공 [숫자에 맞는 색상 변경 및 전원 관리]
 
-###### ※ Used Technology
+###### 📂 Used Technology
 
 :wrench: [Metarial Design](https://material.io/design/)
 
@@ -44,7 +44,7 @@
 
 :wrench: [Naver Cloud Platform - Micro Server & DNS](https://www.ncloud.com/)
 
-###### ※ Used Arduino Sensor
+###### 📂 Used Arduino Sensor
 
 |Number|Model Name|Module Comment|
 |:----:|:--------:|:------------:|
@@ -62,15 +62,17 @@
 
 ![](https://user-images.githubusercontent.com/20036523/50383180-e75c9480-06f1-11e9-9c06-abc621db6982.png)
 
-* macOS Mojave Version 10.14.1
+* * *
 
-* XCODE Version 10.1
+* 🔌 macOS Mojave Version 10.14.1
 
-* Swift Version 4.2
+* 🔌 XCODE Version 10.1
 
-* Github Desktop Version 1.4.3
+* 🔌 Swift Version 4.2
 
-* QuickTime Player Version 10.5
+* 🔌 Github Desktop Version 1.4.3
+
+* 🔌 QuickTime Player Version 10.5
 
 ## 🍩 프로젝트 오픈소스 (Project OpenSource)
 
@@ -152,19 +154,15 @@
 |:---------------------------------:|:---------------------------------:|
 |<img src="https://user-images.githubusercontent.com/20036523/50155272-07194480-030f-11e9-9d5a-d2062e970e9f.gif" width="720" />|<img src="https://user-images.githubusercontent.com/20036523/50155264-054f8100-030f-11e9-83b3-78d51073e0ab.gif" width="720" />|
 
-## ★ Copyright Registration
-
-|:bookmark_tabs: Copyright Registration|
-|:------------------------------------:|
-|<img src="https://user-images.githubusercontent.com/20036523/50946872-dd52d800-14de-11e9-9701-475129543d52.jpg" />|
-
 ## 🚀 참조 (REFERENCE)
 
-:airplane: [Styles Vision - Github](https://github.com/cocoa-ai/StylesVisionDemo)
+✈️ [Copyright Registration](https://user-images.githubusercontent.com/20036523/50946872-dd52d800-14de-11e9-9701-475129543d52.jpg)
 
-:airplane: [Google Sign-In Quickstart - Github](https://github.com/googlesamples/google-services/tree/master/ios/signin)
+✈️ [Styles Vision - Github](https://github.com/cocoa-ai/StylesVisionDemo)
 
-:airplane: [CoreMLHandwritingRecognition - Github](https://github.com/brianadvent/CoreMLHandwritingRecognition)
+✈️ [Google Sign-In Quickstart - Github](https://github.com/googlesamples/google-services/tree/master/ios/signin)
+
+✈️ [CoreMLHandwritingRecognition - Github](https://github.com/brianadvent/CoreMLHandwritingRecognition)
 
 ## 👓 개발자 정보 (Devloper Information)
 
